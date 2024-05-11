@@ -1,0 +1,1728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.apache.kafka.common.KafkaFuture" />
+			<role name="FactoryMethod()" element="org.apache.kafka.common.KafkaFuture::thenApply():org.apache.kafka.common.KafkaFuture" />
+			<role name="FactoryMethod()" element="org.apache.kafka.common.KafkaFuture::whenComplete(org.apache.kafka.common.KafkaFuture$BiConsumer):org.apache.kafka.common.KafkaFuture" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.kafka.common.record.FileLogInputStream$FileChannelRecordBatch" />
+			<role name="FactoryMethod()" element="org.apache.kafka.common.record.FileLogInputStream$FileChannelRecordBatch::toMemoryRecordBatch(java.nio.ByteBuffer):org.apache.kafka.common.record.RecordBatch" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.kafka.common.record.LogInputStream" />
+			<role name="FactoryMethod()" element="org.apache.kafka.common.record.LogInputStream::nextBatch():org.apache.kafka.common.record.RecordBatch" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin" />
+			<role name="FactoryMethod()" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::expiringCredential():org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredential" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenValidator" />
+			<role name="FactoryMethod()" element="org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenValidator::validate(java.lang.String):org.apache.kafka.common.security.oauthbearer.OAuthBearerToken" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.kafka.common.telemetry.internals.MetricNamingStrategy" />
+			<role name="FactoryMethod()" element="org.apache.kafka.common.telemetry.internals.MetricNamingStrategy::derivedMetricKey(org.apache.kafka.common.telemetry.internals.MetricKey, java.lang.String):org.apache.kafka.common.telemetry.internals.MetricKey" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest" />
+			<role name="FactoryMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::createAssignor():org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.clients.consumer.ConsumerRecords" />
+			<role name="uniqueInstance" element="org.apache.kafka.clients.consumer.ConsumerRecords::EMPTY:org.apache.kafka.clients.consumer.ConsumerRecords" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator$Generation" />
+			<role name="uniqueInstance" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator$Generation::NO_GENERATION:org.apache.kafka.clients.consumer.internals.AbstractCoordinator$Generation" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.clients.consumer.internals.MembershipManager$LocalAssignment" />
+			<role name="uniqueInstance" element="org.apache.kafka.clients.consumer.internals.MembershipManager$LocalAssignment::NONE:org.apache.kafka.clients.consumer.internals.MembershipManager$LocalAssignment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate$PollResult" />
+			<role name="uniqueInstance" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate$PollResult::EMPTY:org.apache.kafka.clients.consumer.internals.NetworkClientDelegate$PollResult" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.clients.Metadata$LeaderAndEpoch" />
+			<role name="uniqueInstance" element="org.apache.kafka.clients.Metadata$LeaderAndEpoch::NO_LEADER_OR_EPOCH:org.apache.kafka.clients.Metadata$LeaderAndEpoch" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.acl.AccessControlEntryFilter" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.acl.AccessControlEntryFilter::ANY:org.apache.kafka.common.acl.AccessControlEntryFilter" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.acl.AclBindingFilter" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.acl.AclBindingFilter::ANY:org.apache.kafka.common.acl.AclBindingFilter" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.errors.CoordinatorNotAvailableException" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.errors.CoordinatorNotAvailableException::INSTANCE:org.apache.kafka.common.errors.CoordinatorNotAvailableException" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.errors.DisconnectException" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.errors.DisconnectException::INSTANCE:org.apache.kafka.common.errors.DisconnectException" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.memory.MemoryPool" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.memory.MemoryPool::NONE:org.apache.kafka.common.memory.MemoryPool" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.network.ClientInformation" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.network.ClientInformation::EMPTY:org.apache.kafka.common.network.ClientInformation" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.Node" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.Node::NO_NODE:org.apache.kafka.common.Node" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.protocol.types.RawTaggedFieldWriter" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.protocol.types.RawTaggedFieldWriter::EMPTY_WRITER:org.apache.kafka.common.protocol.types.RawTaggedFieldWriter" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.record.MemoryRecords" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.record.MemoryRecords::EMPTY:org.apache.kafka.common.record.MemoryRecords" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.record.RecordValidationStats" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.record.RecordValidationStats::EMPTY:org.apache.kafka.common.record.RecordValidationStats" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.requests.ApiError" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.requests.ApiError::NONE:org.apache.kafka.common.requests.ApiError" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.resource.Resource" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.resource.Resource::CLUSTER:org.apache.kafka.common.resource.Resource" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.resource.ResourcePatternFilter" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.resource.ResourcePatternFilter::ANY:org.apache.kafka.common.resource.ResourcePatternFilter" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.security.auth.KafkaPrincipal" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.security.auth.KafkaPrincipal::ANONYMOUS:org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.utils.BufferSupplier" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.utils.BufferSupplier::NO_CACHING:org.apache.kafka.common.utils.BufferSupplier" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$HeadElement" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$HeadElement::EMPTY:org.apache.kafka.common.utils.ImplicitLinkedHashCollection$HeadElement" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.utils.ProducerIdAndEpoch" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.utils.ProducerIdAndEpoch::NONE:org.apache.kafka.common.utils.ProducerIdAndEpoch" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.utils.Scheduler" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.utils.Scheduler::SYSTEM:org.apache.kafka.common.utils.Scheduler" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.common.utils.Time" />
+			<role name="uniqueInstance" element="org.apache.kafka.common.utils.Time::SYSTEM:org.apache.kafka.common.utils.Time" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.kafka.server.authorizer.AclCreateResult" />
+			<role name="uniqueInstance" element="org.apache.kafka.server.authorizer.AclCreateResult::SUCCESS:org.apache.kafka.server.authorizer.AclCreateResult" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adapter" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="Adaptee" element="org.apache.kafka.clients.ClusterConnectionStates" />
+			<role name="adaptee" element="org.apache.kafka.clients.NetworkClient::connectionStates:org.apache.kafka.clients.ClusterConnectionStates" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::ready(org.apache.kafka.common.Node, long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::disconnect(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::close(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::connectionDelay(org.apache.kafka.common.Node, long):long" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::pollDelayMs(org.apache.kafka.common.Node, long):long" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::connectionFailed(org.apache.kafka.common.Node):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::authenticationException(org.apache.kafka.common.Node):org.apache.kafka.common.errors.AuthenticationException" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::hasReadyNodes(long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::leastLoadedNode(long):org.apache.kafka.common.Node" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="Adaptee" element="org.apache.kafka.clients.InFlightRequests" />
+			<role name="adaptee" element="org.apache.kafka.clients.NetworkClient::inFlightRequests:org.apache.kafka.clients.InFlightRequests" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::inFlightRequestCount():int" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::hasInFlightRequests():boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::inFlightRequestCount(java.lang.String):int" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::hasInFlightRequests(java.lang.String):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::leastLoadedNode(long):org.apache.kafka.common.Node" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="Adaptee" element="org.apache.kafka.clients.NetworkClient$TelemetrySender" />
+			<role name="adaptee" element="org.apache.kafka.clients.NetworkClient::telemetrySender:org.apache.kafka.clients.NetworkClient$TelemetrySender" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::poll(long, long):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.kafka.clients.MockClient" />
+			<role name="Adaptee" element="org.apache.kafka.clients.NodeApiVersions" />
+			<role name="adaptee" element="org.apache.kafka.clients.MockClient::nodeApiVersions:org.apache.kafka.clients.NodeApiVersions" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::send(org.apache.kafka.clients.ClientRequest, long):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.SubscriptionState" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::subscriptions:org.apache.kafka.clients.consumer.internals.SubscriptionState" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::transitionToFenced():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::transitionToFatal():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.metrics.RebalanceMetricsManager" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::metricsManager:org.apache.kafka.clients.consumer.internals.metrics.RebalanceMetricsManager" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::onHeartbeatFailure():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.internals.KafkaCompletableFuture" />
+			<role name="Adapter" element="org.apache.kafka.common.internals.KafkaFutureImpl" />
+			<role name="adaptee" element="org.apache.kafka.common.internals.KafkaFutureImpl::completableFuture:org.apache.kafka.common.internals.KafkaCompletableFuture" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::thenApply():org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::whenComplete(org.apache.kafka.common.KafkaFuture$BiConsumer):org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::complete(T):boolean" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::completeExceptionally(java.lang.Throwable):boolean" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::cancel(boolean):boolean" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::get():java.lang.Object" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::get(long, java.util.concurrent.TimeUnit):java.lang.Object" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::getNow(T):java.lang.Object" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::isCancelled():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::isCompletedExceptionally():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.internals.KafkaFutureImpl::isDone():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.metrics.Metrics" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.KafkaProducer::metrics:org.apache.kafka.common.metrics.Metrics" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::metrics():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.producer.internals.RecordAccumulator" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.KafkaProducer::accumulator:org.apache.kafka.clients.producer.internals.RecordAccumulator" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::flush():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.producer.internals.Sender" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.KafkaProducer::sender:org.apache.kafka.clients.producer.internals.Sender" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::initTransactions():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::sendOffsetsToTransaction(java.util.Map, org.apache.kafka.clients.consumer.ConsumerGroupMetadata):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::commitTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::abortTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::flush():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.producer.internals.TransactionManager" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.KafkaProducer::transactionManager:org.apache.kafka.clients.producer.internals.TransactionManager" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::initTransactions():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::beginTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::sendOffsetsToTransaction(java.util.Map, org.apache.kafka.clients.consumer.ConsumerGroupMetadata):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::commitTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::abortTransaction():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.producer.internals.KafkaProducerMetrics" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.KafkaProducer::producerMetrics:org.apache.kafka.clients.producer.internals.KafkaProducerMetrics" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::initTransactions():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::beginTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::sendOffsetsToTransaction(java.util.Map, org.apache.kafka.clients.consumer.ConsumerGroupMetadata):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::commitTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::abortTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::flush():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.producer.internals.ProducerInterceptors" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.KafkaProducer::interceptors:org.apache.kafka.clients.producer.internals.ProducerInterceptors" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::send(org.apache.kafka.clients.producer.ProducerRecord, org.apache.kafka.clients.producer.Callback):java.util.concurrent.Future" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.SubscriptionState" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::subscriptions:org.apache.kafka.clients.consumer.internals.SubscriptionState" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinComplete(int, java.lang.String, java.lang.String, java.nio.ByteBuffer):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinPrepare(org.apache.kafka.common.utils.Timer, int, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.utils.Timer" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::nextAutoCommitTimer:org.apache.kafka.common.utils.Timer" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::joinPrepareTimer:org.apache.kafka.common.utils.Timer" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinComplete(int, java.lang.String, java.lang.String, java.nio.ByteBuffer):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinPrepare(org.apache.kafka.common.utils.Timer, int, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.ConsumerPartitionAssignor$RebalanceProtocol" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::protocol:org.apache.kafka.clients.consumer.ConsumerPartitionAssignor$RebalanceProtocol" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinPrepare(org.apache.kafka.common.utils.Timer, int, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerRebalanceListenerInvoker" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::rebalanceListenerInvoker:org.apache.kafka.clients.consumer.internals.ConsumerRebalanceListenerInvoker" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinComplete(int, java.lang.String, java.lang.String, java.nio.ByteBuffer):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinPrepare(org.apache.kafka.common.utils.Timer, int, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.record.LegacyRecord" />
+			<role name="Adapter" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch$ByteBufferLegacyRecordBatch" />
+			<role name="adaptee" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch$ByteBufferLegacyRecordBatch::record:org.apache.kafka.common.record.LegacyRecord" />
+			<role name="Request()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch$ByteBufferLegacyRecordBatch::setMaxTimestamp(org.apache.kafka.common.record.TimestampType, long):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator$SaslState" />
+			<role name="Adapter" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::saslState:org.apache.kafka.common.security.authenticator.SaslClientAuthenticator$SaslState" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::authenticate():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.network.ListenerName" />
+			<role name="Adapter" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::listenerName:org.apache.kafka.common.network.ListenerName" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.SubscriptionState" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.MockConsumer" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.MockConsumer::subscriptions:org.apache.kafka.clients.consumer.internals.SubscriptionState" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::assignment():java.util.Set" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::subscription():java.util.Set" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::assign(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::unsubscribe():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::poll(java.time.Duration):org.apache.kafka.clients.consumer.ConsumerRecords" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::commitAsync(org.apache.kafka.clients.consumer.OffsetCommitCallback):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::commitSync():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::commitSync(java.time.Duration):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::seek(org.apache.kafka.common.TopicPartition, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::seek(org.apache.kafka.common.TopicPartition, org.apache.kafka.clients.consumer.OffsetAndMetadata):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::position(org.apache.kafka.common.TopicPartition):long" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::seekToBeginning(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::seekToEnd(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::pause(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.MockConsumer::resume(java.util.Collection):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.Fetcher" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.Fetcher::client:org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.Fetcher::isUnavailable(org.apache.kafka.common.Node):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.Fetcher::maybeThrowAuthFailure(org.apache.kafka.common.Node):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerDelegate" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.KafkaConsumer" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.KafkaConsumer::delegate:org.apache.kafka.clients.consumer.internals.ConsumerDelegate" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::assignment():java.util.Set" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::subscription():java.util.Set" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::subscribe(java.util.Collection, org.apache.kafka.clients.consumer.ConsumerRebalanceListener):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::subscribe(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::subscribe(java.util.regex.Pattern, org.apache.kafka.clients.consumer.ConsumerRebalanceListener):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::subscribe(java.util.regex.Pattern):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::unsubscribe():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::assign(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::poll(long):org.apache.kafka.clients.consumer.ConsumerRecords" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::poll(java.time.Duration):org.apache.kafka.clients.consumer.ConsumerRecords" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::commitSync():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::commitSync(java.time.Duration):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::commitSync(java.util.Map):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::commitSync(java.util.Map, java.time.Duration):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::commitAsync():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::commitAsync(org.apache.kafka.clients.consumer.OffsetCommitCallback):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::commitAsync(java.util.Map, org.apache.kafka.clients.consumer.OffsetCommitCallback):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::seek(org.apache.kafka.common.TopicPartition, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::seek(org.apache.kafka.common.TopicPartition, org.apache.kafka.clients.consumer.OffsetAndMetadata):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::seekToBeginning(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::seekToEnd(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::position(org.apache.kafka.common.TopicPartition):long" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::position(org.apache.kafka.common.TopicPartition, java.time.Duration):long" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::committed(org.apache.kafka.common.TopicPartition):org.apache.kafka.clients.consumer.OffsetAndMetadata" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::committed(org.apache.kafka.common.TopicPartition, java.time.Duration):org.apache.kafka.clients.consumer.OffsetAndMetadata" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::committed(java.util.Set):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::committed(java.util.Set, java.time.Duration):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::clientInstanceId(java.time.Duration):org.apache.kafka.common.Uuid" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::metrics():java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::partitionsFor(java.lang.String):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::partitionsFor(java.lang.String, java.time.Duration):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::listTopics():java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::listTopics(java.time.Duration):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::pause(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::resume(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::paused():java.util.Set" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::offsetsForTimes(java.util.Map):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::offsetsForTimes(java.util.Map, java.time.Duration):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::beginningOffsets(java.util.Collection):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::beginningOffsets(java.util.Collection, java.time.Duration):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::endOffsets(java.util.Collection):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::endOffsets(java.util.Collection, java.time.Duration):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::currentLag(org.apache.kafka.common.TopicPartition):java.util.OptionalLong" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::groupMetadata():org.apache.kafka.clients.consumer.ConsumerGroupMetadata" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::enforceRebalance(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::enforceRebalance():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::close():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::close(java.time.Duration):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::wakeup():void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.CommitRequestManager" />
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.CommitRequestManager$PendingRequests" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.CommitRequestManager::pendingRequests:org.apache.kafka.clients.consumer.internals.CommitRequestManager$PendingRequests" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.CommitRequestManager::poll(long):org.apache.kafka.clients.consumer.internals.NetworkClientDelegate$PollResult" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.RequestState" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.CoordinatorRequestManager" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.CoordinatorRequestManager::coordinatorRequestState:org.apache.kafka.clients.consumer.internals.RequestState" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.CoordinatorRequestManager::poll(long):org.apache.kafka.clients.consumer.internals.NetworkClientDelegate$PollResult" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.config.internals.AllowedPaths" />
+			<role name="Adapter" element="org.apache.kafka.common.config.provider.FileConfigProvider" />
+			<role name="adaptee" element="org.apache.kafka.common.config.provider.FileConfigProvider::allowedPaths:org.apache.kafka.common.config.internals.AllowedPaths" />
+			<role name="Request()" element="org.apache.kafka.common.config.provider.FileConfigProvider::get(java.lang.String):org.apache.kafka.common.config.ConfigData" />
+			<role name="Request()" element="org.apache.kafka.common.config.provider.FileConfigProvider::get(java.lang.String, java.util.Set):org.apache.kafka.common.config.ConfigData" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.producer.internals.StickyPartitionCache" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.UniformStickyPartitioner" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.UniformStickyPartitioner::stickyPartitionCache:org.apache.kafka.clients.producer.internals.StickyPartitionCache" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.UniformStickyPartitioner::partition(java.lang.String, java.lang.Object, byte[], java.lang.Object, byte[], org.apache.kafka.common.Cluster):int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.RequestFuture" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::autoCommitOffsetRequestFuture:org.apache.kafka.clients.consumer.internals.RequestFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator::onJoinPrepare(org.apache.kafka.common.utils.Timer, int, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.MetadataUpdater" />
+			<role name="Adapter" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="adaptee" element="org.apache.kafka.clients.NetworkClient::metadataUpdater:org.apache.kafka.clients.MetadataUpdater" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::isReady(org.apache.kafka.common.Node, long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::poll(long, long):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::leastLoadedNode(long):org.apache.kafka.common.Node" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.telemetry.ClientTelemetryState" />
+			<role name="Adapter" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$DefaultClientTelemetrySender" />
+			<role name="adaptee" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$DefaultClientTelemetrySender::state:org.apache.kafka.common.telemetry.ClientTelemetryState" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$DefaultClientTelemetrySender::timeToNextUpdate(long):long" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$ClientTelemetrySubscription" />
+			<role name="Adapter" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$DefaultClientTelemetrySender" />
+			<role name="adaptee" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$DefaultClientTelemetrySender::subscription:org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$ClientTelemetrySubscription" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter$DefaultClientTelemetrySender::clientInstanceId(java.time.Duration):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector$StateLedger" />
+			<role name="Adapter" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector" />
+			<role name="adaptee" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector::ledger:org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector$StateLedger" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector::collect(org.apache.kafka.common.telemetry.internals.MetricsEmitter):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.network.Selectable" />
+			<role name="Adapter" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="adaptee" element="org.apache.kafka.clients.NetworkClient::selector:org.apache.kafka.common.network.Selectable" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::disconnect(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::close(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::poll(long, long):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::wakeup():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.record.RecordValidationStats" />
+			<role name="Adapter" element="org.apache.kafka.common.record.LazyDownConversionRecordsSend" />
+			<role name="adaptee" element="org.apache.kafka.common.record.LazyDownConversionRecordsSend::recordValidationStats:org.apache.kafka.common.record.RecordValidationStats" />
+			<role name="Request()" element="org.apache.kafka.common.record.LazyDownConversionRecordsSend::writeTo(org.apache.kafka.common.network.TransferableChannel, int, int):int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.network.PlaintextTransportLayer" />
+			<role name="Adapter" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator::transportLayer:org.apache.kafka.common.network.PlaintextTransportLayer" />
+			<role name="Request()" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.network.SslTransportLayer" />
+			<role name="Adapter" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator::transportLayer:org.apache.kafka.common.network.SslTransportLayer" />
+			<role name="Request()" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.protocol.types.Schema" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.CooperativeStickyAssignor" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.CooperativeStickyAssignor::COOPERATIVE_STICKY_ASSIGNOR_USER_DATA_V0:org.apache.kafka.common.protocol.types.Schema" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.CooperativeStickyAssignor::memberData(org.apache.kafka.clients.consumer.ConsumerPartitionAssignor$Subscription):org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor$MemberData" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$SecurityStore" />
+			<role name="Adapter" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory" />
+			<role name="adaptee" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::truststore:org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$SecurityStore" />
+			<role name="adaptee" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::keystore:org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$SecurityStore" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::shouldBeRebuilt(java.util.Map):boolean" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::keystore():java.security.KeyStore" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::truststore():java.security.KeyStore" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.MockClient$MockMetadataUpdater" />
+			<role name="Adapter" element="org.apache.kafka.clients.MockClient" />
+			<role name="adaptee" element="org.apache.kafka.clients.MockClient::metadataUpdater:org.apache.kafka.clients.MockClient$MockMetadataUpdater" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::poll(long, long):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::leastLoadedNode(long):org.apache.kafka.common.Node" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.network.NetworkReceive" />
+			<role name="Adapter" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::netInBuffer:org.apache.kafka.common.network.NetworkReceive" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::authenticate():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.auth.SslEngineFactory" />
+			<role name="Adapter" element="org.apache.kafka.common.security.ssl.SslFactory" />
+			<role name="adaptee" element="org.apache.kafka.common.security.ssl.SslFactory::sslEngineFactory:org.apache.kafka.common.security.auth.SslEngineFactory" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.SslFactory::reconfigurableConfigs():java.util.Set" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.SslFactory::reconfigure(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.Metadata" />
+			<role name="Adapter" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater" />
+			<role name="adaptee" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::metadata:org.apache.kafka.clients.Metadata" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::fetchNodes():java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::isUpdateDue(long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::maybeUpdate(long):long" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::handleServerDisconnect(long, java.lang.String, java.util.Optional):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::handleFailedRequest(long, java.util.Optional):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::handleSuccessfulResponse(org.apache.kafka.common.requests.RequestHeader, long, org.apache.kafka.common.requests.MetadataResponse):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.telemetry.internals.ClientTelemetrySender" />
+			<role name="Adapter" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter" />
+			<role name="adaptee" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::clientTelemetrySender:org.apache.kafka.common.telemetry.internals.ClientTelemetrySender" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.requests.RequestHeader" />
+			<role name="Adapter" element="org.apache.kafka.common.requests.RequestContext" />
+			<role name="adaptee" element="org.apache.kafka.common.requests.RequestContext::header:org.apache.kafka.common.requests.RequestHeader" />
+			<role name="Request()" element="org.apache.kafka.common.requests.RequestContext::requestType():int" />
+			<role name="Request()" element="org.apache.kafka.common.requests.RequestContext::requestVersion():int" />
+			<role name="Request()" element="org.apache.kafka.common.requests.RequestContext::clientId():java.lang.String" />
+			<role name="Request()" element="org.apache.kafka.common.requests.RequestContext::correlationId():int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin" />
+			<role name="Adapter" element="org.apache.kafka.common.security.oauthbearer.internals.OAuthBearerRefreshingLogin" />
+			<role name="adaptee" element="org.apache.kafka.common.security.oauthbearer.internals.OAuthBearerRefreshingLogin::expiringCredentialRefreshingLogin:org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.OAuthBearerRefreshingLogin::close():void" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.OAuthBearerRefreshingLogin::subject():javax.security.auth.Subject" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.OAuthBearerRefreshingLogin::serviceName():java.lang.String" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.OAuthBearerRefreshingLogin::login():javax.security.auth.login.LoginContext" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer$BackgroundEventProcessor" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer::backgroundEventProcessor:org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer$BackgroundEventProcessor" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer::updateAssignmentMetadataIfNeeded(org.apache.kafka.common.utils.Timer):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenRetriever" />
+			<role name="Adapter" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler" />
+			<role name="adaptee" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler::accessTokenRetriever:org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenRetriever" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.oauthbearer.internals.secured.CloseableVerificationKeyResolver" />
+			<role name="Adapter" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler" />
+			<role name="adaptee" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler::verificationKeyResolver:org.apache.kafka.common.security.oauthbearer.internals.secured.CloseableVerificationKeyResolver" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.config.types.Password" />
+			<role name="Adapter" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$FileBasedStore" />
+			<role name="adaptee" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$FileBasedStore::keyPassword:org.apache.kafka.common.config.types.Password" />
+			<role name="adaptee" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$FileBasedStore::password:org.apache.kafka.common.config.types.Password" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$FileBasedStore::keyPassword():char[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.Metadata" />
+			<role name="Adapter" element="org.apache.kafka.clients.MockClient$DefaultMockMetadataUpdater" />
+			<role name="adaptee" element="org.apache.kafka.clients.MockClient$DefaultMockMetadataUpdater::metadata:org.apache.kafka.clients.Metadata" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient$DefaultMockMetadataUpdater::fetchNodes():java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient$DefaultMockMetadataUpdater::isUpdateNeeded():boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient$DefaultMockMetadataUpdater::update(org.apache.kafka.common.utils.Time, org.apache.kafka.clients.MockClient$MetadataUpdate):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector" />
+			<role name="Adapter" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter" />
+			<role name="adaptee" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::kafkaMetricsCollector:org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::init(java.util.List):void" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::metricChange(org.apache.kafka.common.metrics.KafkaMetric):void" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::metricRemoval(org.apache.kafka.common.metrics.KafkaMetric):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate" />
+			<role name="Adapter" element="org.apache.kafka.clients.consumer.internals.FetchRequestManager" />
+			<role name="adaptee" element="org.apache.kafka.clients.consumer.internals.FetchRequestManager::networkClientDelegate:org.apache.kafka.clients.consumer.internals.NetworkClientDelegate" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchRequestManager::isUnavailable(org.apache.kafka.common.Node):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchRequestManager::maybeThrowAuthFailure(org.apache.kafka.common.Node):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.serialization.Serializer" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.MockProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.MockProducer::keySerializer:org.apache.kafka.common.serialization.Serializer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.MockProducer::valueSerializer:org.apache.kafka.common.serialization.Serializer" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.MockProducer::send(org.apache.kafka.clients.producer.ProducerRecord, org.apache.kafka.clients.producer.Callback):java.util.concurrent.Future" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.network.CipherInformation" />
+			<role name="Adapter" element="org.apache.kafka.common.network.Selector$SelectorChannelMetadataRegistry" />
+			<role name="adaptee" element="org.apache.kafka.common.network.Selector$SelectorChannelMetadataRegistry::cipherInformation:org.apache.kafka.common.network.CipherInformation" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector$SelectorChannelMetadataRegistry::registerCipherInformation(org.apache.kafka.common.network.CipherInformation):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.network.ClientInformation" />
+			<role name="Adapter" element="org.apache.kafka.common.network.Selector$SelectorChannelMetadataRegistry" />
+			<role name="adaptee" element="org.apache.kafka.common.network.Selector$SelectorChannelMetadataRegistry::clientInformation:org.apache.kafka.common.network.ClientInformation" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector$SelectorChannelMetadataRegistry::registerClientInformation(org.apache.kafka.common.network.ClientInformation):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.utils.Time" />
+			<role name="Adapter" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="adaptee" element="org.apache.kafka.clients.producer.KafkaProducer::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::initTransactions():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::beginTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::sendOffsetsToTransaction(java.util.Map, org.apache.kafka.clients.consumer.ConsumerGroupMetadata):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::commitTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::abortTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::flush():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::partitionsFor(java.lang.String):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.memory.MemoryPool" />
+			<role name="Adapter" element="org.apache.kafka.common.network.Selector" />
+			<role name="adaptee" element="org.apache.kafka.common.network.Selector::memoryPool:org.apache.kafka.common.memory.MemoryPool" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::poll(long):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Adapter" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator::principalBuilder:org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Request()" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Adapter" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator::principalBuilder:org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Request()" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Adapter" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator" />
+			<role name="adaptee" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::principalBuilder:org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.utils.Time" />
+			<role name="Adapter" element="org.apache.kafka.clients.MockClient" />
+			<role name="adaptee" element="org.apache.kafka.clients.MockClient::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::connectionFailed(org.apache.kafka.common.Node):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::send(org.apache.kafka.clients.ClientRequest, long):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.utils.Time" />
+			<role name="Adapter" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="adaptee" element="org.apache.kafka.clients.NetworkClient::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::disconnect(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::close(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::poll(long, long):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.memory.MemoryPool" />
+			<role name="Adapter" element="org.apache.kafka.common.network.NetworkReceive" />
+			<role name="adaptee" element="org.apache.kafka.common.network.NetworkReceive::memoryPool:org.apache.kafka.common.memory.MemoryPool" />
+			<role name="Request()" element="org.apache.kafka.common.network.NetworkReceive::readFrom(java.nio.channels.ScatteringByteChannel):long" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.utils.Time" />
+			<role name="Adapter" element="org.apache.kafka.common.network.Selector" />
+			<role name="adaptee" element="org.apache.kafka.common.network.Selector::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::poll(long):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.kafka.common.requests.RequestContext" />
+			<role name="Adaptee" element="org.apache.kafka.common.network.ListenerName" />
+			<role name="adaptee" element="org.apache.kafka.common.requests.RequestContext::listenerName:org.apache.kafka.common.network.ListenerName" />
+			<role name="Request()" element="org.apache.kafka.common.requests.RequestContext::listenerName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.kafka.common.utils.Time" />
+			<role name="Adapter" element="org.apache.kafka.common.metrics.KafkaMetric" />
+			<role name="adaptee" element="org.apache.kafka.common.metrics.KafkaMetric::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.KafkaMetric::metricValue():java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="org.apache.kafka.common.protocol.types.Type" />
+			<role name="Decorator" element="org.apache.kafka.common.protocol.types.ArrayOf" />
+			<role name="component" element="org.apache.kafka.common.protocol.types.ArrayOf::type:org.apache.kafka.common.protocol.types.Type" />
+			<role name="Operation()" element="org.apache.kafka.common.protocol.types.ArrayOf::write(java.nio.ByteBuffer, java.lang.Object):void" />
+			<role name="Operation()" element="org.apache.kafka.common.protocol.types.ArrayOf::read(java.nio.ByteBuffer):java.lang.Object" />
+			<role name="Operation()" element="org.apache.kafka.common.protocol.types.ArrayOf::sizeOf(java.lang.Object):int" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.kafka.common.protocol.types.Type" />
+			<role name="Decorator" element="org.apache.kafka.common.protocol.types.CompactArrayOf" />
+			<role name="component" element="org.apache.kafka.common.protocol.types.CompactArrayOf::type:org.apache.kafka.common.protocol.types.Type" />
+			<role name="Operation()" element="org.apache.kafka.common.protocol.types.CompactArrayOf::write(java.nio.ByteBuffer, java.lang.Object):void" />
+			<role name="Operation()" element="org.apache.kafka.common.protocol.types.CompactArrayOf::read(java.nio.ByteBuffer):java.lang.Object" />
+			<role name="Operation()" element="org.apache.kafka.common.protocol.types.CompactArrayOf::sizeOf(java.lang.Object):int" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.kafka.clients.admin.Admin" />
+			<role name="Decorator" element="org.apache.kafka.clients.admin.ForwardingAdmin" />
+			<role name="component" element="org.apache.kafka.clients.admin.ForwardingAdmin::delegate:org.apache.kafka.clients.admin.Admin" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::close(java.time.Duration):void" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::createTopics(java.util.Collection, org.apache.kafka.clients.admin.CreateTopicsOptions):org.apache.kafka.clients.admin.CreateTopicsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::deleteTopics(org.apache.kafka.common.TopicCollection, org.apache.kafka.clients.admin.DeleteTopicsOptions):org.apache.kafka.clients.admin.DeleteTopicsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::listTopics(org.apache.kafka.clients.admin.ListTopicsOptions):org.apache.kafka.clients.admin.ListTopicsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeTopics(org.apache.kafka.common.TopicCollection, org.apache.kafka.clients.admin.DescribeTopicsOptions):org.apache.kafka.clients.admin.DescribeTopicsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeCluster(org.apache.kafka.clients.admin.DescribeClusterOptions):org.apache.kafka.clients.admin.DescribeClusterResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeAcls(org.apache.kafka.common.acl.AclBindingFilter, org.apache.kafka.clients.admin.DescribeAclsOptions):org.apache.kafka.clients.admin.DescribeAclsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::createAcls(java.util.Collection, org.apache.kafka.clients.admin.CreateAclsOptions):org.apache.kafka.clients.admin.CreateAclsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::deleteAcls(java.util.Collection, org.apache.kafka.clients.admin.DeleteAclsOptions):org.apache.kafka.clients.admin.DeleteAclsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeConfigs(java.util.Collection, org.apache.kafka.clients.admin.DescribeConfigsOptions):org.apache.kafka.clients.admin.DescribeConfigsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::alterConfigs(java.util.Map, org.apache.kafka.clients.admin.AlterConfigsOptions):org.apache.kafka.clients.admin.AlterConfigsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::incrementalAlterConfigs(java.util.Map, org.apache.kafka.clients.admin.AlterConfigsOptions):org.apache.kafka.clients.admin.AlterConfigsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::alterReplicaLogDirs(java.util.Map, org.apache.kafka.clients.admin.AlterReplicaLogDirsOptions):org.apache.kafka.clients.admin.AlterReplicaLogDirsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeLogDirs(java.util.Collection, org.apache.kafka.clients.admin.DescribeLogDirsOptions):org.apache.kafka.clients.admin.DescribeLogDirsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeReplicaLogDirs(java.util.Collection, org.apache.kafka.clients.admin.DescribeReplicaLogDirsOptions):org.apache.kafka.clients.admin.DescribeReplicaLogDirsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::createPartitions(java.util.Map, org.apache.kafka.clients.admin.CreatePartitionsOptions):org.apache.kafka.clients.admin.CreatePartitionsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::deleteRecords(java.util.Map, org.apache.kafka.clients.admin.DeleteRecordsOptions):org.apache.kafka.clients.admin.DeleteRecordsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::createDelegationToken(org.apache.kafka.clients.admin.CreateDelegationTokenOptions):org.apache.kafka.clients.admin.CreateDelegationTokenResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::renewDelegationToken(byte[], org.apache.kafka.clients.admin.RenewDelegationTokenOptions):org.apache.kafka.clients.admin.RenewDelegationTokenResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::expireDelegationToken(byte[], org.apache.kafka.clients.admin.ExpireDelegationTokenOptions):org.apache.kafka.clients.admin.ExpireDelegationTokenResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeDelegationToken(org.apache.kafka.clients.admin.DescribeDelegationTokenOptions):org.apache.kafka.clients.admin.DescribeDelegationTokenResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeConsumerGroups(java.util.Collection, org.apache.kafka.clients.admin.DescribeConsumerGroupsOptions):org.apache.kafka.clients.admin.DescribeConsumerGroupsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::listConsumerGroups(org.apache.kafka.clients.admin.ListConsumerGroupsOptions):org.apache.kafka.clients.admin.ListConsumerGroupsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::listConsumerGroupOffsets(java.util.Map, org.apache.kafka.clients.admin.ListConsumerGroupOffsetsOptions):org.apache.kafka.clients.admin.ListConsumerGroupOffsetsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::deleteConsumerGroups(java.util.Collection, org.apache.kafka.clients.admin.DeleteConsumerGroupsOptions):org.apache.kafka.clients.admin.DeleteConsumerGroupsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::deleteConsumerGroupOffsets(java.lang.String, java.util.Set, org.apache.kafka.clients.admin.DeleteConsumerGroupOffsetsOptions):org.apache.kafka.clients.admin.DeleteConsumerGroupOffsetsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::electLeaders(org.apache.kafka.common.ElectionType, java.util.Set, org.apache.kafka.clients.admin.ElectLeadersOptions):org.apache.kafka.clients.admin.ElectLeadersResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::alterPartitionReassignments(java.util.Map, org.apache.kafka.clients.admin.AlterPartitionReassignmentsOptions):org.apache.kafka.clients.admin.AlterPartitionReassignmentsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::listPartitionReassignments(java.util.Optional, org.apache.kafka.clients.admin.ListPartitionReassignmentsOptions):org.apache.kafka.clients.admin.ListPartitionReassignmentsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::removeMembersFromConsumerGroup(java.lang.String, org.apache.kafka.clients.admin.RemoveMembersFromConsumerGroupOptions):org.apache.kafka.clients.admin.RemoveMembersFromConsumerGroupResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::alterConsumerGroupOffsets(java.lang.String, java.util.Map, org.apache.kafka.clients.admin.AlterConsumerGroupOffsetsOptions):org.apache.kafka.clients.admin.AlterConsumerGroupOffsetsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::listOffsets(java.util.Map, org.apache.kafka.clients.admin.ListOffsetsOptions):org.apache.kafka.clients.admin.ListOffsetsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeClientQuotas(org.apache.kafka.common.quota.ClientQuotaFilter, org.apache.kafka.clients.admin.DescribeClientQuotasOptions):org.apache.kafka.clients.admin.DescribeClientQuotasResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::alterClientQuotas(java.util.Collection, org.apache.kafka.clients.admin.AlterClientQuotasOptions):org.apache.kafka.clients.admin.AlterClientQuotasResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeUserScramCredentials(java.util.List, org.apache.kafka.clients.admin.DescribeUserScramCredentialsOptions):org.apache.kafka.clients.admin.DescribeUserScramCredentialsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::alterUserScramCredentials(java.util.List, org.apache.kafka.clients.admin.AlterUserScramCredentialsOptions):org.apache.kafka.clients.admin.AlterUserScramCredentialsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeFeatures(org.apache.kafka.clients.admin.DescribeFeaturesOptions):org.apache.kafka.clients.admin.DescribeFeaturesResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::updateFeatures(java.util.Map, org.apache.kafka.clients.admin.UpdateFeaturesOptions):org.apache.kafka.clients.admin.UpdateFeaturesResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeMetadataQuorum(org.apache.kafka.clients.admin.DescribeMetadataQuorumOptions):org.apache.kafka.clients.admin.DescribeMetadataQuorumResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::unregisterBroker(int, org.apache.kafka.clients.admin.UnregisterBrokerOptions):org.apache.kafka.clients.admin.UnregisterBrokerResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeProducers(java.util.Collection, org.apache.kafka.clients.admin.DescribeProducersOptions):org.apache.kafka.clients.admin.DescribeProducersResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::describeTransactions(java.util.Collection, org.apache.kafka.clients.admin.DescribeTransactionsOptions):org.apache.kafka.clients.admin.DescribeTransactionsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::abortTransaction(org.apache.kafka.clients.admin.AbortTransactionSpec, org.apache.kafka.clients.admin.AbortTransactionOptions):org.apache.kafka.clients.admin.AbortTransactionResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::listTransactions(org.apache.kafka.clients.admin.ListTransactionsOptions):org.apache.kafka.clients.admin.ListTransactionsResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::fenceProducers(java.util.Collection, org.apache.kafka.clients.admin.FenceProducersOptions):org.apache.kafka.clients.admin.FenceProducersResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::listClientMetricsResources(org.apache.kafka.clients.admin.ListClientMetricsResourcesOptions):org.apache.kafka.clients.admin.ListClientMetricsResourcesResult" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::clientInstanceId(java.time.Duration):org.apache.kafka.common.Uuid" />
+			<role name="Operation()" element="org.apache.kafka.clients.admin.ForwardingAdmin::metrics():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.kafka.common.network.Send" />
+			<role name="Decorator" element="org.apache.kafka.common.network.NetworkSend" />
+			<role name="component" element="org.apache.kafka.common.network.NetworkSend::send:org.apache.kafka.common.network.Send" />
+			<role name="Operation()" element="org.apache.kafka.common.network.NetworkSend::completed():boolean" />
+			<role name="Operation()" element="org.apache.kafka.common.network.NetworkSend::writeTo(org.apache.kafka.common.network.TransferableChannel):long" />
+			<role name="Operation()" element="org.apache.kafka.common.network.NetworkSend::size():long" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.kafka.common.network.Send" />
+			<role name="Decorator" element="org.apache.kafka.common.record.MultiRecordsSend" />
+			<role name="component" element="org.apache.kafka.common.record.MultiRecordsSend::current:org.apache.kafka.common.network.Send" />
+			<role name="Operation()" element="org.apache.kafka.common.record.MultiRecordsSend::writeTo(org.apache.kafka.common.network.TransferableChannel):long" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.kafka.clients.producer.Callback" />
+			<role name="Decorator" element="org.apache.kafka.clients.producer.KafkaProducer$AppendCallbacks" />
+			<role name="component" element="org.apache.kafka.clients.producer.KafkaProducer$AppendCallbacks::userCallback:org.apache.kafka.clients.producer.Callback" />
+			<role name="Operation()" element="org.apache.kafka.clients.producer.KafkaProducer$AppendCallbacks::onCompletion(org.apache.kafka.clients.producer.RecordMetadata, java.lang.Exception):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.kafka.common.cache.Cache" />
+			<role name="Decorator" element="org.apache.kafka.common.cache.SynchronizedCache" />
+			<role name="component" element="org.apache.kafka.common.cache.SynchronizedCache::underlying:org.apache.kafka.common.cache.Cache" />
+			<role name="Operation()" element="org.apache.kafka.common.cache.SynchronizedCache::get(K):java.lang.Object" />
+			<role name="Operation()" element="org.apache.kafka.common.cache.SynchronizedCache::put(K, V):void" />
+			<role name="Operation()" element="org.apache.kafka.common.cache.SynchronizedCache::remove(K):boolean" />
+			<role name="Operation()" element="org.apache.kafka.common.cache.SynchronizedCache::size():long" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="org.apache.kafka.common.metrics.MetricsReporter" />
+			<role name="Subject" element="org.apache.kafka.common.metrics.Metrics" />
+			<role name="Notify()" element="org.apache.kafka.common.metrics.Metrics::removeMetric(org.apache.kafka.common.MetricName):org.apache.kafka.common.metrics.KafkaMetric" />
+			<role name="Notify()" element="org.apache.kafka.common.metrics.Metrics::registerMetric(org.apache.kafka.common.metrics.KafkaMetric):org.apache.kafka.common.metrics.KafkaMetric" />
+			<role name="Notify()" element="org.apache.kafka.common.metrics.Metrics::close():void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.utils.Exit" />
+			<role name="State" element="org.apache.kafka.common.utils.Exit$Procedure" />
+			<role name="state" element="org.apache.kafka.common.utils.Exit::exitProcedure:org.apache.kafka.common.utils.Exit$Procedure" />
+			<role name="state" element="org.apache.kafka.common.utils.Exit::haltProcedure:org.apache.kafka.common.utils.Exit$Procedure" />
+			<role name="Request()" element="org.apache.kafka.common.utils.Exit::exit(int, java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.common.utils.Exit::halt(int, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.utils.Exit" />
+			<role name="State" element="org.apache.kafka.common.utils.Exit$ShutdownHookAdder" />
+			<role name="state" element="org.apache.kafka.common.utils.Exit::shutdownHookAdder:org.apache.kafka.common.utils.Exit$ShutdownHookAdder" />
+			<role name="Request()" element="org.apache.kafka.common.utils.Exit::addShutdownHook(java.lang.String, java.lang.Runnable):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.internals.Sender" />
+			<role name="State" element="org.apache.kafka.clients.KafkaClient" />
+			<role name="state" element="org.apache.kafka.clients.producer.internals.Sender::client:org.apache.kafka.clients.KafkaClient" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::run():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::runOnce():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::sendProducerData(long):long" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::maybeSendAndPollTransactionalRequest():boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::wakeup():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient" />
+			<role name="State" element="org.apache.kafka.clients.KafkaClient" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::client:org.apache.kafka.clients.KafkaClient" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::send(org.apache.kafka.common.Node, org.apache.kafka.common.requests.AbstractRequest$Builder, int):org.apache.kafka.clients.consumer.internals.RequestFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::leastLoadedNode():org.apache.kafka.common.Node" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::hasReadyNodes(long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::wakeup():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::poll(org.apache.kafka.common.utils.Timer, org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient$PollCondition, boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::transmitSends():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::pendingRequestCount(org.apache.kafka.common.Node):int" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::hasPendingRequests(org.apache.kafka.common.Node):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::pendingRequestCount():int" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::hasPendingRequests():boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::firePendingCompletedRequests():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::checkDisconnects(long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::handlePendingDisconnects():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::disconnectAsync(org.apache.kafka.common.Node):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::trySend(long):long" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest" />
+			<role name="State" element="org.apache.kafka.clients.consumer.internals.MembershipManager" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::membershipManager:org.apache.kafka.clients.consumer.internals.MembershipManager" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testSkippingHeartbeat(boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testTimerNotDue():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testHeartbeatOutsideInterval():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testFailureOnFatalException():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testPollTimerExpiration():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testPollTimerExpirationShouldNotMarkMemberStaleIfMemberAlreadyLeaving():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testHeartbeatMetrics():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testFencedMemberStopHeartbeatUntilItReleasesAssignmentToRejoin():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::ensureFatalError():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::ensureHeartbeatStopped():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.events.ApplicationEventProcessorTest" />
+			<role name="State" element="org.apache.kafka.clients.consumer.internals.MembershipManager" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.events.ApplicationEventProcessorTest::membershipManager:org.apache.kafka.clients.consumer.internals.MembershipManager" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.events.ApplicationEventProcessorTest::testPrepClosingLeaveGroupEvent():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.admin.AlterConsumerGroupOffsetsResult" />
+			<role name="State" element="org.apache.kafka.common.KafkaFuture" />
+			<role name="state" element="org.apache.kafka.clients.admin.AlterConsumerGroupOffsetsResult::future:org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.admin.AlterConsumerGroupOffsetsResult::partitionResult(org.apache.kafka.common.TopicPartition):org.apache.kafka.common.KafkaFuture" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.admin.DeleteConsumerGroupOffsetsResult" />
+			<role name="State" element="org.apache.kafka.common.KafkaFuture" />
+			<role name="state" element="org.apache.kafka.clients.admin.DeleteConsumerGroupOffsetsResult::future:org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.admin.DeleteConsumerGroupOffsetsResult::partitionResult(org.apache.kafka.common.TopicPartition):org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.admin.DeleteConsumerGroupOffsetsResult::all():org.apache.kafka.common.KafkaFuture" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.admin.ListClientMetricsResourcesResult" />
+			<role name="State" element="org.apache.kafka.common.KafkaFuture" />
+			<role name="state" element="org.apache.kafka.clients.admin.ListClientMetricsResourcesResult::future:org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.admin.ListClientMetricsResourcesResult::all():org.apache.kafka.common.KafkaFuture" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.admin.ListTransactionsResult" />
+			<role name="State" element="org.apache.kafka.common.KafkaFuture" />
+			<role name="state" element="org.apache.kafka.clients.admin.ListTransactionsResult::future:org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.admin.ListTransactionsResult::byBrokerId():org.apache.kafka.common.KafkaFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.admin.ListTransactionsResult::allByBrokerId():org.apache.kafka.common.KafkaFuture" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.KafkaChannel" />
+			<role name="State" element="org.apache.kafka.common.network.Authenticator" />
+			<role name="state" element="org.apache.kafka.common.network.KafkaChannel::authenticator:org.apache.kafka.common.network.Authenticator" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::principalSerde():java.util.Optional" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::prepare():void" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::ready():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.FetchCollectorTest" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.FetchCollectorTest::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchCollectorTest::testFetchWithReadReplica():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchCollectorTest::testFetchWithMetadataRefreshErrors(org.apache.kafka.common.protocol.Errors):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchCollectorTest::testFetchWithOffsetOutOfRangeWithPreferredReadReplica():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::testLatency():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::testBytesFetched():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::testBytesFetchedTopic():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::testRecordsFetched():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::testRecordsFetchedTopic():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::testPartitionLag():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.FetchMetricsManagerTest::testPartitionLead():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testHeartbeatOnStartup():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testSkippingHeartbeat(boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testTimerNotDue():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testHeartbeatOutsideInterval():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testNetworkTimeout():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testFailureOnFatalException():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testNoCoordinator():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::getHeartbeatRequest(org.apache.kafka.clients.consumer.internals.HeartbeatRequestManager, short):org.apache.kafka.common.requests.ConsumerGroupHeartbeatRequest" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testPollTimerExpiration():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testPollTimerExpirationShouldNotMarkMemberStaleIfMemberAlreadyLeaving():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testHeartbeatMetrics():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::testFencedMemberStopHeartbeatUntilItReleasesAssignmentToRejoin():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::assertHeartbeat(org.apache.kafka.clients.consumer.internals.HeartbeatRequestManager, int):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::assertNoHeartbeat(org.apache.kafka.clients.consumer.internals.HeartbeatRequestManager):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.HeartbeatRequestManagerTest::ensureHeartbeatStopped():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.OffsetFetcher" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.OffsetFetcher::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.OffsetFetcher::validatePositionsAsync(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.ConsumerMetadataTest" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.ConsumerMetadataTest::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerMetadataTest::testPatternSubscription(boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerMetadataTest::testTransientTopics():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerMetadataTest::testBasicSubscription(java.util.Set, java.util.Set):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.internals.RecordAccumulator" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.producer.internals.RecordAccumulator::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.RecordAccumulator::append(java.lang.String, int, long, byte[], byte[], org.apache.kafka.common.header.Header[], org.apache.kafka.clients.producer.internals.RecordAccumulator$AppendCallbacks, long, boolean, long, org.apache.kafka.common.Cluster):org.apache.kafka.clients.producer.internals.RecordAccumulator$RecordAppendResult" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.OffsetFetcherUtils" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.OffsetFetcherUtils::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.OffsetFetcherUtils::getPartitionsToValidate():java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.OffsetFetcherUtils::getOffsetResetTimestamp():java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.OffsetFetcherUtils::onFailedResponseForValidatingPositions(java.util.Map, java.lang.RuntimeException):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.metrics.Sensor" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.metrics.Sensor::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.Sensor::record():void" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.Sensor::record(double):void" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.Sensor::checkQuotas():void" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.Sensor::hasExpired():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.metrics.HeartbeatMetricsManagerTest" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.metrics.HeartbeatMetricsManagerTest::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.metrics.HeartbeatMetricsManagerTest::testHeartbeatMetrics():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.ConsumerRebalanceListenerInvoker" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.ConsumerRebalanceListenerInvoker::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerRebalanceListenerInvoker::invokePartitionsAssigned(java.util.SortedSet):java.lang.Exception" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerRebalanceListenerInvoker::invokePartitionsRevoked(java.util.SortedSet):java.lang.Exception" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerRebalanceListenerInvoker::invokePartitionsLost(java.util.SortedSet):java.lang.Exception" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkThreadTest" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkThreadTest::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkThreadTest::testAssignmentChangeEvent():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkThreadTest::testEnsureEventsAreCompleted():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.internals.Sender" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.producer.internals.Sender::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::runOnce():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::maybeSendAndPollTransactionalRequest():boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender::maybeFindCoordinatorAndRetry(org.apache.kafka.clients.producer.internals.TransactionManager$TxnRequestHandler):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.internals.Sender$SenderMetrics" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.producer.internals.Sender$SenderMetrics::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender$SenderMetrics::updateProduceRequestMetrics(java.util.Map):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender$SenderMetrics::recordRetries(java.lang.String, int):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender$SenderMetrics::recordErrors(java.lang.String, int):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.Sender$SenderMetrics::recordLatency(java.lang.String, long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.Heartbeat" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.Heartbeat::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.Heartbeat::failHeartbeat():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.Heartbeat::receiveHeartbeat():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.Heartbeat::resetTimeouts():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.Heartbeat::resetSessionTimeout():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.internals.FutureRecordMetadata" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.producer.internals.FutureRecordMetadata::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.FutureRecordMetadata::get(long, java.util.concurrent.TimeUnit):org.apache.kafka.clients.producer.RecordMetadata" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::send(org.apache.kafka.common.Node, org.apache.kafka.common.requests.AbstractRequest$Builder, int):org.apache.kafka.clients.consumer.internals.RequestFuture" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient::leastLoadedNode():org.apache.kafka.common.Node" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.metrics.TokenBucketTest" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.metrics.TokenBucketTest::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.TokenBucketTest::testRecord():void" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.TokenBucketTest::testUnrecord():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.oauthbearer.internals.secured.Retry" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.security.oauthbearer.internals.secured.Retry::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.secured.Retry::execute(org.apache.kafka.common.security.oauthbearer.internals.secured.Retryable):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.utils.Timer" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.utils.Timer::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.utils.Timer::update():void" />
+			<role name="Request()" element="org.apache.kafka.common.utils.Timer::sleep(long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.KafkaConsumer" />
+			<role name="State" element="org.apache.kafka.clients.consumer.internals.ConsumerDelegate" />
+			<role name="state" element="org.apache.kafka.clients.consumer.KafkaConsumer::delegate:org.apache.kafka.clients.consumer.internals.ConsumerDelegate" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::clientId():java.lang.String" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::metricsRegistry():org.apache.kafka.common.metrics.Metrics" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::kafkaConsumerMetrics():org.apache.kafka.clients.consumer.internals.metrics.KafkaConsumerMetrics" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.KafkaConsumer::updateAssignmentMetadataIfNeeded(org.apache.kafka.common.utils.Timer):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.ClientResponse" />
+			<role name="State" element="org.apache.kafka.clients.RequestCompletionHandler" />
+			<role name="state" element="org.apache.kafka.clients.ClientResponse::callback:org.apache.kafka.clients.RequestCompletionHandler" />
+			<role name="Request()" element="org.apache.kafka.clients.ClientResponse::onComplete():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.kafka.clients.MetadataUpdater" />
+			<role name="Context" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="state" element="org.apache.kafka.clients.NetworkClient::metadataUpdater:org.apache.kafka.clients.MetadataUpdater" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::cancelInFlightRequests(java.lang.String, long, java.util.Collection, boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::isReady(org.apache.kafka.common.Node, long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::doSend(org.apache.kafka.clients.ClientRequest, boolean, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::poll(long, long):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::close():void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::leastLoadedNode(long):org.apache.kafka.common.Node" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::processDisconnection(java.util.List, java.lang.String, long, org.apache.kafka.common.network.ChannelState, boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleCompletedReceives(java.util.List, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::initiateConnect(org.apache.kafka.common.Node, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::isAnyNodeConnecting():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.KafkaChannel" />
+			<role name="State" element="org.apache.kafka.common.network.TransportLayer" />
+			<role name="state" element="org.apache.kafka.common.network.KafkaChannel::transportLayer:org.apache.kafka.common.network.TransportLayer" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::prepare():void" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::disconnect():void" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::finishConnect():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::isConnected():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::selectionKey():java.nio.channels.SelectionKey" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::mute():void" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::maybeUnmute():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::delayCloseOnAuthenticationFailure():void" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::completeCloseOnAuthenticationFailure():void" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::isInMutableState():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::ready():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::socketAddress():java.net.InetAddress" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::socketPort():int" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::socketDescription():java.lang.String" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::setSend(org.apache.kafka.common.network.NetworkSend):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::maybeCompleteSend():org.apache.kafka.common.network.NetworkSend" />
+			<role name="Request()" element="org.apache.kafka.common.network.KafkaChannel::hasBytesBuffered():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate" />
+			<role name="State" element="org.apache.kafka.clients.KafkaClient" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::client:org.apache.kafka.clients.KafkaClient" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::poll(long, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::doSend(org.apache.kafka.clients.consumer.internals.NetworkClientDelegate$UnsentRequest, long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::checkDisconnects(long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::makeClientRequest(org.apache.kafka.clients.consumer.internals.NetworkClientDelegate$UnsentRequest, org.apache.kafka.common.Node, long):org.apache.kafka.clients.ClientRequest" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::leastLoadedNode():org.apache.kafka.common.Node" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::wakeup():void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::nodeUnavailable(org.apache.kafka.common.Node):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="State" element="org.apache.kafka.common.network.Selectable" />
+			<role name="state" element="org.apache.kafka.clients.NetworkClient::selector:org.apache.kafka.common.network.Selectable" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::disconnect(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::close(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::canSendRequest(java.lang.String, long):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::doSend(org.apache.kafka.clients.ClientRequest, boolean, long, org.apache.kafka.common.requests.AbstractRequest):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::poll(long, long):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::wakeup():void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::close():void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleTimedOutRequests(java.util.List, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleTimedOutConnections(java.util.List, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleCompletedSends(java.util.List, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleCompletedReceives(java.util.List, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleDisconnections(java.util.List, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleConnections():void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::handleInitiateApiVersionRequests(long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::initiateConnect(org.apache.kafka.common.Node, long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.network.TransportLayer" />
+			<role name="state" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::transportLayer:org.apache.kafka.common.network.TransportLayer" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::setSaslState(org.apache.kafka.common.security.authenticator.SaslClientAuthenticator$SaslState):void" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::flushNetOutBufferAndUpdateInterestOps():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.network.TransportLayer" />
+			<role name="state" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::transportLayer:org.apache.kafka.common.network.TransportLayer" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::flushNetOutBufferAndUpdateInterestOps():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::serverAddress():java.net.InetAddress" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::clientAddress():java.net.InetAddress" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::clientPort():int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory" />
+			<role name="State" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$SecurityStore" />
+			<role name="state" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::truststore:org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$SecurityStore" />
+			<role name="state" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::keystore:org.apache.kafka.common.security.ssl.DefaultSslEngineFactory$SecurityStore" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::shouldBeRebuilt(java.util.Map):boolean" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::keystore():java.security.KeyStore" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.DefaultSslEngineFactory::truststore():java.security.KeyStore" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.MockClient" />
+			<role name="State" element="org.apache.kafka.clients.MockClient$MockMetadataUpdater" />
+			<role name="state" element="org.apache.kafka.clients.MockClient::metadataUpdater:org.apache.kafka.clients.MockClient$MockMetadataUpdater" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::poll(long, long):java.util.List" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::updateMetadata(org.apache.kafka.common.requests.MetadataResponse):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::leastLoadedNode(long):org.apache.kafka.common.Node" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer::committed(java.util.Set, java.time.Duration):java.util.Map" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer::commitSync(java.util.Map, java.time.Duration):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.AsyncKafkaConsumer::assign(java.util.Collection):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.LegacyKafkaConsumer" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.LegacyKafkaConsumer::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.LegacyKafkaConsumer::assign(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.LegacyKafkaConsumer::commitSync(java.util.Map, java.time.Duration):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.LegacyKafkaConsumer::committed(java.util.Set, java.time.Duration):java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.ssl.SslFactory" />
+			<role name="State" element="org.apache.kafka.common.security.auth.SslEngineFactory" />
+			<role name="state" element="org.apache.kafka.common.security.ssl.SslFactory::sslEngineFactory:org.apache.kafka.common.security.auth.SslEngineFactory" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.SslFactory::reconfigurableConfigs():java.util.Set" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.SslFactory::reconfigure(java.util.Map):void" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.SslFactory::createNewSslEngineFactory(java.util.Map):org.apache.kafka.common.security.auth.SslEngineFactory" />
+			<role name="Request()" element="org.apache.kafka.common.security.ssl.SslFactory::createSslEngine(java.lang.String, int):javax.net.ssl.SSLEngine" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.compress.KafkaLZ4BlockInputStream" />
+			<role name="State" element="org.apache.kafka.common.utils.BufferSupplier" />
+			<role name="state" element="org.apache.kafka.common.compress.KafkaLZ4BlockInputStream::bufferSupplier:org.apache.kafka.common.utils.BufferSupplier" />
+			<role name="Request()" element="org.apache.kafka.common.compress.KafkaLZ4BlockInputStream::close():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.utils.ChunkedBytesStream" />
+			<role name="State" element="org.apache.kafka.common.utils.BufferSupplier" />
+			<role name="state" element="org.apache.kafka.common.utils.ChunkedBytesStream::bufferSupplier:org.apache.kafka.common.utils.BufferSupplier" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ChunkedBytesStream::close():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.kafka.common.telemetry.internals.ClientTelemetrySender" />
+			<role name="Context" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter" />
+			<role name="state" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::clientTelemetrySender:org.apache.kafka.common.telemetry.internals.ClientTelemetrySender" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter::initiateClose(long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.authenticator.LoginManager" />
+			<role name="State" element="org.apache.kafka.common.security.auth.Login" />
+			<role name="state" element="org.apache.kafka.common.security.authenticator.LoginManager::login:org.apache.kafka.common.security.auth.Login" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.LoginManager::subject():javax.security.auth.Subject" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.LoginManager::serviceName():java.lang.String" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.LoginManager::release():void" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.LoginManager::closeAll():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection" />
+			<role name="State" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element" />
+			<role name="state" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection::elements:org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element[]" />
+			<role name="state" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection::head:org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection::add(E):boolean" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection::reseat(int):void" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection::moveToEnd(E):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler" />
+			<role name="State" element="org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenRetriever" />
+			<role name="state" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler::accessTokenRetriever:org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenRetriever" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler::handleTokenCallback(org.apache.kafka.common.security.oauthbearer.OAuthBearerTokenCallback):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.metrics.stats.Frequencies" />
+			<role name="State" element="org.apache.kafka.common.metrics.stats.Histogram$BinScheme" />
+			<role name="state" element="org.apache.kafka.common.metrics.stats.Frequencies::binScheme:org.apache.kafka.common.metrics.stats.Histogram$BinScheme" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.stats.Frequencies::frequency(org.apache.kafka.common.metrics.MetricConfig, long, double):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.metrics.stats.Percentiles" />
+			<role name="State" element="org.apache.kafka.common.metrics.stats.Histogram$BinScheme" />
+			<role name="state" element="org.apache.kafka.common.metrics.stats.Percentiles::binScheme:org.apache.kafka.common.metrics.stats.Histogram$BinScheme" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.stats.Percentiles::value(org.apache.kafka.common.metrics.MetricConfig, long, double):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator$OffsetCommitCompletion" />
+			<role name="State" element="org.apache.kafka.clients.consumer.OffsetCommitCallback" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator$OffsetCommitCompletion::callback:org.apache.kafka.clients.consumer.OffsetCommitCallback" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator$OffsetCommitCompletion::invoke():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="State" element="org.apache.kafka.clients.producer.Partitioner" />
+			<role name="state" element="org.apache.kafka.clients.producer.KafkaProducer::partitioner:org.apache.kafka.clients.producer.Partitioner" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::partition(org.apache.kafka.clients.producer.ProducerRecord, byte[], byte[], org.apache.kafka.common.Cluster):int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.MockProducer" />
+			<role name="State" element="org.apache.kafka.clients.producer.Partitioner" />
+			<role name="state" element="org.apache.kafka.clients.producer.MockProducer::partitioner:org.apache.kafka.clients.producer.Partitioner" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.MockProducer::partition(org.apache.kafka.clients.producer.ProducerRecord, org.apache.kafka.common.Cluster):int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.MockProducer" />
+			<role name="State" element="org.apache.kafka.common.serialization.Serializer" />
+			<role name="state" element="org.apache.kafka.clients.producer.MockProducer::keySerializer:org.apache.kafka.common.serialization.Serializer" />
+			<role name="state" element="org.apache.kafka.clients.producer.MockProducer::valueSerializer:org.apache.kafka.common.serialization.Serializer" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.MockProducer::send(org.apache.kafka.clients.producer.ProducerRecord, org.apache.kafka.clients.producer.Callback):java.util.concurrent.Future" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.network.Send" />
+			<role name="state" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::netOutBuffer:org.apache.kafka.common.network.Send" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::setSaslState(org.apache.kafka.common.security.authenticator.SaslClientAuthenticator$SaslState):void" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::flushNetOutBuffer():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.network.Send" />
+			<role name="state" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::netOutBuffer:org.apache.kafka.common.network.Send" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::setSaslState(org.apache.kafka.common.security.authenticator.SaslServerAuthenticator$SaslState, org.apache.kafka.common.errors.AuthenticationException):void" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::flushNetOutBuffer():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.utils.Crc32C" />
+			<role name="State" element="org.apache.kafka.common.utils.Crc32C$ChecksumFactory" />
+			<role name="state" element="org.apache.kafka.common.utils.Crc32C::CHECKSUM_FACTORY:org.apache.kafka.common.utils.Crc32C$ChecksumFactory" />
+			<role name="Request()" element="org.apache.kafka.common.utils.Crc32C::create():java.util.zip.Checksum" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::transitionTo(org.apache.kafka.clients.consumer.internals.MemberState):void" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.MembershipManagerImpl::getExpirationTimeForTimeout(long):long" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.OffsetsRequestManager" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.OffsetsRequestManager::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.OffsetsRequestManager::sendOffsetsForLeaderEpochRequestsAndValidatePositions(java.util.Map):java.util.concurrent.CompletableFuture" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.KafkaProducer" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.producer.KafkaProducer::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::initTransactions():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::beginTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::sendOffsetsToTransaction(java.util.Map, org.apache.kafka.clients.consumer.ConsumerGroupMetadata):void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::commitTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::abortTransaction():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::doSend(org.apache.kafka.clients.producer.ProducerRecord, org.apache.kafka.clients.producer.Callback):java.util.concurrent.Future" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::waitOnMetadata(java.lang.String, java.lang.Integer, long, long):org.apache.kafka.clients.producer.KafkaProducer$ClusterAndWaitTime" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::flush():void" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.KafkaProducer::partitionsFor(java.lang.String):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.Selector" />
+			<role name="State" element="org.apache.kafka.common.memory.MemoryPool" />
+			<role name="state" element="org.apache.kafka.common.network.Selector::memoryPool:org.apache.kafka.common.memory.MemoryPool" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::poll(long):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::determineHandlingOrder(java.util.Set):java.util.Collection" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.metrics.stats.Histogram" />
+			<role name="State" element="org.apache.kafka.common.metrics.stats.Histogram$BinScheme" />
+			<role name="state" element="org.apache.kafka.common.metrics.stats.Histogram::binScheme:org.apache.kafka.common.metrics.stats.Histogram$BinScheme" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.stats.Histogram::record(double):void" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.stats.Histogram::value(double):double" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.stats.Histogram::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="state" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator::principalBuilder:org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Request()" element="org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="state" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator::principalBuilder:org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Request()" element="org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="state" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::principalBuilder:org.apache.kafka.common.security.auth.KafkaPrincipalBuilder" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslServerAuthenticator::principal():org.apache.kafka.common.security.auth.KafkaPrincipal" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.record.RecordBatchIterator" />
+			<role name="State" element="org.apache.kafka.common.record.LogInputStream" />
+			<role name="state" element="org.apache.kafka.common.record.RecordBatchIterator::logInputStream:org.apache.kafka.common.record.LogInputStream" />
+			<role name="Request()" element="org.apache.kafka.common.record.RecordBatchIterator::makeNext():org.apache.kafka.common.record.RecordBatch" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkThread" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkThread::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.ConsumerNetworkThread::runOnce():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.MockClient" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.MockClient::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::backoff(org.apache.kafka.common.Node, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::setUnreachable(org.apache.kafka.common.Node, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::throttle(org.apache.kafka.common.Node, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::delayReady(org.apache.kafka.common.Node, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::connectionFailed(org.apache.kafka.common.Node):boolean" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::disconnect(java.lang.String, boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::send(org.apache.kafka.clients.ClientRequest, long):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::respondToRequest(org.apache.kafka.clients.ClientRequest, org.apache.kafka.common.requests.AbstractResponse):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::respond(org.apache.kafka.common.requests.AbstractResponse, boolean):void" />
+			<role name="Request()" element="org.apache.kafka.clients.MockClient::respondFrom(org.apache.kafka.common.requests.AbstractResponse, org.apache.kafka.common.Node, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.NetworkClient" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.NetworkClient::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::disconnect(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::close(java.lang.String):void" />
+			<role name="Request()" element="org.apache.kafka.clients.NetworkClient::poll(long, long):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.internals.ProducerMetadata" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.producer.internals.ProducerMetadata::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.ProducerMetadata::awaitUpdate(int, long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.producer.internals.BufferPool" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.producer.internals.BufferPool::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.BufferPool::allocate(int, long):java.nio.ByteBuffer" />
+			<role name="Request()" element="org.apache.kafka.clients.producer.internals.BufferPool::recordWaitTime(long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.NetworkReceive" />
+			<role name="State" element="org.apache.kafka.common.memory.MemoryPool" />
+			<role name="state" element="org.apache.kafka.common.network.NetworkReceive::memoryPool:org.apache.kafka.common.memory.MemoryPool" />
+			<role name="Request()" element="org.apache.kafka.common.network.NetworkReceive::readFrom(java.nio.channels.ScatteringByteChannel):long" />
+			<role name="Request()" element="org.apache.kafka.common.network.NetworkReceive::close():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.Selector" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.network.Selector::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::registerChannel(java.lang.String, java.nio.channels.SocketChannel, int):java.nio.channels.SelectionKey" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::poll(long):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::pollSelectionKeys(java.util.Set, boolean, long):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::write(org.apache.kafka.common.network.KafkaChannel):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::attemptRead(org.apache.kafka.common.network.KafkaChannel):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::maybeRecordTimePerConnection(org.apache.kafka.common.network.KafkaChannel, long):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::lambda$3(org.apache.kafka.common.network.KafkaChannel, org.apache.kafka.common.network.NetworkReceive):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler" />
+			<role name="State" element="org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenValidator" />
+			<role name="state" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler::accessTokenValidator:org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenValidator" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler::handleTokenCallback(org.apache.kafka.common.security.oauthbearer.OAuthBearerTokenCallback):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler" />
+			<role name="State" element="org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenValidator" />
+			<role name="state" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler::accessTokenValidator:org.apache.kafka.common.security.oauthbearer.internals.secured.AccessTokenValidator" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler::handleValidatorCallback(org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallback):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.oauthbearer.internals.unsecured.OAuthBearerUnsecuredLoginCallbackHandler" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.security.oauthbearer.internals.unsecured.OAuthBearerUnsecuredLoginCallbackHandler::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.unsecured.OAuthBearerUnsecuredLoginCallbackHandler::handleTokenCallback(org.apache.kafka.common.security.oauthbearer.OAuthBearerTokenCallback):void" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.unsecured.OAuthBearerUnsecuredLoginCallbackHandler::expClaimText(long):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.oauthbearer.internals.unsecured.OAuthBearerUnsecuredValidatorCallbackHandler" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.security.oauthbearer.internals.unsecured.OAuthBearerUnsecuredValidatorCallbackHandler::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.unsecured.OAuthBearerUnsecuredValidatorCallbackHandler::handleCallback(org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallback):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.kerberos.KerberosLogin" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.security.kerberos.KerberosLogin::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.security.kerberos.KerberosLogin::currentWallTime():long" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$ImplicitLinkedHashCollectionIterator" />
+			<role name="State" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element" />
+			<role name="state" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$ImplicitLinkedHashCollectionIterator::cur:org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element" />
+			<role name="state" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$ImplicitLinkedHashCollectionIterator::lastReturned:org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$ImplicitLinkedHashCollectionIterator::hasPrevious():boolean" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$ImplicitLinkedHashCollectionIterator::next():org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$ImplicitLinkedHashCollectionIterator::previous():org.apache.kafka.common.utils.ImplicitLinkedHashCollection$Element" />
+			<role name="Request()" element="org.apache.kafka.common.utils.ImplicitLinkedHashCollection$ImplicitLinkedHashCollectionIterator::remove():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.admin.MockAdminClient" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.admin.MockAdminClient::mockTime:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.admin.MockAdminClient::clientInstanceId(java.time.Duration):org.apache.kafka.common.Uuid" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::leastLoadedNode():org.apache.kafka.common.Node" />
+			<role name="Request()" element="org.apache.kafka.clients.consumer.internals.NetworkClientDelegate::nodeUnavailable(org.apache.kafka.common.Node):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.Selector" />
+			<role name="State" element="org.apache.kafka.common.network.ChannelBuilder" />
+			<role name="state" element="org.apache.kafka.common.network.Selector::channelBuilder:org.apache.kafka.common.network.ChannelBuilder" />
+			<role name="Request()" element="org.apache.kafka.common.network.Selector::buildAndAttachKafkaChannel(java.nio.channels.SocketChannel, java.lang.String, java.nio.channels.SelectionKey):org.apache.kafka.common.network.KafkaChannel" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.metrics.KafkaMetric" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.metrics.KafkaMetric::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.KafkaMetric::metricValue():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.security.authenticator.SaslClientAuthenticator::setSaslState(org.apache.kafka.common.security.authenticator.SaslClientAuthenticator$SaslState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.network.SslTransportLayer" />
+			<role name="State" element="org.apache.kafka.common.network.ChannelMetadataRegistry" />
+			<role name="state" element="org.apache.kafka.common.network.SslTransportLayer::metadataRegistry:org.apache.kafka.common.network.ChannelMetadataRegistry" />
+			<role name="Request()" element="org.apache.kafka.common.network.SslTransportLayer::handshakeFinished():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="Context" element="org.apache.kafka.common.security.oauthbearer.internals.secured.RefreshingHttpsJwks" />
+			<role name="state" element="org.apache.kafka.common.security.oauthbearer.internals.secured.RefreshingHttpsJwks::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.security.oauthbearer.internals.secured.RefreshingHttpsJwks::maybeExpediteRefresh(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector" />
+			<role name="State" element="org.apache.kafka.common.utils.Time" />
+			<role name="state" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector::time:org.apache.kafka.common.utils.Time" />
+			<role name="Request()" element="org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector::collectMetric(org.apache.kafka.common.telemetry.internals.MetricsEmitter, org.apache.kafka.common.telemetry.internals.MetricKey, org.apache.kafka.common.metrics.KafkaMetric):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest" />
+			<role name="Implementor" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor" />
+			<role name="implementor" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::assignor:org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor" />
+			<role name="Operation()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testMemberData():void" />
+			<role name="Operation()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::memberData(org.apache.kafka.clients.consumer.ConsumerPartitionAssignor$Subscription):org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor$MemberData" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin" />
+			<role name="Implementor" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredential" />
+			<role name="implementor" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::expiringCredential:org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredential" />
+			<role name="Operation()" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::login():javax.security.auth.login.LoginContext" />
+			<role name="Operation()" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::refreshMs(long):java.lang.Long" />
+			<role name="Operation()" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::reLogin():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator" />
+			<role name="Implementor" element="org.apache.kafka.common.utils.Time" />
+			<role name="implementor" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator::time:org.apache.kafka.common.utils.Time" />
+			<role name="Operation()" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator::initiateJoinGroup():org.apache.kafka.clients.consumer.internals.RequestFuture" />
+			<role name="Operation()" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator::markCoordinatorUnknown(boolean, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.kafka.clients.consumer.internals.AbstractFetch" />
+			<role name="Implementor" element="org.apache.kafka.common.utils.Time" />
+			<role name="implementor" element="org.apache.kafka.clients.consumer.internals.AbstractFetch::time:org.apache.kafka.common.utils.Time" />
+			<role name="Operation()" element="org.apache.kafka.clients.consumer.internals.AbstractFetch::prepareFetchRequests():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin" />
+			<role name="Implementor" element="org.apache.kafka.common.utils.Time" />
+			<role name="implementor" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::time:org.apache.kafka.common.utils.Time" />
+			<role name="Operation()" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::currentMs():long" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.admin.internals.AdminApiHandler$Batched" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.admin.internals.AdminApiHandler$Batched::buildRequest(int, java.util.Set):java.util.Collection" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.admin.internals.AdminApiHandler$Unbatched" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.admin.internals.AdminApiHandler$Unbatched::handleResponse(org.apache.kafka.common.Node, java.util.Set, org.apache.kafka.common.requests.AbstractResponse):org.apache.kafka.clients.admin.internals.AdminApiHandler$ApiResult" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.admin.internals.AdminApiHandler$Unbatched::lambda$0(int, java.lang.Object):org.apache.kafka.clients.admin.internals.AdminApiHandler$RequestAndKeys" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler::onSuccess(org.apache.kafka.clients.ClientResponse, org.apache.kafka.clients.consumer.internals.RequestFuture):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator::joinGroupIfNeeded(org.apache.kafka.common.utils.Timer):boolean" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractCoordinator::isProtocolTypeInconsistent(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.AbstractFetch" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractFetch::prepareFetchRequests():java.util.Map" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractFetch::lambda$7(org.apache.kafka.common.Cluster, java.util.Map, java.lang.Integer, org.apache.kafka.clients.FetchSessionHandler):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor::assignPartitions(java.util.Map, java.util.Map):java.util.Map" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor::allSubscriptionsEqual(java.util.Set, java.util.Map, java.util.Map, java.util.Set):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.CachedSupplier" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.CachedSupplier::get():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.CommitRequestManager$RetriableRequestState" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.CommitRequestManager$RetriableRequestState::maybeExpire(long):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.CommitRequestManager$RetriableRequestState::handleClientResponse(org.apache.kafka.clients.ClientResponse, java.lang.Throwable, long):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.events.EventProcessor" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.events.EventProcessor::process(org.apache.kafka.clients.consumer.internals.events.EventProcessor$ProcessHandler):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.KafkaFuture" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.KafkaFuture::completedFuture():org.apache.kafka.common.KafkaFuture" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.KafkaFuture::lambda$0(org.apache.kafka.common.KafkaFuture):java.util.concurrent.CompletableFuture" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.metrics.stats.SampledStat" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.metrics.stats.SampledStat::record(org.apache.kafka.common.metrics.MetricConfig, double, long):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.metrics.stats.SampledStat::measure(org.apache.kafka.common.metrics.MetricConfig, long):double" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.protocol.types.Type$DocumentedType" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.protocol.types.Type$DocumentedType::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::isValid():boolean" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::ensureValid():void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::keySize():int" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::hasKey():boolean" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::key():java.nio.ByteBuffer" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::valueSize():int" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::hasValue():boolean" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::value():java.nio.ByteBuffer" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::hasMagic(byte):boolean" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::hasTimestampType(org.apache.kafka.common.record.TimestampType):boolean" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::checksum():long" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::timestamp():long" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::timestampType():org.apache.kafka.common.record.TimestampType" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::magic():byte" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::compressionType():org.apache.kafka.common.record.CompressionType" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::sizeInBytes():int" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::toString():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.AbstractLegacyRecordBatch::writeTo(java.nio.ByteBuffer):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.record.DefaultRecordBatch$RecordIterator" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.DefaultRecordBatch$RecordIterator::next():org.apache.kafka.common.record.Record" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.record.DefaultRecordBatch$StreamRecordIterator" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.DefaultRecordBatch$StreamRecordIterator::readNext(long, long, int, java.lang.Long):org.apache.kafka.common.record.Record" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.record.FileLogInputStream$FileChannelRecordBatch" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.FileLogInputStream$FileChannelRecordBatch::loadBatchHeader():org.apache.kafka.common.record.RecordBatch" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.FileLogInputStream$FileChannelRecordBatch::loadBatchWithSize(int, java.lang.String):org.apache.kafka.common.record.RecordBatch" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.record.RecordsSend" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.record.RecordsSend::writeTo(org.apache.kafka.common.network.TransferableChannel):long" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.requests.AbstractRequest$Builder" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.requests.AbstractRequest$Builder::build():org.apache.kafka.common.requests.AbstractRequest" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.requests.AbstractRequest" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.requests.AbstractRequest::getErrorResponse(java.lang.Throwable):org.apache.kafka.common.requests.AbstractResponse" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.requests.AbstractRequest::errorCounts(java.lang.Throwable):java.util.Map" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::login():javax.security.auth.login.LoginContext" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.security.oauthbearer.internals.expiring.ExpiringCredentialRefreshingLogin::reLogin():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.security.scram.internals.ScramMessages$AbstractScramMessage" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.security.scram.internals.ScramMessages$AbstractScramMessage::toBytes():byte[]" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.utils.AbstractIterator" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.utils.AbstractIterator::maybeComputeNext():java.lang.Boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.common.utils.Shell" />
+			<role name="TemplateMethod()" element="org.apache.kafka.common.utils.Shell::runCommand():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::setUp():void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testMemberData():void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testOnlyAssignsPartitionsFromSubscribedTopics(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testConsumerOwningMinQuotaExpectedMaxQuota(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testMaxQuotaConsumerMoreThanNumExpectedMaxCapacityMembers(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testAllConsumersAreUnderMinQuota(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testAddRemoveConsumerOneTopic(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testTopicBalanceAfterReassignment(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testAddRemoveTwoConsumersTwoTopics(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testAddRemoveTopicTwoConsumers(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testReassignmentAfterOneConsumerLeaves(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testSameSubscriptions(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testLargeAssignmentAndGroupWithUniformSubscription(boolean):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testLargeAssignmentAndGroupWithNonEqualSubscription(boolean):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testAssignmentAndGroupWithNonEqualSubscriptionNotTimeout(boolean):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testSubscriptionNotEqualAndAssignSamePartitionWith3Generation():void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testLargeAssignmentWithMultipleConsumersLeavingAndRandomSubscription(boolean):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testMoveExistingAssignments(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testStickiness(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testNoExceptionThrownWhenOnlySubscribedTopicDeleted(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testReassignmentWithRandomSubscriptionsAndChanges(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testAllConsumersReachExpectedQuotaAndAreConsideredFilled(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testOwnedPartitionsAreInvalidatedForConsumerWithStaleGeneration(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testOwnedPartitionsAreInvalidatedForConsumerWithNoGeneration(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testPartitionsTransferringOwnershipIncludeThePartitionClaimedByMultipleConsumersInSameGeneration(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testEnsurePartitionsAssignedToHighestGeneration(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testNoReassignmentOnCurrentMembers(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+			<role name="TemplateMethod()" element="org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest::testOwnedPartitionsAreInvalidatedForConsumerWithMultipleGeneration(org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignorTest$RackConfig):void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.apache.kafka.common.metrics.stats.Rate" />
+			<role name="RealSubject" element="org.apache.kafka.common.metrics.stats.SampledStat" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.stats.Rate::record(org.apache.kafka.common.metrics.MetricConfig, double, long):void" />
+			<role name="Request()" element="org.apache.kafka.common.metrics.stats.Rate::measure(org.apache.kafka.common.metrics.MetricConfig, long):double" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.apache.kafka.common.config.ConfigDef$ValidList" />
+			<role name="RealSubject" element="org.apache.kafka.common.config.ConfigDef$ValidString" />
+			<role name="Request()" element="org.apache.kafka.common.config.ConfigDef$ValidList::ensureValid(java.lang.String, java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.apache.kafka.common.network.SaslChannelBuilder" />
+			<role name="RealSubject" element="org.apache.kafka.common.security.ssl.SslFactory" />
+			<role name="Request()" element="org.apache.kafka.common.network.SaslChannelBuilder::configure(java.util.Map):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.SaslChannelBuilder::validateReconfiguration(java.util.Map):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.SaslChannelBuilder::reconfigure(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.apache.kafka.common.network.SslChannelBuilder" />
+			<role name="RealSubject" element="org.apache.kafka.common.security.ssl.SslFactory" />
+			<role name="Request()" element="org.apache.kafka.common.network.SslChannelBuilder::configure(java.util.Map):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.SslChannelBuilder::validateReconfiguration(java.util.Map):void" />
+			<role name="Request()" element="org.apache.kafka.common.network.SslChannelBuilder::reconfigure(java.util.Map):void" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

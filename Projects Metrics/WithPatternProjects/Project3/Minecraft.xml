@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.reader.cassandrareader.CassandraReaderErrorCode" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.reader.cassandrareader.CassandraReaderErrorCode::CONF_ERROR:com.alibaba.datax.plugin.reader.cassandrareader.CassandraReaderErrorCode" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriterErrorCode" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriterErrorCode::TUPLE_NOT_SUPPORTED_ERROR:com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriterErrorCode" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.common.statistics.PerfTrace" />
+			<role name="uniqueInstance" element="com.alibaba.datax.common.statistics.PerfTrace::instance:com.alibaba.datax.common.statistics.PerfTrace" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.common.statistics.VMInfo" />
+			<role name="uniqueInstance" element="com.alibaba.datax.common.statistics.VMInfo::vmInfo:com.alibaba.datax.common.statistics.VMInfo" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.core.job.meta.ExecuteMode" />
+			<role name="uniqueInstance" element="com.alibaba.datax.core.job.meta.ExecuteMode::STANDALONE:com.alibaba.datax.core.job.meta.ExecuteMode" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.core.taskgroup.TaskMonitor" />
+			<role name="uniqueInstance" element="com.alibaba.datax.core.taskgroup.TaskMonitor::instance:com.alibaba.datax.core.taskgroup.TaskMonitor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.core.transport.record.TerminateRecord" />
+			<role name="uniqueInstance" element="com.alibaba.datax.core.transport.record.TerminateRecord::SINGLE:com.alibaba.datax.core.transport.record.TerminateRecord" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.core.util.HttpClientUtil" />
+			<role name="uniqueInstance" element="com.alibaba.datax.core.util.HttpClientUtil::clientUtil:com.alibaba.datax.core.util.HttpClientUtil" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReaderErrorCode" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReaderErrorCode::GET_TOPOLOGY_FAILED:com.alibaba.datax.plugin.reader.drdsreader.DrdsReaderErrorCode" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.reader.gdbreader.mapping.MappingRuleFactory" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.reader.gdbreader.mapping.MappingRuleFactory::instance:com.alibaba.datax.plugin.reader.gdbreader.mapping.MappingRuleFactory" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.writer.gdbwriter.client.GdbGraphManager" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.writer.gdbwriter.client.GdbGraphManager::INSTANCE:com.alibaba.datax.plugin.writer.gdbwriter.client.GdbGraphManager" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.writer.gdbwriter.mapping.MapperConfig" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.writer.gdbwriter.mapping.MapperConfig::instance:com.alibaba.datax.plugin.writer.gdbwriter.mapping.MapperConfig" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.writer.gdbwriter.mapping.MappingRuleFactory" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.writer.gdbwriter.mapping.MappingRuleFactory::instance:com.alibaba.datax.plugin.writer.gdbwriter.mapping.MappingRuleFactory" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ObDataSourceErrorCode" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ObDataSourceErrorCode::DESC:com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ObDataSourceErrorCode" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.writer.ocswriter.utils.ConfigurationChecker$WRITE_FORMAT" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.writer.ocswriter.utils.ConfigurationChecker$WRITE_FORMAT::text:com.alibaba.datax.plugin.writer.ocswriter.utils.ConfigurationChecker$WRITE_FORMAT" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReaderErrorCode" />
+			<role name="uniqueInstance" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReaderErrorCode::HINT_ERROR:com.alibaba.datax.plugin.reader.oraclereader.OracleReaderErrorCode" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.odpsreader.OdpsReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.odpsreader.OdpsReader$Task::readerSliceConf:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.odpsreader.OdpsReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Task::sliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.hdfswriter.HdfsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.hdfswriter.HdfsWriter$Job::writerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.hdfswriter.HdfsWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Job::writerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.hdfsreader.HdfsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.hdfsreader.HdfsReader$Job::readerOriginConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.hdfsreader.HdfsReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::writerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Job::readerOriginConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.common.plugin.AbstractPlugin" />
+			<role name="adaptee" element="com.alibaba.datax.common.plugin.AbstractPlugin::pluginConf:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.common.plugin.AbstractPlugin::getPluginName():java.lang.String" />
+			<role name="Request()" element="com.alibaba.datax.common.plugin.AbstractPlugin::getDeveloper():java.lang.String" />
+			<role name="Request()" element="com.alibaba.datax.common.plugin.AbstractPlugin::getDescription():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.TDengineReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.TDengineReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.TDengineReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.datahubreader.DatahubReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.datahubreader.DatahubReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.datahubreader.DatahubReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Job::originConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.loghubreader.LogHubReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.loghubreader.LogHubReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.loghubreader.LogHubReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.opentsdbreader.OpenTSDBReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.opentsdbreader.OpenTSDBReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.opentsdbreader.OpenTSDBReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Task::readerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.streamreader.StreamReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.streamreader.StreamReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.streamreader.StreamReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.tsdbreader.TSDBReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.tsdbreader.TSDBReader$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.tsdbreader.TSDBReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.txtfilereader.TxtFileReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.txtfilereader.TxtFileReader$Job::originConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.txtfilereader.TxtFileReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adbpgwriter.AdbpgWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adbpgwriter.AdbpgWriter$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adbpgwriter.AdbpgWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.cassandrawriter.CassandraWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.cassandrawriter.CassandraWriter$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.cassandrawriter.CassandraWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.datahubwriter.DatahubWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.datahubwriter.DatahubWriter$Job::jobConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.datahubwriter.DatahubWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.elasticsearchwriter.ElasticSearchWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.elasticsearchwriter.ElasticSearchWriter$Job::conf:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.elasticsearchwriter.ElasticSearchWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.gdbwriter.GdbWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.gdbwriter.GdbWriter$Job::jobConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.gdbwriter.GdbWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.hbase094xwriter.Hbase094xWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.hbase094xwriter.Hbase094xWriter$Job::originConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.hbase094xwriter.Hbase094xWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.hbase11xwriter.Hbase11xWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.hbase11xwriter.Hbase11xWriter$Job::originConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.hbase11xwriter.Hbase11xWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.hbase20xsqlwriter.HBase20xSQLWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.hbase20xsqlwriter.HBase20xSQLWriter$Job::config:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.hbase20xsqlwriter.HBase20xSQLWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.loghubwriter.LogHubWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.loghubwriter.LogHubWriter$Job::jobConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.loghubwriter.LogHubWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.mongodbwriter.MongoDBWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.mongodbwriter.MongoDBWriter$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.mongodbwriter.MongoDBWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.ocswriter.OcsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.ocswriter.OcsWriter$Job::configuration:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.ocswriter.OcsWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.tdenginewriter.TDengineWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.tdenginewriter.TDengineWriter$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.tdenginewriter.TDengineWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.tdenginewriter.TDengineWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.tdenginewriter.TDengineWriter$Task::writerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.tdenginewriter.TDengineWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.tsdbwriter.TSDBWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.tsdbwriter.TSDBWriter$Job::originalConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.tsdbwriter.TSDBWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.txtfilewriter.TxtFileWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.txtfilewriter.TxtFileWriter$Job::writerSliceConfig:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.txtfilewriter.TxtFileWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.q1.datax.plugin.writer.kudu11xwriter.Kudu11xWriter$Job" />
+			<role name="adaptee" element="com.q1.datax.plugin.writer.kudu11xwriter.Kudu11xWriter$Job::config:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.q1.datax.plugin.writer.kudu11xwriter.Kudu11xWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.otsreader.OtsReaderMasterProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.otsreader.OtsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.otsreader.OtsReader$Job::proxy:com.alibaba.datax.plugin.reader.otsreader.OtsReaderMasterProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.otsreader.OtsReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.otsreader.OtsReaderSlaveProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.otsreader.OtsReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.otsreader.OtsReader$Task::proxy:com.alibaba.datax.plugin.reader.otsreader.OtsReaderSlaveProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.otsreader.OtsReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReaderMasterProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReader$Job::proxy:com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReaderMasterProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReaderSlaveProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReader$Task::proxy:com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReaderSlaveProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.OTSStreamReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.hbase11xsqlwriter.HbaseSQLWriterConfig" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.hbase11xsqlwriter.HbaseSQLWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.hbase11xsqlwriter.HbaseSQLWriter$Job::config:com.alibaba.datax.plugin.writer.hbase11xsqlwriter.HbaseSQLWriterConfig" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.hbase11xsqlwriter.HbaseSQLWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriterMasterProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriter$Job::proxy:com.alibaba.datax.plugin.writer.otswriter.OtsWriterMasterProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriterSlaveProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriter$Task::proxy:com.alibaba.datax.plugin.writer.otswriter.OtsWriterSlaveProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.otswriter.OtsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.rdbmswriter.RdbmsWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.rdbmswriter.RdbmsWriter$Job::commonRdbmsWriterMaster:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.rdbmswriter.RdbmsWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adbmysqlwriter.AdbMysqlWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adbmysqlwriter.AdbMysqlWriter$Job::commonRdbmsWriterJob:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adbmysqlwriter.AdbMysqlWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriter$Job::commonRdbmsWriterMaster:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.databendwriter.DatabendWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.databendwriter.DatabendWriter$Job::commonRdbmsWriterMaster:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.databendwriter.DatabendWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.drdswriter.DrdsWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.drdswriter.DrdsWriter$Job::commonRdbmsWriterJob:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.drdswriter.DrdsWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.kingbaseeswriter.KingbaseesWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.kingbaseeswriter.KingbaseesWriter$Job::commonRdbmsWriterMaster:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.kingbaseeswriter.KingbaseesWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.mysqlwriter.MysqlWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.mysqlwriter.MysqlWriter$Job::commonRdbmsWriterJob:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.mysqlwriter.MysqlWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Job::commonJob:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.oraclewriter.OracleWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.oraclewriter.OracleWriter$Job::commonRdbmsWriterJob:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oraclewriter.OracleWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.oscarwriter.OscarWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.oscarwriter.OscarWriter$Job::commonRdbmsWriterJob:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oscarwriter.OscarWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.postgresqlwriter.PostgresqlWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.postgresqlwriter.PostgresqlWriter$Job::commonRdbmsWriterMaster:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.postgresqlwriter.PostgresqlWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.sqlserverwriter.SqlServerWriter$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.sqlserverwriter.SqlServerWriter$Job::commonRdbmsWriterJob:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.sqlserverwriter.SqlServerWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.core.job.JobContainer" />
+			<role name="adaptee" element="com.alibaba.datax.core.job.JobContainer::userConf:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.core.job.JobContainer::start():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.core.taskgroup.TaskMonitor" />
+			<role name="Adapter" element="com.alibaba.datax.core.taskgroup.TaskGroupContainer" />
+			<role name="adaptee" element="com.alibaba.datax.core.taskgroup.TaskGroupContainer::taskMonitor:com.alibaba.datax.core.taskgroup.TaskMonitor" />
+			<role name="Request()" element="com.alibaba.datax.core.taskgroup.TaskGroupContainer::start():void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.rdbmswriter.RdbmsWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.rdbmswriter.RdbmsWriter$Task::commonRdbmsWriterSlave:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.rdbmswriter.RdbmsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adbmysqlwriter.AdbMysqlWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adbmysqlwriter.AdbMysqlWriter$Task::commonRdbmsWriterTask:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adbmysqlwriter.AdbMysqlWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriter$Task::commonRdbmsWriterSlave:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.clickhousewriter.ClickhouseWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.databendwriter.DatabendWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.databendwriter.DatabendWriter$Task::commonRdbmsWriterSlave:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.databendwriter.DatabendWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.drdswriter.DrdsWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.drdswriter.DrdsWriter$Task::commonRdbmsWriterTask:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.drdswriter.DrdsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.kingbaseeswriter.KingbaseesWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.kingbaseeswriter.KingbaseesWriter$Task::commonRdbmsWriterSlave:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.kingbaseeswriter.KingbaseesWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.mysqlwriter.MysqlWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.mysqlwriter.MysqlWriter$Task::commonRdbmsWriterTask:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.mysqlwriter.MysqlWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Task::writerTask:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.OceanBaseV10Writer$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.oraclewriter.OracleWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.oraclewriter.OracleWriter$Task::commonRdbmsWriterTask:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oraclewriter.OracleWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.oscarwriter.OscarWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.oscarwriter.OscarWriter$Task::commonRdbmsWriterTask:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oscarwriter.OscarWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.postgresqlwriter.PostgresqlWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.postgresqlwriter.PostgresqlWriter$Task::commonRdbmsWriterSlave:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.postgresqlwriter.PostgresqlWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.sqlserverwriter.SqlServerWriter$Task" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.sqlserverwriter.SqlServerWriter$Task::commonRdbmsWriterTask:com.alibaba.datax.plugin.rdbms.writer.CommonRdbmsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.sqlserverwriter.SqlServerWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Job::commonRdbmsReaderMaster:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Job::commonRdbmsReaderJob:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Job::commonRdbmsReaderJob:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Job::commonRdbmsReaderMaster:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Job::commonRdbmsReaderMaster:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Job::commonRdbmsReaderJob:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Job::commonRdbmsReaderJob:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Job" />
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.ext.ReaderJob" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Job::readerJob:com.alibaba.datax.plugin.reader.oceanbasev10reader.ext.ReaderJob" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReader$Task::commonRdbmsReaderTask:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.drdsreader.DrdsReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Task::commonRdbmsReaderSlave:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.kingbaseesreader.KingbaseesReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Task::commonRdbmsReaderTask:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.mysqlreader.MysqlReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Task::commonRdbmsReaderTask:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.oraclereader.OracleReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Task::commonRdbmsReaderSlave:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.postgresqlreader.PostgresqlReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Task::commonRdbmsReaderSlave:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.rdbmsreader.RdbmsReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Task::commonRdbmsReaderTask:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.sqlserverreader.SqlServerReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Task::commonRdbmsReaderTask:com.alibaba.datax.plugin.rdbms.reader.CommonRdbmsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.starrocksreader.StarRocksReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.ext.ReaderTask" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Task::commonRdbmsReaderTask:com.alibaba.datax.plugin.reader.oceanbasev10reader.ext.ReaderTask" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.oceanbasev10reader.OceanBaseReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.util.Configuration" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsInsertProxy" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsInsertProxy::configuration:com.alibaba.datax.common.util.Configuration" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsInsertProxy::startWriteWithConnection(com.alibaba.datax.common.plugin.RecordReceiver, java.sql.Connection, int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.tdenginewriter.SchemaManager" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.tdenginewriter.DefaultDataHandler" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.tdenginewriter.DefaultDataHandler::schemaManager:com.alibaba.datax.plugin.writer.tdenginewriter.SchemaManager" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.tdenginewriter.DefaultDataHandler::handle(com.alibaba.datax.common.plugin.RecordReceiver, com.alibaba.datax.common.plugin.TaskPluginCollector):int" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.alibaba.datax.core.statistics.plugin.task.AbstractTaskPluginCollector" />
+			<role name="Adaptee" element="com.alibaba.datax.common.constant.PluginType" />
+			<role name="adaptee" element="com.alibaba.datax.core.statistics.plugin.task.AbstractTaskPluginCollector::pluginType:com.alibaba.datax.common.constant.PluginType" />
+			<role name="Request()" element="com.alibaba.datax.core.statistics.plugin.task.AbstractTaskPluginCollector::collectDirtyRecord(com.alibaba.datax.common.element.Record, java.lang.Throwable, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Adapter" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger" />
+			<role name="adaptee" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::channel:com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::flush():void" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::terminate():void" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Adapter" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger" />
+			<role name="adaptee" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger::channel:com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger::flush():void" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger::terminate():void" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Adapter" element="com.alibaba.datax.core.transport.exchanger.RecordExchanger" />
+			<role name="adaptee" element="com.alibaba.datax.core.transport.exchanger.RecordExchanger::channel:com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.RecordExchanger::sendToWriter(com.alibaba.datax.common.element.Record):void" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.RecordExchanger::terminate():void" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.RecordExchanger::getFromReader():com.alibaba.datax.common.element.Record" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.unstructuredstorage.writer.DataXCsvWriter" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.unstructuredstorage.writer.CsvWriterImpl" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.unstructuredstorage.writer.CsvWriterImpl::csvWriter:com.alibaba.datax.plugin.unstructuredstorage.writer.DataXCsvWriter" />
+			<role name="Request()" element="com.alibaba.datax.plugin.unstructuredstorage.writer.CsvWriterImpl::writeOneRecord(java.util.List):void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.unstructuredstorage.writer.CsvWriterImpl::flush():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.unstructuredstorage.writer.CsvWriterImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.ocswriter.OcsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.ocswriter.OcsWriter$Task::taskPluginCollector:com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.ocswriter.OcsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.core.statistics.communication.Communication" />
+			<role name="Adapter" element="com.alibaba.datax.core.statistics.plugin.task.AbstractTaskPluginCollector" />
+			<role name="adaptee" element="com.alibaba.datax.core.statistics.plugin.task.AbstractTaskPluginCollector::communication:com.alibaba.datax.core.statistics.communication.Communication" />
+			<role name="Request()" element="com.alibaba.datax.core.statistics.plugin.task.AbstractTaskPluginCollector::collectMessage(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.datax.core.statistics.plugin.task.AbstractTaskPluginCollector::collectDirtyRecord(com.alibaba.datax.common.element.Record, java.lang.Throwable, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.ftpreader.FtpHelper" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task::ftpHelper:com.alibaba.datax.plugin.reader.ftpreader.FtpHelper" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.ftpwriter.util.IFtpHelper" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Task::ftpHelper:com.alibaba.datax.plugin.writer.ftpwriter.util.IFtpHelper" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.tsdbreader.conn.TSDBConnection" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.tsdbreader.TSDBReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.tsdbreader.TSDBReader$Task::conn:com.alibaba.datax.plugin.reader.tsdbreader.conn.TSDBConnection" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.tsdbreader.TSDBReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::proxy:com.alibaba.datax.plugin.writer.adswriter.insert.AdsProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.hbase094xwriter.HbaseAbstractTask" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.hbase094xwriter.Hbase094xWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.hbase094xwriter.Hbase094xWriter$Task::hbaseTaskProxy:com.alibaba.datax.plugin.writer.hbase094xwriter.HbaseAbstractTask" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.hbase094xwriter.Hbase094xWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.hbase11xwriter.HbaseAbstractTask" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.hbase11xwriter.Hbase11xWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.hbase11xwriter.Hbase11xWriter$Task::hbaseTaskProxy:com.alibaba.datax.plugin.writer.hbase11xwriter.HbaseAbstractTask" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.hbase11xwriter.Hbase11xWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsClientProxy" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsClientProxy::taskPluginCollector:com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsClientProxy::startWriteWithConnection(com.alibaba.datax.common.plugin.RecordReceiver, java.sql.Connection, int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsInsertProxy" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsInsertProxy::taskPluginCollector:com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsInsertProxy::startWriteWithConnection(com.alibaba.datax.common.plugin.RecordReceiver, java.sql.Connection, int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.reader.conn.OpenTSDBConnection" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.reader.opentsdbreader.OpenTSDBReader$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.reader.opentsdbreader.OpenTSDBReader$Task::conn:com.alibaba.datax.plugin.reader.conn.OpenTSDBConnection" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.opentsdbreader.OpenTSDBReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.adbpgwriter.copy.Adb4pgClientProxy" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adbpgwriter.AdbpgWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adbpgwriter.AdbpgWriter$Task::adb4pgClientProxy:com.alibaba.datax.plugin.writer.adbpgwriter.copy.Adb4pgClientProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adbpgwriter.AdbpgWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Adapter" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger" />
+			<role name="adaptee" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::pluginCollector:com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::sendToWriter(com.alibaba.datax.common.element.Record):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="Adapter" element="com.alibaba.datax.core.taskgroup.runner.ReaderRunner" />
+			<role name="adaptee" element="com.alibaba.datax.core.taskgroup.runner.ReaderRunner::recordSender:com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="Request()" element="com.alibaba.datax.core.taskgroup.runner.ReaderRunner::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.transformer.Transformer" />
+			<role name="Adapter" element="com.alibaba.datax.core.transport.transformer.ComplexTransformerProxy" />
+			<role name="adaptee" element="com.alibaba.datax.core.transport.transformer.ComplexTransformerProxy::realTransformer:com.alibaba.datax.transformer.Transformer" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.transformer.ComplexTransformerProxy::evaluate(com.alibaba.datax.common.element.Record, java.util.Map, java.lang.Object[]):com.alibaba.datax.common.element.Record" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.doriswriter.DorisCodec" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.doriswriter.DorisWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.doriswriter.DorisWriter$Task::rowCodec:com.alibaba.datax.plugin.writer.doriswriter.DorisCodec" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.doriswriter.DorisWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbCodec" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbWriter$Task" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbWriter$Task::rowCodec:com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbCodec" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.row.StarRocksISerializer" />
+			<role name="Adapter" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.StarRocksWriter$Task" />
+			<role name="adaptee" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.StarRocksWriter$Task::rowSerializer:com.starrocks.connector.datax.plugin.writer.starrockswriter.row.StarRocksISerializer" />
+			<role name="Request()" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.StarRocksWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Adapter" element="com.alibaba.datax.plugin.writer.adbpgwriter.copy.Adb4pgClientProxy" />
+			<role name="adaptee" element="com.alibaba.datax.plugin.writer.adbpgwriter.copy.Adb4pgClientProxy::taskPluginCollector:com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adbpgwriter.copy.Adb4pgClientProxy::startWriteWithConnection(com.alibaba.datax.common.plugin.RecordReceiver, java.sql.Connection):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator" />
+			<role name="Adapter" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector" />
+			<role name="adaptee" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector::jobCollector:com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator" />
+			<role name="Request()" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector::getMessage():java.util.Map" />
+			<role name="Request()" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector::getMessage(java.lang.String):java.util.List" />
+		</instance>
+	</pattern>
+	<pattern name="Command">
+		<instance>
+			<role name="Receiver" element="com.alibaba.datax.common.plugin.RecordReceiver" />
+			<role name="ConcreteCommand" element="com.alibaba.datax.core.taskgroup.runner.WriterRunner" />
+			<role name="receiver" element="com.alibaba.datax.core.taskgroup.runner.WriterRunner::recordReceiver:com.alibaba.datax.common.plugin.RecordReceiver" />
+			<role name="Execute()" element="com.alibaba.datax.core.taskgroup.runner.WriterRunner::shutdown():void" />
+		</instance>
+	</pattern>
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="com.alibaba.datax.transformer.Transformer" />
+			<role name="Decorator" element="com.alibaba.datax.core.transport.transformer.GroovyTransformer" />
+			<role name="component" element="com.alibaba.datax.core.transport.transformer.GroovyTransformer::groovyTransformer:com.alibaba.datax.transformer.Transformer" />
+			<role name="Operation()" element="com.alibaba.datax.core.transport.transformer.GroovyTransformer::evaluate(com.alibaba.datax.common.element.Record, java.lang.Object[]):com.alibaba.datax.common.element.Record" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.job.JobContainer" />
+			<role name="State" element="com.alibaba.datax.common.spi.Reader$Job" />
+			<role name="state" element="com.alibaba.datax.core.job.JobContainer::jobReader:com.alibaba.datax.common.spi.Reader$Job" />
+			<role name="Request()" element="com.alibaba.datax.core.job.JobContainer::doReaderSplit(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.job.JobContainer" />
+			<role name="State" element="com.alibaba.datax.common.spi.Writer$Job" />
+			<role name="state" element="com.alibaba.datax.core.job.JobContainer::jobWriter:com.alibaba.datax.common.spi.Writer$Job" />
+			<role name="Request()" element="com.alibaba.datax.core.job.JobContainer::doWriterSplit(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="State" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="Context" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.InsertTask" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.InsertTask::connHolder:com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.InsertTask::destroy():void" />
+		</instance>
+		<instance>
+			<role name="State" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="Context" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.DataBaseWriterBuffer" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.DataBaseWriterBuffer::connHolder:com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.DataBaseWriterBuffer::addRecord(com.alibaba.datax.common.element.Record, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="State" element="com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="Context" element="com.alibaba.datax.plugin.reader.odpsreader.ReaderProxy" />
+			<role name="state" element="com.alibaba.datax.plugin.reader.odpsreader.ReaderProxy::recordSender:com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.odpsreader.ReaderProxy::doRead():void" />
+		</instance>
+		<instance>
+			<role name="State" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Context" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriterProxy" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriterProxy::taskPluginCollector:com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriterProxy::dataxRecordToOdpsRecord(com.alibaba.datax.common.element.Record):com.aliyun.odps.data.Record" />
+		</instance>
+		<instance>
+			<role name="State" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Context" element="com.alibaba.datax.plugin.writer.osswriter.parquet.ParquetFileSupport" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.osswriter.parquet.ParquetFileSupport::taskPluginCollector:com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.parquet.ParquetFileSupport::writeFields(java.util.List, com.alibaba.datax.common.element.Record):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger" />
+			<role name="State" element="com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="state" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::channel:com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordExchanger::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger" />
+			<role name="State" element="com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="state" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger::channel:com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.exchanger.BufferedRecordTransformerExchanger::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="State" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.IStreamRecordSender" />
+			<role name="Context" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.RecordProcessor" />
+			<role name="state" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.RecordProcessor::otsStreamRecordSender:com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.IStreamRecordSender" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.RecordProcessor::sendRecord(com.alicloud.openservices.tablestore.model.StreamRecord):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Job" />
+			<role name="State" element="com.alibaba.datax.plugin.reader.ftpreader.FtpHelper" />
+			<role name="state" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Job::ftpHelper:com.alibaba.datax.plugin.reader.ftpreader.FtpHelper" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Job::init():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Job::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task" />
+			<role name="State" element="com.alibaba.datax.plugin.reader.ftpreader.FtpHelper" />
+			<role name="state" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task::ftpHelper:com.alibaba.datax.plugin.reader.ftpreader.FtpHelper" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task::init():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task::destroy():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Job" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.ftpwriter.util.IFtpHelper" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Job::ftpHelper:com.alibaba.datax.plugin.writer.ftpwriter.util.IFtpHelper" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Job::prepare():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Job::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Task" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.ftpwriter.util.IFtpHelper" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Task::ftpHelper:com.alibaba.datax.plugin.writer.ftpwriter.util.IFtpHelper" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.ftpwriter.FtpWriter$Task::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.ConcurrentTableWriterTask" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.ConcurrentTableWriterTask::checkConnHolder:com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.ConcurrentTableWriterTask::connHolder:com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.ConcurrentTableWriterTask::init(com.alibaba.datax.common.util.Configuration):void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.ConcurrentTableWriterTask::rewriteSql():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.ConcurrentTableWriterTask::destroy(com.alibaba.datax.common.util.Configuration):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.SingleTableWriterTask" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.SingleTableWriterTask::connHolder:com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.task.SingleTableWriterTask::rewriteSql():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.adswriter.insert.AdsProxy" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::proxy:com.alibaba.datax.plugin.writer.adswriter.insert.AdsProxy" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.MultiVerModeRecordSender" />
+			<role name="State" element="com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="state" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.MultiVerModeRecordSender::dataxRecordSender:com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.MultiVerModeRecordSender::sendToDatax(com.alicloud.openservices.tablestore.model.PrimaryKey, com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.MultiVerModeRecordSender$OpType, com.alicloud.openservices.tablestore.model.Column, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.SingleVerAndUpOnlyModeRecordSender" />
+			<role name="State" element="com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="state" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.SingleVerAndUpOnlyModeRecordSender::dataxRecordSender:com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.otsstreamreader.internal.core.SingleVerAndUpOnlyModeRecordSender::sendToDatax(com.alicloud.openservices.tablestore.model.PrimaryKey, java.util.List, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.gdbwriter.GdbWriter$Task" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.gdbwriter.model.GdbGraph" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.gdbwriter.GdbWriter$Task::graph:com.alibaba.datax.plugin.writer.gdbwriter.model.GdbGraph" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.gdbwriter.GdbWriter$Task::batchCommitRecords(java.util.List):boolean" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.gdbwriter.GdbWriter$Task::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.taskgroup.runner.ReaderRunner" />
+			<role name="State" element="com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="state" element="com.alibaba.datax.core.taskgroup.runner.ReaderRunner::recordSender:com.alibaba.datax.common.plugin.RecordSender" />
+			<role name="Request()" element="com.alibaba.datax.core.taskgroup.runner.ReaderRunner::run():void" />
+			<role name="Request()" element="com.alibaba.datax.core.taskgroup.runner.ReaderRunner::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.transport.transformer.ComplexTransformerProxy" />
+			<role name="State" element="com.alibaba.datax.transformer.Transformer" />
+			<role name="state" element="com.alibaba.datax.core.transport.transformer.ComplexTransformerProxy::realTransformer:com.alibaba.datax.transformer.Transformer" />
+			<role name="Request()" element="com.alibaba.datax.core.transport.transformer.ComplexTransformerProxy::evaluate(com.alibaba.datax.common.element.Record, java.util.Map, java.lang.Object[]):com.alibaba.datax.common.element.Record" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.doriswriter.DorisWriter$Task" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.doriswriter.DorisCodec" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.doriswriter.DorisWriter$Task::rowCodec:com.alibaba.datax.plugin.writer.doriswriter.DorisCodec" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.doriswriter.DorisWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbWriter$Task" />
+			<role name="State" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbCodec" />
+			<role name="state" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbWriter$Task::rowCodec:com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbCodec" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.selectdbwriter.SelectdbWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.StarRocksWriter$Task" />
+			<role name="State" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.row.StarRocksISerializer" />
+			<role name="state" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.StarRocksWriter$Task::rowSerializer:com.starrocks.connector.datax.plugin.writer.starrockswriter.row.StarRocksISerializer" />
+			<role name="Request()" element="com.starrocks.connector.datax.plugin.writer.starrockswriter.StarRocksWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector" />
+			<role name="State" element="com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator" />
+			<role name="state" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector::jobCollector:com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator" />
+			<role name="Request()" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector::getMessage():java.util.Map" />
+			<role name="Request()" element="com.alibaba.datax.core.statistics.plugin.DefaultJobPluginCollector::getMessage(java.lang.String):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.datax.core.taskgroup.runner.WriterRunner" />
+			<role name="State" element="com.alibaba.datax.common.plugin.RecordReceiver" />
+			<role name="state" element="com.alibaba.datax.core.taskgroup.runner.WriterRunner::recordReceiver:com.alibaba.datax.common.plugin.RecordReceiver" />
+			<role name="Request()" element="com.alibaba.datax.core.taskgroup.runner.WriterRunner::shutdown():void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="com.alibaba.datax.core.job.scheduler.AbstractScheduler" />
+			<role name="Implementor" element="com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator" />
+			<role name="implementor" element="com.alibaba.datax.core.job.scheduler.AbstractScheduler::containerCommunicator:com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator" />
+			<role name="Operation()" element="com.alibaba.datax.core.job.scheduler.AbstractScheduler::schedule(java.util.List):void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.common.plugin.TaskPluginCollector" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.common.plugin.TaskPluginCollector::collectDirtyRecord(com.alibaba.datax.common.element.Record, java.lang.String):void" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.common.plugin.TaskPluginCollector::collectDirtyRecord(com.alibaba.datax.common.element.Record, java.lang.Throwable):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.core.job.scheduler.AbstractScheduler" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.core.job.scheduler.AbstractScheduler::schedule(java.util.List):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.core.statistics.container.communicator.AbstractContainerCommunicator::resetCommunication(java.lang.Integer):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.core.transport.channel.Channel" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.core.transport.channel.Channel::push(com.alibaba.datax.common.element.Record):void" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.core.transport.channel.Channel::pushTerminate(com.alibaba.datax.core.transport.record.TerminateRecord):void" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.core.transport.channel.Channel::pushAll(java.util.Collection):void" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.core.transport.channel.Channel::pull():com.alibaba.datax.common.element.Record" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.core.transport.channel.Channel::pullAll(java.util.Collection):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.plugin.reader.ftpreader.FtpHelper" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.plugin.reader.ftpreader.FtpHelper::getAllFiles(java.util.List, int, int):java.util.HashSet" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.plugin.reader.hbase094xreader.HbaseAbstractTask" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.plugin.reader.hbase094xreader.HbaseAbstractTask::prepare():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.plugin.writer.hbase094xwriter.HbaseAbstractTask" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.plugin.writer.hbase094xwriter.HbaseAbstractTask::startWriter(com.alibaba.datax.common.plugin.RecordReceiver, com.alibaba.datax.common.plugin.TaskPluginCollector):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.plugin.reader.hbase11xreader.HbaseAbstractTask" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.plugin.reader.hbase11xreader.HbaseAbstractTask::prepare():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.plugin.writer.hbase11xwriter.HbaseAbstractTask" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.plugin.writer.hbase11xwriter.HbaseAbstractTask::startWriter(com.alibaba.datax.common.plugin.RecordReceiver, com.alibaba.datax.common.plugin.TaskPluginCollector):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.plugin.writer.oceanbasev10writer.ext.ConnHolder::reconnect():java.sql.Connection" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.datax.plugin.unstructuredstorage.reader.split.UnstructuredSplitUtil" />
+			<role name="TemplateMethod()" element="com.alibaba.datax.plugin.unstructuredstorage.reader.split.UnstructuredSplitUtil::getSplitConfiguration(com.alibaba.datax.common.util.Configuration, java.util.List, int):java.util.List" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Job" />
+			<role name="RealSubject" element="com.alibaba.datax.plugin.reader.hdfsreader.HdfsReader$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Job::init():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Job::destroy():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Task" />
+			<role name="RealSubject" element="com.alibaba.datax.plugin.reader.hdfsreader.HdfsReader$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Task::init():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Task::startRead(com.alibaba.datax.common.plugin.RecordSender):void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.reader.ossreader.OssReader$Task::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Job" />
+			<role name="RealSubject" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Job::split(int):java.util.List" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Job::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task" />
+			<role name="RealSubject" element="com.alibaba.datax.plugin.writer.odpswriter.OdpsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::init():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.adswriter.AdsWriter$Task::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Job" />
+			<role name="RealSubject" element="com.alibaba.datax.plugin.writer.hdfswriter.HdfsWriter$Job" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Job::init():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Job::destroy():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Job::split(int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Task" />
+			<role name="RealSubject" element="com.alibaba.datax.plugin.writer.hdfswriter.HdfsWriter$Task" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Task::init():void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Task::startWrite(com.alibaba.datax.common.plugin.RecordReceiver):void" />
+			<role name="Request()" element="com.alibaba.datax.plugin.writer.osswriter.OssWriter$Task::destroy():void" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="the.bytecode.club.bytecodeviewer.plugin.PluginLaunchStrategy" />
+			<role name="FactoryMethod()" element="the.bytecode.club.bytecodeviewer.plugin.PluginLaunchStrategy::run(java.io.File):the.bytecode.club.bytecodeviewer.api.Plugin" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="the.bytecode.club.bytecodeviewer.gui.contextmenu.ContextMenu" />
+			<role name="uniqueInstance" element="the.bytecode.club.bytecodeviewer.gui.contextmenu.ContextMenu::SINGLETON:the.bytecode.club.bytecodeviewer.gui.contextmenu.ContextMenu" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="the.bytecode.club.bytecodeviewer.resources.ExternalResources" />
+			<role name="uniqueInstance" element="the.bytecode.club.bytecodeviewer.resources.ExternalResources::SINGLETON:the.bytecode.club.bytecodeviewer.resources.ExternalResources" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="the.bytecode.club.bytecodeviewer.searching.EnterKeyEvent" />
+			<role name="uniqueInstance" element="the.bytecode.club.bytecodeviewer.searching.EnterKeyEvent::SINGLETON:the.bytecode.club.bytecodeviewer.searching.EnterKeyEvent" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel" />
+			<role name="Adapter" element="the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ClassViewer" />
+			<role name="adaptee" element="the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ClassViewer::bytecodeViewPanel1:the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel" />
+			<role name="adaptee" element="the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ClassViewer::bytecodeViewPanel2:the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel" />
+			<role name="adaptee" element="the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ClassViewer::bytecodeViewPanel3:the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ClassViewer::refresh(javax.swing.JButton):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="the.bytecode.club.bytecodeviewer.api.PluginConsole" />
+			<role name="Adapter" element="the.bytecode.club.bytecodeviewer.plugin.preinstalled.ReplaceStrings" />
+			<role name="adaptee" element="the.bytecode.club.bytecodeviewer.plugin.preinstalled.ReplaceStrings::frame:the.bytecode.club.bytecodeviewer.api.PluginConsole" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.plugin.preinstalled.ReplaceStrings::execute(java.util.List):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="the.bytecode.club.uikit.tabpopup.closer.PopupMenuTabsCloseConfiguration" />
+			<role name="Adapter" element="the.bytecode.club.uikit.tabpopup.closer.JTabbedPanePopupMenuTabsCloser" />
+			<role name="adaptee" element="the.bytecode.club.uikit.tabpopup.closer.JTabbedPanePopupMenuTabsCloser::closeConfiguration:the.bytecode.club.uikit.tabpopup.closer.PopupMenuTabsCloseConfiguration" />
+			<role name="Request()" element="the.bytecode.club.uikit.tabpopup.closer.JTabbedPanePopupMenuTabsCloser::toBuildTabPopupMenu(javax.swing.JTabbedPane, java.awt.Component):javax.swing.JPopupMenu" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.MouseClickedListener" />
+			<role name="State" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.MouseClickedListener$MouseClickedEvent" />
+			<role name="state" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.MouseClickedListener::mouseClickedEvent:the.bytecode.club.bytecodeviewer.gui.components.listeners.MouseClickedListener$MouseClickedEvent" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.MouseClickedListener::mouseClicked(java.awt.event.MouseEvent):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.PressKeyListener" />
+			<role name="State" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.PressKeyListener$KeyPressedEvent" />
+			<role name="state" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.PressKeyListener::keyPressedEvent:the.bytecode.club.bytecodeviewer.gui.components.listeners.PressKeyListener$KeyPressedEvent" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.PressKeyListener::keyPressed(java.awt.event.KeyEvent):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.ReleaseKeyListener" />
+			<role name="State" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.ReleaseKeyListener$KeyReleasedEvent" />
+			<role name="state" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.ReleaseKeyListener::keyReleasedEvent:the.bytecode.club.bytecodeviewer.gui.components.listeners.ReleaseKeyListener$KeyReleasedEvent" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.components.listeners.ReleaseKeyListener::keyReleased(java.awt.event.KeyEvent):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="the.bytecode.club.bytecodeviewer.util.FileDrop$TransferableObject" />
+			<role name="State" element="the.bytecode.club.bytecodeviewer.util.FileDrop$TransferableObject$Fetcher" />
+			<role name="state" element="the.bytecode.club.bytecodeviewer.util.FileDrop$TransferableObject::fetcher:the.bytecode.club.bytecodeviewer.util.FileDrop$TransferableObject$Fetcher" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.util.FileDrop$TransferableObject::getTransferData(java.awt.datatransfer.DataFlavor):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="the.bytecode.club.uikit.tabpopup.closer.JTabbedPaneCloser" />
+			<role name="State" element="the.bytecode.club.uikit.tabpopup.ITabZeroComponentEventListener" />
+			<role name="state" element="the.bytecode.club.uikit.tabpopup.closer.JTabbedPaneCloser::tabZeroComponentEventListener:the.bytecode.club.uikit.tabpopup.ITabZeroComponentEventListener" />
+			<role name="Request()" element="the.bytecode.club.uikit.tabpopup.closer.JTabbedPaneCloser::tryTriggerTabZeroComponentEvent():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="the.bytecode.club.bytecodeviewer.gui.hexviewer.HexViewer" />
+			<role name="State" element="the.bytecode.club.bytecodeviewer.gui.hexviewer.BinaryStatusApi" />
+			<role name="state" element="the.bytecode.club.bytecodeviewer.gui.hexviewer.HexViewer::binaryStatus:the.bytecode.club.bytecodeviewer.gui.hexviewer.BinaryStatusApi" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.hexviewer.HexViewer::registerBinaryStatus(the.bytecode.club.bytecodeviewer.gui.hexviewer.BinaryStatusApi):void" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.hexviewer.HexViewer::lambda$1(org.exbin.bined.CodeAreaCaretPosition):void" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.hexviewer.HexViewer::lambda$2():void" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.gui.hexviewer.HexViewer::lambda$3():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="the.bytecode.club.uikit.tabpopup.JTabbedPanePopupEventHandler" />
+			<role name="State" element="the.bytecode.club.uikit.tabpopup.ITabPopupEventListener" />
+			<role name="state" element="the.bytecode.club.uikit.tabpopup.JTabbedPanePopupEventHandler::tabPopupEventListener:the.bytecode.club.uikit.tabpopup.ITabPopupEventListener" />
+			<role name="Request()" element="the.bytecode.club.uikit.tabpopup.JTabbedPanePopupEventHandler::tryTriggerTabPopupEvent(java.awt.event.MouseEvent):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="the.bytecode.club.bytecodeviewer.bootloader.classtree.nullpermablehashmap.NullPermeableHashMap" />
+			<role name="State" element="the.bytecode.club.bytecodeviewer.bootloader.classtree.nullpermablehashmap.ValueCreator" />
+			<role name="state" element="the.bytecode.club.bytecodeviewer.bootloader.classtree.nullpermablehashmap.NullPermeableHashMap::creator:the.bytecode.club.bytecodeviewer.bootloader.classtree.nullpermablehashmap.ValueCreator" />
+			<role name="Request()" element="the.bytecode.club.bytecodeviewer.bootloader.classtree.nullpermablehashmap.NullPermeableHashMap::getNonNull(K):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="the.bytecode.club.bytecodeviewer.api.Plugin" />
+			<role name="TemplateMethod()" element="the.bytecode.club.bytecodeviewer.api.Plugin::lambda$0(the.bytecode.club.bytecodeviewer.resources.ResourceContainer):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="the.bytecode.club.bytecodeviewer.malwarescanner.MalwareCodeScanner" />
+			<role name="TemplateMethod()" element="the.bytecode.club.bytecodeviewer.malwarescanner.MalwareCodeScanner::scanFields(the.bytecode.club.bytecodeviewer.malwarescanner.MalwareScan, org.objectweb.asm.tree.ClassNode, org.objectweb.asm.tree.FieldNode[]):void" />
+			<role name="TemplateMethod()" element="the.bytecode.club.bytecodeviewer.malwarescanner.MalwareCodeScanner::scanMethods(the.bytecode.club.bytecodeviewer.malwarescanner.MalwareScan, org.objectweb.asm.tree.ClassNode, org.objectweb.asm.tree.MethodNode[]):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="the.bytecode.club.bytecodeviewer.obfuscators.JavaObfuscator" />
+			<role name="TemplateMethod()" element="the.bytecode.club.bytecodeviewer.obfuscators.JavaObfuscator::run():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="the.bytecode.club.bytecodeviewer.searching.BackgroundSearchThread" />
+			<role name="TemplateMethod()" element="the.bytecode.club.bytecodeviewer.searching.BackgroundSearchThread::run():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="the.bytecode.club.uikit.tabpopup.AbstractJTabbedPanePopupMenuHandler" />
+			<role name="TemplateMethod()" element="the.bytecode.club.uikit.tabpopup.AbstractJTabbedPanePopupMenuHandler::onTabPopupEvent(javax.swing.JTabbedPane, int, the.bytecode.club.uikit.tabpopup.TabPopupEvent):void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

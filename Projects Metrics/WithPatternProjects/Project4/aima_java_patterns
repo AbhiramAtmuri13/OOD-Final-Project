@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="aima.core.learning.framework.AttributeSpecification" />
+			<role name="FactoryMethod()" element="aima.core.learning.framework.AttributeSpecification::createAttribute(java.lang.String):aima.core.learning.framework.Attribute" />
+		</instance>
+		<instance>
+			<role name="Creator" element="aima.core.logic.fol.inference.InferenceProcedure" />
+			<role name="FactoryMethod()" element="aima.core.logic.fol.inference.InferenceProcedure::ask(aima.core.logic.fol.kb.FOLKnowledgeBase, aima.core.logic.fol.parsing.ast.Sentence):aima.core.logic.fol.inference.InferenceResult" />
+		</instance>
+		<instance>
+			<role name="Creator" element="aima.core.probability.bayes.ConditionalProbabilityTable" />
+			<role name="FactoryMethod()" element="aima.core.probability.bayes.ConditionalProbabilityTable::getConditioningCase(aima.core.probability.proposition.AssignmentProposition[]):aima.core.probability.CategoricalDistribution" />
+			<role name="FactoryMethod()" element="aima.core.probability.bayes.ConditionalProbabilityTable::getFactorFor(aima.core.probability.proposition.AssignmentProposition[]):aima.core.probability.Factor" />
+		</instance>
+		<instance>
+			<role name="Creator" element="aima.core.probability.FiniteProbabilityModel" />
+			<role name="FactoryMethod()" element="aima.core.probability.FiniteProbabilityModel::jointDistribution(aima.core.probability.proposition.Proposition[]):aima.core.probability.CategoricalDistribution" />
+		</instance>
+		<instance>
+			<role name="Creator" element="aima.core.probability.hmm.HiddenMarkovModel" />
+			<role name="FactoryMethod()" element="aima.core.probability.hmm.HiddenMarkovModel::createUnitMessage():aima.core.util.math.Matrix" />
+			<role name="FactoryMethod()" element="aima.core.probability.hmm.HiddenMarkovModel::convert(aima.core.probability.CategoricalDistribution):aima.core.util.math.Matrix" />
+			<role name="FactoryMethod()" element="aima.core.probability.hmm.HiddenMarkovModel::convert(aima.core.util.math.Matrix):aima.core.probability.CategoricalDistribution" />
+			<role name="FactoryMethod()" element="aima.core.probability.hmm.HiddenMarkovModel::normalize(aima.core.util.math.Matrix):aima.core.util.math.Matrix" />
+		</instance>
+		<instance>
+			<role name="Creator" element="aima.core.search.csp.solver.inference.InferenceStrategy" />
+			<role name="FactoryMethod()" element="aima.core.search.csp.solver.inference.InferenceStrategy::apply(aima.core.search.csp.CSP):aima.core.search.csp.solver.inference.InferenceLog" />
+			<role name="FactoryMethod()" element="aima.core.search.csp.solver.inference.InferenceStrategy::apply(aima.core.search.csp.CSP, aima.core.search.csp.Assignment, VAR):aima.core.search.csp.solver.inference.InferenceLog" />
+		</instance>
+		<instance>
+			<role name="Creator" element="aima.core.util.math.geom.shapes.IGeometric2D" />
+			<role name="FactoryMethod()" element="aima.core.util.math.geom.shapes.IGeometric2D::getBounds():aima.core.util.math.geom.shapes.Rect2D" />
+			<role name="FactoryMethod()" element="aima.core.util.math.geom.shapes.IGeometric2D::transform(aima.core.util.math.geom.shapes.TransformMatrix2D):aima.core.util.math.geom.shapes.IGeometric2D" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="aima.core.logic.propositional.kb.data.Clause" />
+			<role name="uniqueInstance" element="aima.core.logic.propositional.kb.data.Clause::EMPTY:aima.core.logic.propositional.kb.data.Clause" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="aima.core.robotics.impl.datatypes.Angle" />
+			<role name="uniqueInstance" element="aima.core.robotics.impl.datatypes.Angle::ZERO_ANGLE:aima.core.robotics.impl.datatypes.Angle" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="aima.core.util.math.geom.shapes.TransformMatrix2D" />
+			<role name="uniqueInstance" element="aima.core.util.math.geom.shapes.TransformMatrix2D::UNITY_MATRIX:aima.core.util.math.geom.shapes.TransformMatrix2D" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Adapter" element="aima.core.util.math.geom.shapes.Ellipse2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Ellipse2D::center:aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Ellipse2D::randomPoint():aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Ellipse2D::isInside(aima.core.util.math.geom.shapes.Point2D):boolean" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Ellipse2D::isInsideBorder(aima.core.util.math.geom.shapes.Point2D):boolean" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Ellipse2D::rayCast(aima.core.util.math.geom.shapes.Ray2D):double" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Ellipse2D::getBounds():aima.core.util.math.geom.shapes.Rect2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Ellipse2D::transform(aima.core.util.math.geom.shapes.TransformMatrix2D):aima.core.util.math.geom.shapes.IGeometric2D" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Adapter" element="aima.core.util.math.geom.shapes.Line2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Line2D::start:aima.core.util.math.geom.shapes.Point2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Line2D::end:aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Line2D::randomPoint():aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Line2D::isInsideBorder(aima.core.util.math.geom.shapes.Point2D):boolean" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Line2D::rayCast(aima.core.util.math.geom.shapes.Ray2D):double" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Line2D::getBounds():aima.core.util.math.geom.shapes.Rect2D" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Adapter" element="aima.core.util.math.geom.shapes.Rect2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Rect2D::lowerLeft:aima.core.util.math.geom.shapes.Point2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Rect2D::upperRight:aima.core.util.math.geom.shapes.Point2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Rect2D::upperLeft:aima.core.util.math.geom.shapes.Point2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Rect2D::lowerRight:aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Rect2D::randomPoint():aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Rect2D::isInside(aima.core.util.math.geom.shapes.Point2D):boolean" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Rect2D::isInsideBorder(aima.core.util.math.geom.shapes.Point2D):boolean" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Rect2D::rayCast(aima.core.util.math.geom.shapes.Ray2D):double" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Rect2D::transform(aima.core.util.math.geom.shapes.TransformMatrix2D):aima.core.util.math.geom.shapes.IGeometric2D" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="Adapter" element="aima.core.util.math.geom.shapes.Ellipse2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Ellipse2D::horizontal:aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Ellipse2D::vertical:aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Ellipse2D::transform(aima.core.util.math.geom.shapes.TransformMatrix2D):aima.core.util.math.geom.shapes.IGeometric2D" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="Adapter" element="aima.core.util.math.geom.shapes.Line2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Line2D::line:aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Line2D::randomPoint():aima.core.util.math.geom.shapes.Point2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Line2D::isInsideBorder(aima.core.util.math.geom.shapes.Point2D):boolean" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Line2D::rayCast(aima.core.util.math.geom.shapes.Ray2D):double" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="Adapter" element="aima.core.util.math.geom.shapes.Rect2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Rect2D::horizontalVector:aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="adaptee" element="aima.core.util.math.geom.shapes.Rect2D::verticalVector:aima.core.util.math.geom.shapes.Vector2D" />
+			<role name="Request()" element="aima.core.util.math.geom.shapes.Rect2D::rayCast(aima.core.util.math.geom.shapes.Ray2D):double" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.NodeFactory" />
+			<role name="Adapter" element="aima.core.search.informed.RecursiveBestFirstSearch" />
+			<role name="adaptee" element="aima.core.search.informed.RecursiveBestFirstSearch::nodeFactory:aima.core.search.framework.NodeFactory" />
+			<role name="Request()" element="aima.core.search.informed.RecursiveBestFirstSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.informed.RecursiveBestFirstSearch::addNodeListener(java.util.function.Consumer):void" />
+			<role name="Request()" element="aima.core.search.informed.RecursiveBestFirstSearch::removeNodeListener(java.util.function.Consumer):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.NodeFactory" />
+			<role name="Adapter" element="aima.core.search.local.SimulatedAnnealingSearch" />
+			<role name="adaptee" element="aima.core.search.local.SimulatedAnnealingSearch::nodeFactory:aima.core.search.framework.NodeFactory" />
+			<role name="Request()" element="aima.core.search.local.SimulatedAnnealingSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.local.SimulatedAnnealingSearch::addNodeListener(java.util.function.Consumer):void" />
+			<role name="Request()" element="aima.core.search.local.SimulatedAnnealingSearch::removeNodeListener(java.util.function.Consumer):boolean" />
+			<role name="Request()" element="aima.core.search.local.SimulatedAnnealingSearch::findState(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.NodeFactory" />
+			<role name="Adapter" element="aima.core.search.local.HillClimbingSearch" />
+			<role name="adaptee" element="aima.core.search.local.HillClimbingSearch::nodeFactory:aima.core.search.framework.NodeFactory" />
+			<role name="Request()" element="aima.core.search.local.HillClimbingSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.local.HillClimbingSearch::addNodeListener(java.util.function.Consumer):void" />
+			<role name="Request()" element="aima.core.search.local.HillClimbingSearch::removeNodeListener(java.util.function.Consumer):boolean" />
+			<role name="Request()" element="aima.core.search.local.HillClimbingSearch::findState(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.NodeFactory" />
+			<role name="Adapter" element="aima.core.search.uninformed.DepthLimitedSearch" />
+			<role name="adaptee" element="aima.core.search.uninformed.DepthLimitedSearch::nodeFactory:aima.core.search.framework.NodeFactory" />
+			<role name="Request()" element="aima.core.search.uninformed.DepthLimitedSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.uninformed.DepthLimitedSearch::addNodeListener(java.util.function.Consumer):void" />
+			<role name="Request()" element="aima.core.search.uninformed.DepthLimitedSearch::removeNodeListener(java.util.function.Consumer):boolean" />
+			<role name="Request()" element="aima.core.search.uninformed.DepthLimitedSearch::findState(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.NodeFactory" />
+			<role name="Adapter" element="aima.core.search.uninformed.IterativeDeepeningSearch" />
+			<role name="adaptee" element="aima.core.search.uninformed.IterativeDeepeningSearch::nodeFactory:aima.core.search.framework.NodeFactory" />
+			<role name="Request()" element="aima.core.search.uninformed.IterativeDeepeningSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.uninformed.IterativeDeepeningSearch::addNodeListener(java.util.function.Consumer):void" />
+			<role name="Request()" element="aima.core.search.uninformed.IterativeDeepeningSearch::removeNodeListener(java.util.function.Consumer):boolean" />
+			<role name="Request()" element="aima.core.search.uninformed.IterativeDeepeningSearch::findState(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.Metrics" />
+			<role name="Adapter" element="aima.core.search.informed.RecursiveBestFirstSearch" />
+			<role name="adaptee" element="aima.core.search.informed.RecursiveBestFirstSearch::metrics:aima.core.search.framework.Metrics" />
+			<role name="Request()" element="aima.core.search.informed.RecursiveBestFirstSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.FrequencyCounter" />
+			<role name="Adapter" element="aima.core.learning.reinforcement.agent.PassiveADPAgent" />
+			<role name="adaptee" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::Nsa:aima.core.util.FrequencyCounter" />
+			<role name="adaptee" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::NsDelta_sa:aima.core.util.FrequencyCounter" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::act(aima.core.learning.reinforcement.PerceptStateReward):java.util.Optional" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::reset():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.FrequencyCounter" />
+			<role name="Adapter" element="aima.core.learning.reinforcement.agent.PassiveTDAgent" />
+			<role name="adaptee" element="aima.core.learning.reinforcement.agent.PassiveTDAgent::Ns:aima.core.util.FrequencyCounter" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.PassiveTDAgent::act(aima.core.learning.reinforcement.PerceptStateReward):java.util.Optional" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.PassiveTDAgent::reset():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.FrequencyCounter" />
+			<role name="Adapter" element="aima.core.learning.reinforcement.agent.QLearningAgent" />
+			<role name="adaptee" element="aima.core.learning.reinforcement.agent.QLearningAgent::Nsa:aima.core.util.FrequencyCounter" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.QLearningAgent::act(aima.core.learning.reinforcement.PerceptStateReward):java.util.Optional" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.QLearningAgent::reset():void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.FOLModelElimination" />
+			<role name="Adaptee" element="aima.core.logic.fol.inference.trace.FOLModelEliminationTracer" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.FOLModelElimination::tracer:aima.core.logic.fol.inference.trace.FOLModelEliminationTracer" />
+			<role name="Request()" element="aima.core.logic.fol.inference.FOLModelElimination::ask(aima.core.logic.fol.kb.FOLKnowledgeBase, aima.core.logic.fol.parsing.ast.Sentence):aima.core.logic.fol.inference.InferenceResult" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.search.informed.BestFirstSearch" />
+			<role name="Adaptee" element="aima.core.search.informed.EvaluationFunction" />
+			<role name="adaptee" element="aima.core.search.informed.BestFirstSearch::evalFn:aima.core.search.informed.EvaluationFunction" />
+			<role name="Request()" element="aima.core.search.informed.BestFirstSearch::setHeuristicFunction(java.util.function.ToDoubleFunction):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.parsing.FOLParser" />
+			<role name="Adapter" element="aima.core.logic.fol.RemoveQuantifiers" />
+			<role name="adaptee" element="aima.core.logic.fol.RemoveQuantifiers::parser:aima.core.logic.fol.parsing.FOLParser" />
+			<role name="Request()" element="aima.core.logic.fol.RemoveQuantifiers::visitQuantifiedSentence(aima.core.logic.fol.parsing.ast.QuantifiedSentence, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepChainFromClause" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepChainFromClause::fromClause:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepChainFromClause::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepBwChGoal" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepBwChGoal::toProve:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepBwChGoal::getProof():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepClauseBinaryResolvent" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseBinaryResolvent::resolvent:aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseBinaryResolvent::parent1:aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseBinaryResolvent::parent2:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseBinaryResolvent::getProof():java.lang.String" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseBinaryResolvent::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepClauseClausifySentence" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseClausifySentence::clausified:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseClausifySentence::getProof():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepClauseDemodulation" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseDemodulation::demodulated:aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseDemodulation::origClause:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseDemodulation::getProof():java.lang.String" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseDemodulation::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepClauseFactor" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseFactor::factor:aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseFactor::factorOf:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseFactor::getProof():java.lang.String" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseFactor::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepClauseParamodulation" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseParamodulation::paramodulated:aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseParamodulation::topClause:aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepClauseParamodulation::equalityClause:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseParamodulation::getProof():java.lang.String" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepClauseParamodulation::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepFoChAssertFact" />
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Clause" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepFoChAssertFact::implication:aima.core.logic.fol.kb.data.Clause" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepFoChAssertFact::getProof():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.parsing.ast.Term" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.AbstractModulation$IdentifyCandidateMatchingTerm" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.AbstractModulation$IdentifyCandidateMatchingTerm::matchingTerm:aima.core.logic.fol.parsing.ast.Term" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.AbstractModulation$IdentifyCandidateMatchingTerm::toMatch:aima.core.logic.fol.parsing.ast.Term" />
+			<role name="Request()" element="aima.core.logic.fol.inference.AbstractModulation$IdentifyCandidateMatchingTerm::visitPredicate(aima.core.logic.fol.parsing.ast.Predicate, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="aima.core.logic.fol.inference.AbstractModulation$IdentifyCandidateMatchingTerm::visitTermEquality(aima.core.logic.fol.parsing.ast.TermEquality, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="aima.core.logic.fol.inference.AbstractModulation$IdentifyCandidateMatchingTerm::visitFunction(aima.core.logic.fol.parsing.ast.Function, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.parsing.ast.Term" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.AbstractModulation$ReplaceMatchingTerm" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.AbstractModulation$ReplaceMatchingTerm::toReplace:aima.core.logic.fol.parsing.ast.Term" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.AbstractModulation$ReplaceMatchingTerm::replaceWith:aima.core.logic.fol.parsing.ast.Term" />
+			<role name="Request()" element="aima.core.logic.fol.inference.AbstractModulation$ReplaceMatchingTerm::visitFunction(aima.core.logic.fol.parsing.ast.Function, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.GameTree" />
+			<role name="Adapter" element="aima.core.search.adversarial.MonteCarloTreeSearch" />
+			<role name="adaptee" element="aima.core.search.adversarial.MonteCarloTreeSearch::tree:aima.core.search.framework.GameTree" />
+			<role name="Request()" element="aima.core.search.adversarial.MonteCarloTreeSearch::makeDecision(S):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch$Timer" />
+			<role name="Adapter" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch" />
+			<role name="adaptee" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::timer:aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch$Timer" />
+			<role name="Request()" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::makeDecision(S):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.inductive.DecisionList" />
+			<role name="Adapter" element="aima.core.learning.learners.DecisionListLearner" />
+			<role name="adaptee" element="aima.core.learning.learners.DecisionListLearner::decisionList:aima.core.learning.inductive.DecisionList" />
+			<role name="Request()" element="aima.core.learning.learners.DecisionListLearner::predict(aima.core.learning.framework.Example):java.lang.String" />
+			<role name="Request()" element="aima.core.learning.learners.DecisionListLearner::test(aima.core.learning.framework.DataSet):int[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.robotics.impl.map.IPoseFactory" />
+			<role name="Adapter" element="aima.core.robotics.impl.map.MclCartesianPlot2D" />
+			<role name="adaptee" element="aima.core.robotics.impl.map.MclCartesianPlot2D::poseFactory:aima.core.robotics.impl.map.IPoseFactory" />
+			<role name="Request()" element="aima.core.robotics.impl.map.MclCartesianPlot2D::isPoseValid(P):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.geom.CartesianPlot2D" />
+			<role name="Adapter" element="aima.core.robotics.impl.map.MclCartesianPlot2D" />
+			<role name="adaptee" element="aima.core.robotics.impl.map.MclCartesianPlot2D::areas:aima.core.util.math.geom.CartesianPlot2D" />
+			<role name="adaptee" element="aima.core.robotics.impl.map.MclCartesianPlot2D::obstacles:aima.core.util.math.geom.CartesianPlot2D" />
+			<role name="Request()" element="aima.core.robotics.impl.map.MclCartesianPlot2D::isPoseValid(P):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.inference.FOLBCAsk$BCASKHandler" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.FOLBCAsk" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.FOLBCAsk::bcaskHandler:aima.core.logic.fol.inference.FOLBCAsk$BCASKHandler" />
+			<role name="Request()" element="aima.core.logic.fol.inference.FOLBCAsk::ask(aima.core.logic.fol.kb.FOLKnowledgeBase, aima.core.logic.fol.parsing.ast.Sentence):aima.core.logic.fol.inference.InferenceResult" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.adversarial.Game" />
+			<role name="Adapter" element="aima.core.search.adversarial.AlphaBetaSearch" />
+			<role name="adaptee" element="aima.core.search.adversarial.AlphaBetaSearch::game:aima.core.search.adversarial.Game" />
+			<role name="Request()" element="aima.core.search.adversarial.AlphaBetaSearch::makeDecision(S):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.adversarial.Game" />
+			<role name="Adapter" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch" />
+			<role name="adaptee" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::game:aima.core.search.adversarial.Game" />
+			<role name="Request()" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::makeDecision(S):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.adversarial.Game" />
+			<role name="Adapter" element="aima.core.search.adversarial.MinimaxSearch" />
+			<role name="adaptee" element="aima.core.search.adversarial.MinimaxSearch::game:aima.core.search.adversarial.Game" />
+			<role name="Request()" element="aima.core.search.adversarial.MinimaxSearch::makeDecision(S):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.search.informed.RecursiveBestFirstSearch" />
+			<role name="Adaptee" element="aima.core.search.informed.EvaluationFunction" />
+			<role name="adaptee" element="aima.core.search.informed.RecursiveBestFirstSearch::evalFn:aima.core.search.informed.EvaluationFunction" />
+			<role name="Request()" element="aima.core.search.informed.RecursiveBestFirstSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.informed.RecursiveBestFirstSearch::setHeuristicFunction(java.util.function.ToDoubleFunction):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.neural.Layer" />
+			<role name="Adapter" element="aima.core.learning.neural.Perceptron" />
+			<role name="adaptee" element="aima.core.learning.neural.Perceptron::layer:aima.core.learning.neural.Layer" />
+			<role name="Request()" element="aima.core.learning.neural.Perceptron::processInput(aima.core.util.math.Vector):aima.core.util.math.Vector" />
+			<role name="Request()" element="aima.core.learning.neural.Perceptron::processError(aima.core.util.math.Vector):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.MixedRadixNumber" />
+			<role name="Adapter" element="aima.core.probability.util.ProbabilityTable" />
+			<role name="adaptee" element="aima.core.probability.util.ProbabilityTable::queryMRN:aima.core.util.math.MixedRadixNumber" />
+			<role name="Request()" element="aima.core.probability.util.ProbabilityTable::getIndex(java.lang.Object[]):int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.problem.StepCostFunction" />
+			<role name="Adapter" element="aima.core.search.framework.problem.GeneralProblem" />
+			<role name="adaptee" element="aima.core.search.framework.problem.GeneralProblem::stepCostFn:aima.core.search.framework.problem.StepCostFunction" />
+			<role name="Request()" element="aima.core.search.framework.problem.GeneralProblem::getStepCosts(S, A, S):double" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.datastructure.LabeledGraph" />
+			<role name="Adapter" element="aima.core.environment.map.ExtendableMap" />
+			<role name="adaptee" element="aima.core.environment.map.ExtendableMap::links:aima.core.util.datastructure.LabeledGraph" />
+			<role name="Request()" element="aima.core.environment.map.ExtendableMap::getLocations():java.util.List" />
+			<role name="Request()" element="aima.core.environment.map.ExtendableMap::getPossibleNextLocations(java.lang.String):java.util.List" />
+			<role name="Request()" element="aima.core.environment.map.ExtendableMap::getDistance(java.lang.String, java.lang.String):java.lang.Double" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.mdp.RewardFunction" />
+			<role name="Adapter" element="aima.core.probability.mdp.impl.MDP" />
+			<role name="adaptee" element="aima.core.probability.mdp.impl.MDP::rewardFunction:aima.core.probability.mdp.RewardFunction" />
+			<role name="Request()" element="aima.core.probability.mdp.impl.MDP::reward(S):double" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.neural.Layer" />
+			<role name="Adapter" element="aima.core.learning.neural.BackPropLearning" />
+			<role name="adaptee" element="aima.core.learning.neural.BackPropLearning::hiddenLayer:aima.core.learning.neural.Layer" />
+			<role name="adaptee" element="aima.core.learning.neural.BackPropLearning::outputLayer:aima.core.learning.neural.Layer" />
+			<role name="Request()" element="aima.core.learning.neural.BackPropLearning::processInput(aima.core.learning.neural.FeedForwardNeuralNetwork, aima.core.util.math.Vector):aima.core.util.math.Vector" />
+			<role name="Request()" element="aima.core.learning.neural.BackPropLearning::processError(aima.core.learning.neural.FeedForwardNeuralNetwork, aima.core.util.math.Vector):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.neural.LayerSensitivity" />
+			<role name="Adapter" element="aima.core.learning.neural.BackPropLearning" />
+			<role name="adaptee" element="aima.core.learning.neural.BackPropLearning::outputSensitivity:aima.core.learning.neural.LayerSensitivity" />
+			<role name="adaptee" element="aima.core.learning.neural.BackPropLearning::hiddenSensitivity:aima.core.learning.neural.LayerSensitivity" />
+			<role name="Request()" element="aima.core.learning.neural.BackPropLearning::processError(aima.core.learning.neural.FeedForwardNeuralNetwork, aima.core.util.math.Vector):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.hmm.HiddenMarkovModel" />
+			<role name="Adapter" element="aima.core.probability.hmm.exact.HMMForwardBackward" />
+			<role name="adaptee" element="aima.core.probability.hmm.exact.HMMForwardBackward::hmm:aima.core.probability.hmm.HiddenMarkovModel" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.HMMForwardBackward::forwardBackward(java.util.List, aima.core.probability.CategoricalDistribution):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.util.ProbabilityTable" />
+			<role name="Adapter" element="aima.core.probability.full.FullJointDistributionModel" />
+			<role name="adaptee" element="aima.core.probability.full.FullJointDistributionModel::distribution:aima.core.probability.util.ProbabilityTable" />
+			<role name="Request()" element="aima.core.probability.full.FullJointDistributionModel::jointDistribution(aima.core.probability.proposition.Proposition[]):aima.core.probability.CategoricalDistribution" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.qsearch.BidirectionalSearch$ExtendedNode" />
+			<role name="Adapter" element="aima.core.search.framework.qsearch.BidirectionalSearch" />
+			<role name="adaptee" element="aima.core.search.framework.qsearch.BidirectionalSearch::goalStateNode:aima.core.search.framework.qsearch.BidirectionalSearch$ExtendedNode" />
+			<role name="Request()" element="aima.core.search.framework.qsearch.BidirectionalSearch::findNode(aima.core.search.framework.problem.Problem, java.util.Queue):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.util.ProbabilityTable" />
+			<role name="Adapter" element="aima.core.probability.bayes.impl.CPT" />
+			<role name="adaptee" element="aima.core.probability.bayes.impl.CPT::table:aima.core.probability.util.ProbabilityTable" />
+			<role name="Request()" element="aima.core.probability.bayes.impl.CPT::getConditioningCase(aima.core.probability.proposition.AssignmentProposition[]):aima.core.probability.CategoricalDistribution" />
+			<role name="Request()" element="aima.core.probability.bayes.impl.CPT::getFactorFor(aima.core.probability.proposition.AssignmentProposition[]):aima.core.probability.Factor" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.agent.Notifier" />
+			<role name="Adapter" element="aima.core.environment.map.MapAgent" />
+			<role name="adaptee" element="aima.core.environment.map.MapAgent::notifier:aima.core.agent.Notifier" />
+			<role name="Request()" element="aima.core.environment.map.MapAgent::formulateGoal():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.agent.Notifier" />
+			<role name="Adapter" element="aima.core.environment.map.SimpleMapAgent" />
+			<role name="adaptee" element="aima.core.environment.map.SimpleMapAgent::notifier:aima.core.agent.Notifier" />
+			<role name="Request()" element="aima.core.environment.map.SimpleMapAgent::formulateGoal():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.agent.impl.DynamicState" />
+			<role name="Adapter" element="aima.core.environment.map.MapAgent" />
+			<role name="adaptee" element="aima.core.environment.map.MapAgent::state:aima.core.agent.impl.DynamicState" />
+			<role name="Request()" element="aima.core.environment.map.MapAgent::formulateGoal():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.agent.impl.DynamicState" />
+			<role name="Adapter" element="aima.core.environment.map.SimpleMapAgent" />
+			<role name="adaptee" element="aima.core.environment.map.SimpleMapAgent::state:aima.core.agent.impl.DynamicState" />
+			<role name="Request()" element="aima.core.environment.map.SimpleMapAgent::formulateGoal():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.Factor$Iterator" />
+			<role name="Adapter" element="aima.core.probability.util.ProbabilityTable$FactorIteratorAdapter" />
+			<role name="adaptee" element="aima.core.probability.util.ProbabilityTable$FactorIteratorAdapter::fi:aima.core.probability.Factor$Iterator" />
+			<role name="Request()" element="aima.core.probability.util.ProbabilityTable$FactorIteratorAdapter::iterate(java.util.Map, double):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Literal" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.FOLBCAsk$BCProofStep" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.FOLBCAsk$BCProofStep::goal:aima.core.logic.fol.kb.data.Literal" />
+			<role name="Request()" element="aima.core.logic.fol.inference.FOLBCAsk$BCProofStep::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Literal" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepBwChGoal" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepBwChGoal::currentGoal:aima.core.logic.fol.kb.data.Literal" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepBwChGoal::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Literal" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepFoChAlreadyAFact" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepFoChAlreadyAFact::fact:aima.core.logic.fol.kb.data.Literal" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepFoChAlreadyAFact::getProof():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.kb.data.Literal" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.proof.ProofStepFoChAssertFact" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.proof.ProofStepFoChAssertFact::fact:aima.core.logic.fol.kb.data.Literal" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofStepFoChAssertFact::getJustification():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.framework.qsearch.QueueSearch" />
+			<role name="Adapter" element="aima.core.search.framework.QueueBasedSearch" />
+			<role name="adaptee" element="aima.core.search.framework.QueueBasedSearch::impl:aima.core.search.framework.qsearch.QueueSearch" />
+			<role name="Request()" element="aima.core.search.framework.QueueBasedSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.framework.QueueBasedSearch::getMetrics():aima.core.search.framework.Metrics" />
+			<role name="Request()" element="aima.core.search.framework.QueueBasedSearch::addNodeListener(java.util.function.Consumer):void" />
+			<role name="Request()" element="aima.core.search.framework.QueueBasedSearch::removeNodeListener(java.util.function.Consumer):boolean" />
+			<role name="Request()" element="aima.core.search.framework.QueueBasedSearch::findState(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.agent.AgentProgram" />
+			<role name="Adapter" element="aima.core.agent.impl.SimpleAgent" />
+			<role name="adaptee" element="aima.core.agent.impl.SimpleAgent::program:aima.core.agent.AgentProgram" />
+			<role name="Request()" element="aima.core.agent.impl.SimpleAgent::act(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.neural.NNTrainingScheme" />
+			<role name="Adapter" element="aima.core.learning.neural.FeedForwardNeuralNetwork" />
+			<role name="adaptee" element="aima.core.learning.neural.FeedForwardNeuralNetwork::trainingScheme:aima.core.learning.neural.NNTrainingScheme" />
+			<role name="Request()" element="aima.core.learning.neural.FeedForwardNeuralNetwork::processError(aima.core.util.math.Vector):void" />
+			<role name="Request()" element="aima.core.learning.neural.FeedForwardNeuralNetwork::processInput(aima.core.util.math.Vector):aima.core.util.math.Vector" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.inference.trace.FOLTFMResolutionTracer" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.FOLTFMResolution" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.FOLTFMResolution::tracer:aima.core.logic.fol.inference.trace.FOLTFMResolutionTracer" />
+			<role name="Request()" element="aima.core.logic.fol.inference.FOLTFMResolution::ask(aima.core.logic.fol.kb.FOLKnowledgeBase, aima.core.logic.fol.parsing.ast.Sentence):aima.core.logic.fol.inference.InferenceResult" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.framework.NumericAttributeSpecification" />
+			<role name="Adapter" element="aima.core.learning.framework.NumericAttribute" />
+			<role name="adaptee" element="aima.core.learning.framework.NumericAttribute::spec:aima.core.learning.framework.NumericAttributeSpecification" />
+			<role name="Request()" element="aima.core.learning.framework.NumericAttribute::name():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.framework.StringAttributeSpecification" />
+			<role name="Adapter" element="aima.core.learning.framework.StringAttribute" />
+			<role name="adaptee" element="aima.core.learning.framework.StringAttribute::spec:aima.core.learning.framework.StringAttributeSpecification" />
+			<role name="Request()" element="aima.core.learning.framework.StringAttribute::name():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.learning.inductive.DecisionTree" />
+			<role name="Adapter" element="aima.core.learning.learners.DecisionTreeLearner" />
+			<role name="adaptee" element="aima.core.learning.learners.DecisionTreeLearner::tree:aima.core.learning.inductive.DecisionTree" />
+			<role name="Request()" element="aima.core.learning.learners.DecisionTreeLearner::predict(aima.core.learning.framework.Example):java.lang.String" />
+			<role name="Request()" element="aima.core.learning.learners.DecisionTreeLearner::test(aima.core.learning.framework.DataSet):int[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.mdp.impl.MDP" />
+			<role name="Adapter" element="aima.core.learning.reinforcement.agent.PassiveADPAgent" />
+			<role name="adaptee" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::mdp:aima.core.probability.mdp.impl.MDP" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::act(aima.core.learning.reinforcement.PerceptStateReward):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="aima.core.logic.fol.StandardizeQuantiferVariables" />
+			<role name="Adaptee" element="aima.core.logic.fol.StandardizeApartIndexical" />
+			<role name="adaptee" element="aima.core.logic.fol.StandardizeQuantiferVariables::quantifiedIndexical:aima.core.logic.fol.StandardizeApartIndexical" />
+			<role name="Request()" element="aima.core.logic.fol.StandardizeQuantiferVariables::visitQuantifiedSentence(aima.core.logic.fol.parsing.ast.QuantifiedSentence, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.csp.solver.inference.InferenceStrategy" />
+			<role name="Adapter" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver" />
+			<role name="adaptee" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::inferenceStrategy:aima.core.search.csp.solver.inference.InferenceStrategy" />
+			<role name="Request()" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::inference(aima.core.search.csp.CSP, aima.core.search.csp.Assignment, VAR):aima.core.search.csp.solver.inference.InferenceLog" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.util.math.Vector" />
+			<role name="Adapter" element="aima.core.learning.neural.Perceptron" />
+			<role name="adaptee" element="aima.core.learning.neural.Perceptron::lastInput:aima.core.util.math.Vector" />
+			<role name="Request()" element="aima.core.learning.neural.Perceptron::processError(aima.core.util.math.Vector):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.logic.fol.inference.Demodulation" />
+			<role name="Adapter" element="aima.core.logic.fol.inference.otter.defaultimpl.DefaultClauseSimplifier" />
+			<role name="adaptee" element="aima.core.logic.fol.inference.otter.defaultimpl.DefaultClauseSimplifier::demodulation:aima.core.logic.fol.inference.Demodulation" />
+			<role name="Request()" element="aima.core.logic.fol.inference.otter.defaultimpl.DefaultClauseSimplifier::simplify(aima.core.logic.fol.kb.data.Clause):aima.core.logic.fol.kb.data.Clause" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.bayes.BayesInference" />
+			<role name="Adapter" element="aima.core.probability.bayes.model.FiniteBayesModel" />
+			<role name="adaptee" element="aima.core.probability.bayes.model.FiniteBayesModel::bayesInference:aima.core.probability.bayes.BayesInference" />
+			<role name="Request()" element="aima.core.probability.bayes.model.FiniteBayesModel::jointDistribution(aima.core.probability.proposition.Proposition[]):aima.core.probability.CategoricalDistribution" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.csp.solver.CspHeuristics$ValueOrderingStrategy" />
+			<role name="Adapter" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver" />
+			<role name="adaptee" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::valOrderingStrategy:aima.core.search.csp.solver.CspHeuristics$ValueOrderingStrategy" />
+			<role name="Request()" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::orderDomainValues(aima.core.search.csp.CSP, aima.core.search.csp.Assignment, VAR):java.lang.Iterable" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.search.csp.solver.CspHeuristics$VariableSelectionStrategy" />
+			<role name="Adapter" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver" />
+			<role name="adaptee" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::varSelectionStrategy:aima.core.search.csp.solver.CspHeuristics$VariableSelectionStrategy" />
+			<role name="Request()" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::selectUnassignedVariable(aima.core.search.csp.CSP, aima.core.search.csp.Assignment):aima.core.search.csp.Variable" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.environment.map.Map" />
+			<role name="Adapter" element="aima.core.environment.map.SimpleMapAgent" />
+			<role name="adaptee" element="aima.core.environment.map.SimpleMapAgent::map:aima.core.environment.map.Map" />
+			<role name="Request()" element="aima.core.environment.map.SimpleMapAgent::formulateGoal():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.mdp.PolicyEvaluation" />
+			<role name="Adapter" element="aima.core.learning.reinforcement.agent.PassiveADPAgent" />
+			<role name="adaptee" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::policyEvaluation:aima.core.probability.mdp.PolicyEvaluation" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::act(aima.core.learning.reinforcement.PerceptStateReward):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.bayes.approx.BayesSampleInference" />
+			<role name="Adapter" element="aima.core.probability.bayes.approx.BayesInferenceApproxAdapter" />
+			<role name="adaptee" element="aima.core.probability.bayes.approx.BayesInferenceApproxAdapter::adaptee:aima.core.probability.bayes.approx.BayesSampleInference" />
+			<role name="Request()" element="aima.core.probability.bayes.approx.BayesInferenceApproxAdapter::ask(aima.core.probability.RandomVariable[], aima.core.probability.proposition.AssignmentProposition[], aima.core.probability.bayes.BayesianNetwork):aima.core.probability.CategoricalDistribution" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.domain.FiniteDomain" />
+			<role name="Adapter" element="aima.core.probability.hmm.impl.HMM" />
+			<role name="adaptee" element="aima.core.probability.hmm.impl.HMM::stateVariableDomain:aima.core.probability.domain.FiniteDomain" />
+			<role name="Request()" element="aima.core.probability.hmm.impl.HMM::createUnitMessage():aima.core.util.math.Matrix" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.mdp.ActionsFunction" />
+			<role name="Adapter" element="aima.core.probability.mdp.impl.MDP" />
+			<role name="adaptee" element="aima.core.probability.mdp.impl.MDP::actionsFunction:aima.core.probability.mdp.ActionsFunction" />
+			<role name="Request()" element="aima.core.probability.mdp.impl.MDP::actions(S):java.util.Set" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.mdp.TransitionProbabilityFunction" />
+			<role name="Adapter" element="aima.core.probability.mdp.impl.MDP" />
+			<role name="adaptee" element="aima.core.probability.mdp.impl.MDP::transitionProbabilityFunction:aima.core.probability.mdp.TransitionProbabilityFunction" />
+			<role name="Request()" element="aima.core.probability.mdp.impl.MDP::transitionProbability(S, S, A):double" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="aima.core.probability.CategoricalDistribution$Iterator" />
+			<role name="Adapter" element="aima.core.probability.util.ProbabilityTable$CategoricalDistributionIteratorAdapter" />
+			<role name="adaptee" element="aima.core.probability.util.ProbabilityTable$CategoricalDistributionIteratorAdapter::cdi:aima.core.probability.CategoricalDistribution$Iterator" />
+			<role name="Request()" element="aima.core.probability.util.ProbabilityTable$CategoricalDistributionIteratorAdapter::iterate(java.util.Map, double):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="Decorator" element="aima.core.agent.impl.aprog.simplerule.ANDCondition" />
+			<role name="component" element="aima.core.agent.impl.aprog.simplerule.ANDCondition::left:aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="component" element="aima.core.agent.impl.aprog.simplerule.ANDCondition::right:aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="Operation()" element="aima.core.agent.impl.aprog.simplerule.ANDCondition::evaluate(aima.core.agent.impl.ObjectWithDynamicAttributes):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="Decorator" element="aima.core.agent.impl.aprog.simplerule.NOTCondition" />
+			<role name="component" element="aima.core.agent.impl.aprog.simplerule.NOTCondition::con:aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="Operation()" element="aima.core.agent.impl.aprog.simplerule.NOTCondition::evaluate(aima.core.agent.impl.ObjectWithDynamicAttributes):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="Decorator" element="aima.core.agent.impl.aprog.simplerule.ORCondition" />
+			<role name="component" element="aima.core.agent.impl.aprog.simplerule.ORCondition::left:aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="component" element="aima.core.agent.impl.aprog.simplerule.ORCondition::right:aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="Operation()" element="aima.core.agent.impl.aprog.simplerule.ORCondition::evaluate(aima.core.agent.impl.ObjectWithDynamicAttributes):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="aima.core.probability.proposition.Proposition" />
+			<role name="Decorator" element="aima.core.probability.proposition.ConjunctiveProposition" />
+			<role name="component" element="aima.core.probability.proposition.ConjunctiveProposition::left:aima.core.probability.proposition.Proposition" />
+			<role name="component" element="aima.core.probability.proposition.ConjunctiveProposition::right:aima.core.probability.proposition.Proposition" />
+			<role name="Operation()" element="aima.core.probability.proposition.ConjunctiveProposition::holds(java.util.Map):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="aima.core.probability.proposition.Proposition" />
+			<role name="Decorator" element="aima.core.probability.proposition.DisjunctiveProposition" />
+			<role name="component" element="aima.core.probability.proposition.DisjunctiveProposition::left:aima.core.probability.proposition.Proposition" />
+			<role name="component" element="aima.core.probability.proposition.DisjunctiveProposition::right:aima.core.probability.proposition.Proposition" />
+			<role name="Operation()" element="aima.core.probability.proposition.DisjunctiveProposition::holds(java.util.Map):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="aima.core.probability.proposition.Proposition" />
+			<role name="Decorator" element="aima.core.probability.proposition.NotProposition" />
+			<role name="component" element="aima.core.probability.proposition.NotProposition::proposition:aima.core.probability.proposition.Proposition" />
+			<role name="Operation()" element="aima.core.probability.proposition.NotProposition::holds(java.util.Map):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="aima.core.logic.propositional.inference.SATPlan" />
+			<role name="State" element="aima.core.logic.propositional.inference.SATPlan$SolutionExtractor" />
+			<role name="state" element="aima.core.logic.propositional.inference.SATPlan::solutionExtractor:aima.core.logic.propositional.inference.SATPlan$SolutionExtractor" />
+			<role name="Request()" element="aima.core.logic.propositional.inference.SATPlan::satPlan(aima.core.logic.propositional.inference.SATPlan$Describe, aima.core.logic.propositional.inference.SATPlan$Describe, aima.core.logic.propositional.inference.SATPlan$Describe, int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.logic.propositional.inference.SATPlan" />
+			<role name="State" element="aima.core.logic.propositional.inference.SATSolver" />
+			<role name="state" element="aima.core.logic.propositional.inference.SATPlan::satSolver:aima.core.logic.propositional.inference.SATSolver" />
+			<role name="Request()" element="aima.core.logic.propositional.inference.SATPlan::satPlan(aima.core.logic.propositional.inference.SATPlan$Describe, aima.core.logic.propositional.inference.SATPlan$Describe, aima.core.logic.propositional.inference.SATPlan$Describe, int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.online.LRTAStarAgent" />
+			<role name="State" element="aima.core.search.framework.problem.OnlineSearchProblem" />
+			<role name="state" element="aima.core.search.online.LRTAStarAgent::problem:aima.core.search.framework.problem.OnlineSearchProblem" />
+			<role name="Request()" element="aima.core.search.online.LRTAStarAgent::act(P):java.util.Optional" />
+			<role name="Request()" element="aima.core.search.online.LRTAStarAgent::lrtaCost(S, A, S):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.online.OnlineDFSAgent" />
+			<role name="State" element="aima.core.search.framework.problem.OnlineSearchProblem" />
+			<role name="state" element="aima.core.search.online.OnlineDFSAgent::problem:aima.core.search.framework.problem.OnlineSearchProblem" />
+			<role name="Request()" element="aima.core.search.online.OnlineDFSAgent::act(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.nondeterministic.NondeterministicProblem" />
+			<role name="State" element="aima.core.search.framework.problem.StepCostFunction" />
+			<role name="state" element="aima.core.search.nondeterministic.NondeterministicProblem::stepCostFn:aima.core.search.framework.problem.StepCostFunction" />
+			<role name="Request()" element="aima.core.search.nondeterministic.NondeterministicProblem::getStepCosts(S, A, S):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.nondeterministic.NondeterministicProblem" />
+			<role name="State" element="aima.core.search.nondeterministic.ResultsFunction" />
+			<role name="state" element="aima.core.search.nondeterministic.NondeterministicProblem::resultsFn:aima.core.search.nondeterministic.ResultsFunction" />
+			<role name="Request()" element="aima.core.search.nondeterministic.NondeterministicProblem::getResults(S, A):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.robotics.impl.map.MclCartesianPlot2D" />
+			<role name="State" element="aima.core.robotics.impl.map.IPoseFactory" />
+			<role name="state" element="aima.core.robotics.impl.map.MclCartesianPlot2D::poseFactory:aima.core.robotics.impl.map.IPoseFactory" />
+			<role name="Request()" element="aima.core.robotics.impl.map.MclCartesianPlot2D::checkDistanceOfPoses(java.util.Set, double):aima.core.robotics.impl.datatypes.IPose2D" />
+			<role name="Request()" element="aima.core.robotics.impl.map.MclCartesianPlot2D::randomPose():aima.core.robotics.impl.datatypes.IPose2D" />
+			<role name="Request()" element="aima.core.robotics.impl.map.MclCartesianPlot2D::isPoseValid(P):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.robotics.impl.map.MclCartesianPlot2D" />
+			<role name="State" element="aima.core.robotics.impl.map.IRangeReadingFactory" />
+			<role name="state" element="aima.core.robotics.impl.map.MclCartesianPlot2D::rangeReadingFactory:aima.core.robotics.impl.map.IRangeReadingFactory" />
+			<role name="Request()" element="aima.core.robotics.impl.map.MclCartesianPlot2D::rayCast(P):aima.core.robotics.impl.datatypes.AbstractRangeReading" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.robotics.MonteCarloLocalization" />
+			<role name="State" element="aima.core.robotics.IMclMap" />
+			<role name="state" element="aima.core.robotics.MonteCarloLocalization::map:aima.core.robotics.IMclMap" />
+			<role name="Request()" element="aima.core.robotics.MonteCarloLocalization::weightSamples(java.util.Set, R[]):double[]" />
+			<role name="Request()" element="aima.core.robotics.MonteCarloLocalization::generateCloud(int):java.util.Set" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.adversarial.AlphaBetaSearch" />
+			<role name="State" element="aima.core.search.adversarial.Game" />
+			<role name="state" element="aima.core.search.adversarial.AlphaBetaSearch::game:aima.core.search.adversarial.Game" />
+			<role name="Request()" element="aima.core.search.adversarial.AlphaBetaSearch::makeDecision(S):java.lang.Object" />
+			<role name="Request()" element="aima.core.search.adversarial.AlphaBetaSearch::maxValue(S, P, double, double):double" />
+			<role name="Request()" element="aima.core.search.adversarial.AlphaBetaSearch::minValue(S, P, double, double):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch" />
+			<role name="State" element="aima.core.search.adversarial.Game" />
+			<role name="state" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::game:aima.core.search.adversarial.Game" />
+			<role name="Request()" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::makeDecision(S):java.lang.Object" />
+			<role name="Request()" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::maxValue(S, P, double, double, int):double" />
+			<role name="Request()" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::minValue(S, P, double, double, int):double" />
+			<role name="Request()" element="aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch::eval(S, P):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.adversarial.MinimaxSearch" />
+			<role name="State" element="aima.core.search.adversarial.Game" />
+			<role name="state" element="aima.core.search.adversarial.MinimaxSearch::game:aima.core.search.adversarial.Game" />
+			<role name="Request()" element="aima.core.search.adversarial.MinimaxSearch::makeDecision(S):java.lang.Object" />
+			<role name="Request()" element="aima.core.search.adversarial.MinimaxSearch::maxValue(S, P):double" />
+			<role name="Request()" element="aima.core.search.adversarial.MinimaxSearch::minValue(S, P):double" />
+			<role name="Request()" element="aima.core.search.adversarial.MinimaxSearch::lambda$0(java.lang.Object, java.lang.Object, java.lang.Object):double" />
+			<role name="Request()" element="aima.core.search.adversarial.MinimaxSearch::lambda$1(java.lang.Object, java.lang.Object, java.lang.Object):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.adversarial.MonteCarloTreeSearch" />
+			<role name="State" element="aima.core.search.adversarial.Game" />
+			<role name="state" element="aima.core.search.adversarial.MonteCarloTreeSearch::game:aima.core.search.adversarial.Game" />
+			<role name="Request()" element="aima.core.search.adversarial.MonteCarloTreeSearch::select(aima.core.search.framework.GameTree):aima.core.search.framework.Node" />
+			<role name="Request()" element="aima.core.search.adversarial.MonteCarloTreeSearch::expand(aima.core.search.framework.Node):aima.core.search.framework.Node" />
+			<role name="Request()" element="aima.core.search.adversarial.MonteCarloTreeSearch::simulate(aima.core.search.framework.Node):boolean" />
+			<role name="Request()" element="aima.core.search.adversarial.MonteCarloTreeSearch::bestAction(aima.core.search.framework.Node):java.lang.Object" />
+			<role name="Request()" element="aima.core.search.adversarial.MonteCarloTreeSearch::isNodeFullyExpanded(aima.core.search.framework.Node):boolean" />
+			<role name="Request()" element="aima.core.search.adversarial.MonteCarloTreeSearch::randomlySelectUnvisitedChild(aima.core.search.framework.Node):aima.core.search.framework.Node" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.twoply.TwoPlyGameTree" />
+			<role name="State" element="aima.core.environment.map.Map" />
+			<role name="state" element="aima.core.environment.twoply.TwoPlyGameTree::aima3eFig5_2:aima.core.environment.map.Map" />
+			<role name="Request()" element="aima.core.environment.twoply.TwoPlyGameTree::getActions(aima.core.environment.twoply.TwoPlyGameState):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.mdp.search.POMDPValueIteration" />
+			<role name="State" element="aima.core.probability.mdp.POMDP" />
+			<role name="state" element="aima.core.probability.mdp.search.POMDPValueIteration::pomdp:aima.core.probability.mdp.POMDP" />
+			<role name="Request()" element="aima.core.probability.mdp.search.POMDPValueIteration::pomdpValueIteration():java.util.HashMap" />
+			<role name="Request()" element="aima.core.probability.mdp.search.POMDPValueIteration::increasePlanDepths(java.util.HashMap):java.util.HashMap" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.hmm.exact.HMMForwardBackward" />
+			<role name="State" element="aima.core.probability.hmm.HiddenMarkovModel" />
+			<role name="state" element="aima.core.probability.hmm.exact.HMMForwardBackward::hmm:aima.core.probability.hmm.HiddenMarkovModel" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.HMMForwardBackward::forwardBackward(java.util.List, aima.core.probability.CategoricalDistribution):java.util.List" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.HMMForwardBackward::forward(aima.core.probability.CategoricalDistribution, java.util.List):aima.core.probability.CategoricalDistribution" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.HMMForwardBackward::backward(aima.core.probability.CategoricalDistribution, java.util.List):aima.core.probability.CategoricalDistribution" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.HMMForwardBackward::forward(aima.core.util.math.Matrix, aima.core.util.math.Matrix):aima.core.util.math.Matrix" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.HMMForwardBackward::backward(aima.core.util.math.Matrix, aima.core.util.math.Matrix):aima.core.util.math.Matrix" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.util.ProbabilityTable$RVInfo" />
+			<role name="State" element="aima.core.probability.domain.FiniteDomain" />
+			<role name="state" element="aima.core.probability.util.ProbabilityTable$RVInfo::varDomain:aima.core.probability.domain.FiniteDomain" />
+			<role name="Request()" element="aima.core.probability.util.ProbabilityTable$RVInfo::getIdxForDomain(java.lang.Object):int" />
+			<role name="Request()" element="aima.core.probability.util.ProbabilityTable$RVInfo::getDomainValueAt(int):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.map.MapAgent" />
+			<role name="State" element="aima.core.search.framework.SearchForActions" />
+			<role name="state" element="aima.core.environment.map.MapAgent::search:aima.core.search.framework.SearchForActions" />
+			<role name="Request()" element="aima.core.environment.map.MapAgent::search(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.map.SimpleMapAgent" />
+			<role name="State" element="aima.core.search.framework.SearchForActions" />
+			<role name="state" element="aima.core.environment.map.SimpleMapAgent::search:aima.core.search.framework.SearchForActions" />
+			<role name="Request()" element="aima.core.environment.map.SimpleMapAgent::search(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.bayes.exact.EnumerationAsk$ObservedEvidence" />
+			<role name="State" element="aima.core.probability.bayes.BayesianNetwork" />
+			<role name="state" element="aima.core.probability.bayes.exact.EnumerationAsk$ObservedEvidence::bn:aima.core.probability.bayes.BayesianNetwork" />
+			<role name="Request()" element="aima.core.probability.bayes.exact.EnumerationAsk$ObservedEvidence::posteriorForParents(aima.core.probability.RandomVariable):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.hmm.exact.FixedLagSmoothing" />
+			<role name="State" element="aima.core.probability.hmm.HiddenMarkovModel" />
+			<role name="state" element="aima.core.probability.hmm.exact.FixedLagSmoothing::hmm:aima.core.probability.hmm.HiddenMarkovModel" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.FixedLagSmoothing::fixedLagSmoothing(java.util.List):aima.core.probability.CategoricalDistribution" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.FixedLagSmoothing::forward(aima.core.util.math.Matrix, aima.core.util.math.Matrix):aima.core.util.math.Matrix" />
+			<role name="Request()" element="aima.core.probability.hmm.exact.FixedLagSmoothing::initPersistent():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.map.MapAgent" />
+			<role name="State" element="aima.core.agent.Notifier" />
+			<role name="state" element="aima.core.environment.map.MapAgent::notifier:aima.core.agent.Notifier" />
+			<role name="Request()" element="aima.core.environment.map.MapAgent::formulateGoal():java.util.Optional" />
+			<role name="Request()" element="aima.core.environment.map.MapAgent::search(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.map.SimpleMapAgent" />
+			<role name="State" element="aima.core.agent.Notifier" />
+			<role name="state" element="aima.core.environment.map.SimpleMapAgent::notifier:aima.core.agent.Notifier" />
+			<role name="Request()" element="aima.core.environment.map.SimpleMapAgent::formulateGoal():java.util.Optional" />
+			<role name="Request()" element="aima.core.environment.map.SimpleMapAgent::search(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.wumpusworld.HybridWumpusAgent" />
+			<role name="State" element="aima.core.agent.Notifier" />
+			<role name="state" element="aima.core.environment.wumpusworld.HybridWumpusAgent::notifier:aima.core.agent.Notifier" />
+			<role name="Request()" element="aima.core.environment.wumpusworld.HybridWumpusAgent::notifyViews(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.agent.NondeterministicSearchAgent" />
+			<role name="State" element="aima.core.agent.Notifier" />
+			<role name="state" element="aima.core.search.agent.NondeterministicSearchAgent::notifier:aima.core.agent.Notifier" />
+			<role name="Request()" element="aima.core.search.agent.NondeterministicSearchAgent::makePlan(aima.core.search.nondeterministic.NondeterministicProblem):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.wumpusworld.WumpusEnvironment" />
+			<role name="State" element="aima.core.agent.Agent" />
+			<role name="state" element="aima.core.environment.wumpusworld.WumpusEnvironment::agentJustKillingWumpus:aima.core.agent.Agent" />
+			<role name="Request()" element="aima.core.environment.wumpusworld.WumpusEnvironment::execute(aima.core.agent.Agent, aima.core.environment.wumpusworld.WumpusAction):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.wumpusworld.WumpusKnowledgeBase" />
+			<role name="State" element="aima.core.logic.propositional.inference.EntailmentChecker" />
+			<role name="state" element="aima.core.environment.wumpusworld.WumpusKnowledgeBase::checker:aima.core.logic.propositional.inference.EntailmentChecker" />
+			<role name="Request()" element="aima.core.environment.wumpusworld.WumpusKnowledgeBase::ask(aima.core.logic.propositional.parsing.ast.Sentence):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.bayes.approx.ParticleFiltering" />
+			<role name="State" element="aima.core.probability.bayes.DynamicBayesianNetwork" />
+			<role name="state" element="aima.core.probability.bayes.approx.ParticleFiltering::dbn:aima.core.probability.bayes.DynamicBayesianNetwork" />
+			<role name="Request()" element="aima.core.probability.bayes.approx.ParticleFiltering::initPersistent(int, aima.core.probability.bayes.DynamicBayesianNetwork):void" />
+			<role name="Request()" element="aima.core.probability.bayes.approx.ParticleFiltering::sampleFromTransitionModel(int):void" />
+			<role name="Request()" element="aima.core.probability.bayes.approx.ParticleFiltering::weightedSampleWithReplacement(int, aima.core.probability.proposition.AssignmentProposition[][], double[]):aima.core.probability.proposition.AssignmentProposition[][]" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.util.ProbabilityTable$FactorIteratorAdapter" />
+			<role name="State" element="aima.core.probability.Factor$Iterator" />
+			<role name="state" element="aima.core.probability.util.ProbabilityTable$FactorIteratorAdapter::fi:aima.core.probability.Factor$Iterator" />
+			<role name="Request()" element="aima.core.probability.util.ProbabilityTable$FactorIteratorAdapter::iterate(java.util.Map, double):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.bayes.approx.ParticleFiltering" />
+			<role name="State" element="aima.core.util.Randomizer" />
+			<role name="state" element="aima.core.probability.bayes.approx.ParticleFiltering::randomizer:aima.core.util.Randomizer" />
+			<role name="Request()" element="aima.core.probability.bayes.approx.ParticleFiltering::weightedSampleWithReplacement(int, aima.core.probability.proposition.AssignmentProposition[][], double[]):aima.core.probability.proposition.AssignmentProposition[][]" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.robotics.MonteCarloLocalization" />
+			<role name="State" element="aima.core.util.Randomizer" />
+			<role name="state" element="aima.core.robotics.MonteCarloLocalization::randomizer:aima.core.util.Randomizer" />
+			<role name="Request()" element="aima.core.robotics.MonteCarloLocalization::extendedWeightedSampleWithReplacement(java.util.Set, double[]):java.util.Set" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.util.math.geom.CartesianPlot2D" />
+			<role name="State" element="aima.core.util.math.geom.IGroupParser" />
+			<role name="state" element="aima.core.util.math.geom.CartesianPlot2D::parser:aima.core.util.math.geom.IGroupParser" />
+			<role name="Request()" element="aima.core.util.math.geom.CartesianPlot2D::loadMap(java.io.InputStream, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.agent.impl.SimpleAgent" />
+			<role name="State" element="aima.core.agent.AgentProgram" />
+			<role name="state" element="aima.core.agent.impl.SimpleAgent::program:aima.core.agent.AgentProgram" />
+			<role name="Request()" element="aima.core.agent.impl.SimpleAgent::act(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.learning.neural.FeedForwardNeuralNetwork" />
+			<role name="State" element="aima.core.learning.neural.NNTrainingScheme" />
+			<role name="state" element="aima.core.learning.neural.FeedForwardNeuralNetwork::trainingScheme:aima.core.learning.neural.NNTrainingScheme" />
+			<role name="Request()" element="aima.core.learning.neural.FeedForwardNeuralNetwork::processError(aima.core.util.math.Vector):void" />
+			<role name="Request()" element="aima.core.learning.neural.FeedForwardNeuralNetwork::processInput(aima.core.util.math.Vector):aima.core.util.math.Vector" />
+			<role name="Request()" element="aima.core.learning.neural.FeedForwardNeuralNetwork::setTrainingScheme(aima.core.learning.neural.NNTrainingScheme):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.logic.fol.inference.FOLTFMResolution" />
+			<role name="State" element="aima.core.logic.fol.inference.trace.FOLTFMResolutionTracer" />
+			<role name="state" element="aima.core.logic.fol.inference.FOLTFMResolution::tracer:aima.core.logic.fol.inference.trace.FOLTFMResolutionTracer" />
+			<role name="Request()" element="aima.core.logic.fol.inference.FOLTFMResolution::ask(aima.core.logic.fol.kb.FOLKnowledgeBase, aima.core.logic.fol.parsing.ast.Sentence):aima.core.logic.fol.inference.InferenceResult" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.logic.fol.parsing.ast.TermEquality" />
+			<role name="State" element="aima.core.logic.fol.parsing.ast.Term" />
+			<role name="state" element="aima.core.logic.fol.parsing.ast.TermEquality::term1:aima.core.logic.fol.parsing.ast.Term" />
+			<role name="state" element="aima.core.logic.fol.parsing.ast.TermEquality::term2:aima.core.logic.fol.parsing.ast.Term" />
+			<role name="Request()" element="aima.core.logic.fol.parsing.ast.TermEquality::copy():aima.core.logic.fol.parsing.ast.TermEquality" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.learning.framework.Example" />
+			<role name="State" element="aima.core.learning.framework.Attribute" />
+			<role name="state" element="aima.core.learning.framework.Example::targetAttribute:aima.core.learning.framework.Attribute" />
+			<role name="Request()" element="aima.core.learning.framework.Example::targetValue():java.lang.String" />
+			<role name="Request()" element="aima.core.learning.framework.Example::numerize(java.util.Hashtable):aima.core.learning.framework.Example" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.logic.fol.inference.FOLOTTERLikeTheoremProver$IndexedClauses" />
+			<role name="State" element="aima.core.logic.fol.inference.otter.LightestClauseHeuristic" />
+			<role name="state" element="aima.core.logic.fol.inference.FOLOTTERLikeTheoremProver$IndexedClauses::lightestClauseHeuristic:aima.core.logic.fol.inference.otter.LightestClauseHeuristic" />
+			<role name="Request()" element="aima.core.logic.fol.inference.FOLOTTERLikeTheoremProver$IndexedClauses::addClause(aima.core.logic.fol.kb.data.Clause, java.util.Set, java.util.Set):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.logic.fol.StandardizeQuantiferVariables" />
+			<role name="State" element="aima.core.logic.fol.StandardizeApartIndexical" />
+			<role name="state" element="aima.core.logic.fol.StandardizeQuantiferVariables::quantifiedIndexical:aima.core.logic.fol.StandardizeApartIndexical" />
+			<role name="Request()" element="aima.core.logic.fol.StandardizeQuantiferVariables::visitQuantifiedSentence(aima.core.logic.fol.parsing.ast.QuantifiedSentence, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.proposition.SubsetProposition" />
+			<role name="State" element="aima.core.probability.domain.FiniteDomain" />
+			<role name="state" element="aima.core.probability.proposition.SubsetProposition::subsetDomain:aima.core.probability.domain.FiniteDomain" />
+			<role name="Request()" element="aima.core.probability.proposition.SubsetProposition::holds(java.util.Map):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.learning.neural.Layer" />
+			<role name="State" element="aima.core.learning.neural.ActivationFunction" />
+			<role name="state" element="aima.core.learning.neural.Layer::activationFunction:aima.core.learning.neural.ActivationFunction" />
+			<role name="Request()" element="aima.core.learning.neural.Layer::feedForward(aima.core.util.math.Vector):aima.core.util.math.Vector" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.logic.fol.inference.proof.ProofFinal" />
+			<role name="State" element="aima.core.logic.fol.inference.proof.ProofStep" />
+			<role name="state" element="aima.core.logic.fol.inference.proof.ProofFinal::finalStep:aima.core.logic.fol.inference.proof.ProofStep" />
+			<role name="Request()" element="aima.core.logic.fol.inference.proof.ProofFinal::calcualteProofSteps():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.logic.fol.kb.data.Literal" />
+			<role name="State" element="aima.core.logic.fol.parsing.ast.AtomicSentence" />
+			<role name="state" element="aima.core.logic.fol.kb.data.Literal::atom:aima.core.logic.fol.parsing.ast.AtomicSentence" />
+			<role name="Request()" element="aima.core.logic.fol.kb.data.Literal::equals(java.lang.Object):boolean" />
+			<role name="Request()" element="aima.core.logic.fol.kb.data.Literal::hashCode():int" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.bayes.model.FiniteBayesModel" />
+			<role name="State" element="aima.core.probability.bayes.BayesInference" />
+			<role name="state" element="aima.core.probability.bayes.model.FiniteBayesModel::bayesInference:aima.core.probability.bayes.BayesInference" />
+			<role name="Request()" element="aima.core.probability.bayes.model.FiniteBayesModel::prior(aima.core.probability.proposition.Proposition[]):double" />
+			<role name="Request()" element="aima.core.probability.bayes.model.FiniteBayesModel::jointDistribution(aima.core.probability.proposition.Proposition[]):aima.core.probability.CategoricalDistribution" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.map.SimpleMapAgent" />
+			<role name="State" element="aima.core.environment.map.Map" />
+			<role name="state" element="aima.core.environment.map.SimpleMapAgent::map:aima.core.environment.map.Map" />
+			<role name="Request()" element="aima.core.environment.map.SimpleMapAgent::formulateGoal():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.learning.reinforcement.agent.QLearningAgent" />
+			<role name="State" element="aima.core.probability.mdp.ActionsFunction" />
+			<role name="state" element="aima.core.learning.reinforcement.agent.QLearningAgent::actionsFunction:aima.core.probability.mdp.ActionsFunction" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.QLearningAgent::isTerminal(S):boolean" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.QLearningAgent::maxAPrime(S):double" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.QLearningAgent::argmaxAPrime(S):aima.core.agent.Action" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.learning.reinforcement.agent.PassiveADPAgent" />
+			<role name="State" element="aima.core.probability.mdp.PolicyEvaluation" />
+			<role name="state" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::policyEvaluation:aima.core.probability.mdp.PolicyEvaluation" />
+			<role name="Request()" element="aima.core.learning.reinforcement.agent.PassiveADPAgent::act(aima.core.learning.reinforcement.PerceptStateReward):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.environment.map.MapEnvironment" />
+			<role name="State" element="aima.core.environment.map.Map" />
+			<role name="state" element="aima.core.environment.map.MapEnvironment::map:aima.core.environment.map.Map" />
+			<role name="Request()" element="aima.core.environment.map.MapEnvironment::execute(aima.core.agent.Agent, aima.core.environment.map.MoveToAction):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.learning.reinforcement.example.CellWorldEnvironment" />
+			<role name="State" element="aima.core.probability.mdp.TransitionProbabilityFunction" />
+			<role name="state" element="aima.core.learning.reinforcement.example.CellWorldEnvironment::tpf:aima.core.probability.mdp.TransitionProbabilityFunction" />
+			<role name="Request()" element="aima.core.learning.reinforcement.example.CellWorldEnvironment::execute(aima.core.agent.Agent, aima.core.environment.cellworld.CellWorldAction):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.learning.reinforcement.example.CellWorldEnvironment" />
+			<role name="State" element="aima.core.util.Randomizer" />
+			<role name="state" element="aima.core.learning.reinforcement.example.CellWorldEnvironment::r:aima.core.util.Randomizer" />
+			<role name="Request()" element="aima.core.learning.reinforcement.example.CellWorldEnvironment::execute(aima.core.agent.Agent, aima.core.environment.cellworld.CellWorldAction):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.agent.impl.aprog.simplerule.Rule" />
+			<role name="State" element="aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="state" element="aima.core.agent.impl.aprog.simplerule.Rule::con:aima.core.agent.impl.aprog.simplerule.Condition" />
+			<role name="Request()" element="aima.core.agent.impl.aprog.simplerule.Rule::evaluate(aima.core.agent.impl.ObjectWithDynamicAttributes):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.temporal.generic.ForwardBackward" />
+			<role name="State" element="aima.core.probability.FiniteProbabilityModel" />
+			<role name="state" element="aima.core.probability.temporal.generic.ForwardBackward::sensorModel:aima.core.probability.FiniteProbabilityModel" />
+			<role name="Request()" element="aima.core.probability.temporal.generic.ForwardBackward::forward(aima.core.probability.CategoricalDistribution, java.util.List):aima.core.probability.CategoricalDistribution" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.bayes.approx.BayesInferenceApproxAdapter" />
+			<role name="State" element="aima.core.probability.bayes.approx.BayesSampleInference" />
+			<role name="state" element="aima.core.probability.bayes.approx.BayesInferenceApproxAdapter::adaptee:aima.core.probability.bayes.approx.BayesSampleInference" />
+			<role name="Request()" element="aima.core.probability.bayes.approx.BayesInferenceApproxAdapter::ask(aima.core.probability.RandomVariable[], aima.core.probability.proposition.AssignmentProposition[], aima.core.probability.bayes.BayesianNetwork):aima.core.probability.CategoricalDistribution" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.mdp.impl.MDP" />
+			<role name="State" element="aima.core.probability.mdp.ActionsFunction" />
+			<role name="state" element="aima.core.probability.mdp.impl.MDP::actionsFunction:aima.core.probability.mdp.ActionsFunction" />
+			<role name="Request()" element="aima.core.probability.mdp.impl.MDP::actions(S):java.util.Set" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.mdp.search.PolicyIteration" />
+			<role name="State" element="aima.core.probability.mdp.PolicyEvaluation" />
+			<role name="state" element="aima.core.probability.mdp.search.PolicyIteration::policyEvaluation:aima.core.probability.mdp.PolicyEvaluation" />
+			<role name="Request()" element="aima.core.probability.mdp.search.PolicyIteration::policyIteration(aima.core.probability.mdp.MarkovDecisionProcess):aima.core.probability.mdp.Policy" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.mdp.impl.MDP" />
+			<role name="State" element="aima.core.probability.mdp.TransitionProbabilityFunction" />
+			<role name="state" element="aima.core.probability.mdp.impl.MDP::transitionProbabilityFunction:aima.core.probability.mdp.TransitionProbabilityFunction" />
+			<role name="Request()" element="aima.core.probability.mdp.impl.MDP::transitionProbability(S, S, A):double" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.probability.util.ProbabilityTable$CategoricalDistributionIteratorAdapter" />
+			<role name="State" element="aima.core.probability.CategoricalDistribution$Iterator" />
+			<role name="state" element="aima.core.probability.util.ProbabilityTable$CategoricalDistributionIteratorAdapter::cdi:aima.core.probability.CategoricalDistribution$Iterator" />
+			<role name="Request()" element="aima.core.probability.util.ProbabilityTable$CategoricalDistributionIteratorAdapter::iterate(java.util.Map, double):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy">
+		<instance>
+			<role name="Context" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver" />
+			<role name="Strategy" element="aima.core.search.csp.solver.inference.InferenceStrategy" />
+			<role name="strategy" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::inferenceStrategy:aima.core.search.csp.solver.inference.InferenceStrategy" />
+			<role name="ContextInterface()" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::solve(aima.core.search.csp.CSP):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.csp.solver.BackjumpingBacktrackingSolver" />
+			<role name="Strategy" element="aima.core.search.csp.solver.CspHeuristics$VariableSelectionStrategy" />
+			<role name="strategy" element="aima.core.search.csp.solver.BackjumpingBacktrackingSolver::varSelectionStrategy:aima.core.search.csp.solver.CspHeuristics$VariableSelectionStrategy" />
+			<role name="ContextInterface()" element="aima.core.search.csp.solver.BackjumpingBacktrackingSolver::selectUnassignedVariable(aima.core.search.csp.CSP, aima.core.search.csp.Assignment):aima.core.search.csp.Variable" />
+		</instance>
+		<instance>
+			<role name="Context" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver" />
+			<role name="Strategy" element="aima.core.search.csp.solver.CspHeuristics$VariableSelectionStrategy" />
+			<role name="strategy" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::varSelectionStrategy:aima.core.search.csp.solver.CspHeuristics$VariableSelectionStrategy" />
+			<role name="ContextInterface()" element="aima.core.search.csp.solver.FlexibleBacktrackingSolver::selectUnassignedVariable(aima.core.search.csp.CSP, aima.core.search.csp.Assignment):aima.core.search.csp.Variable" />
+		</instance>
+	</pattern>
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="aima.core.probability.DecisionNetwork" />
+			<role name="Implementor" element="aima.core.probability.bayes.BayesInference" />
+			<role name="implementor" element="aima.core.probability.DecisionNetwork::inferenceProcedure:aima.core.probability.bayes.BayesInference" />
+			<role name="Operation()" element="aima.core.probability.DecisionNetwork::getExpectedUtility(aima.core.probability.RandomVariable, java.util.List):double" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="aima.core.search.framework.QueueBasedSearch" />
+			<role name="Implementor" element="aima.core.search.framework.qsearch.QueueSearch" />
+			<role name="implementor" element="aima.core.search.framework.QueueBasedSearch::impl:aima.core.search.framework.qsearch.QueueSearch" />
+			<role name="Operation()" element="aima.core.search.framework.QueueBasedSearch::findActions(aima.core.search.framework.problem.Problem):java.util.Optional" />
+			<role name="Operation()" element="aima.core.search.framework.QueueBasedSearch::findState(aima.core.search.framework.problem.Problem):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="aima.core.probability.InformationGatheringAgent" />
+			<role name="Implementor" element="aima.core.probability.bayes.BayesInference" />
+			<role name="implementor" element="aima.core.probability.InformationGatheringAgent::inferenceMethod:aima.core.probability.bayes.BayesInference" />
+			<role name="Operation()" element="aima.core.probability.InformationGatheringAgent::getVpi(aima.core.probability.RandomVariable):double" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="aima.core.agent.DTAgent" />
+			<role name="TemplateMethod()" element="aima.core.agent.DTAgent::perceive(aima.core.agent.Percept):aima.core.agent.Action" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.agent.impl.AbstractEnvironment" />
+			<role name="TemplateMethod()" element="aima.core.agent.impl.AbstractEnvironment::step():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.agent.impl.aprog.ModelBasedReflexAgentProgram" />
+			<role name="TemplateMethod()" element="aima.core.agent.impl.aprog.ModelBasedReflexAgentProgram::apply(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.agent.impl.aprog.SimpleReflexAgentProgram" />
+			<role name="TemplateMethod()" element="aima.core.agent.impl.aprog.SimpleReflexAgentProgram::apply(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.learning.neural.NNDataSet" />
+			<role name="TemplateMethod()" element="aima.core.learning.neural.NNDataSet::createExamplesFromFile(java.lang.String):void" />
+			<role name="TemplateMethod()" element="aima.core.learning.neural.NNDataSet::createExamplesFromDataSet(aima.core.learning.framework.DataSet, aima.core.learning.neural.Numerizer):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.learning.reinforcement.agent.ReinforcementAgent" />
+			<role name="TemplateMethod()" element="aima.core.learning.reinforcement.agent.ReinforcementAgent::act(java.lang.Object):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.logic.common.Parser" />
+			<role name="TemplateMethod()" element="aima.core.logic.common.Parser::parse(java.io.Reader):java.lang.Object" />
+			<role name="TemplateMethod()" element="aima.core.logic.common.Parser::initializeLookAheadBuffer():void" />
+			<role name="TemplateMethod()" element="aima.core.logic.common.Parser::loadNextTokenFromInput():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.logic.propositional.agent.KBAgent" />
+			<role name="TemplateMethod()" element="aima.core.logic.propositional.agent.KBAgent::act(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.probability.DecisionNetwork" />
+			<role name="TemplateMethod()" element="aima.core.probability.DecisionNetwork::getExpectedUtility(aima.core.probability.RandomVariable, java.util.List):double" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.probability.domain.AbstractFiniteDomain" />
+			<role name="TemplateMethod()" element="aima.core.probability.domain.AbstractFiniteDomain::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.probability.InformationGatheringAgent" />
+			<role name="TemplateMethod()" element="aima.core.probability.InformationGatheringAgent::act(aima.core.agent.Percept):java.util.Optional" />
+			<role name="TemplateMethod()" element="aima.core.probability.InformationGatheringAgent::vpiPerUnitCost(java.util.List):java.util.List" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.search.agent.ProblemSolvingAgent" />
+			<role name="TemplateMethod()" element="aima.core.search.agent.ProblemSolvingAgent::act(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.search.agent.SimpleProblemSolvingAgent" />
+			<role name="TemplateMethod()" element="aima.core.search.agent.SimpleProblemSolvingAgent::act(P):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="aima.core.search.csp.solver.AbstractBacktrackingSolver" />
+			<role name="TemplateMethod()" element="aima.core.search.csp.solver.AbstractBacktrackingSolver::backtrack(aima.core.search.csp.CSP, aima.core.search.csp.Assignment):aima.core.search.csp.Assignment" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor">
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.ConnectedSentence" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.ConnectedSentence::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.NotSentence" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.NotSentence::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.Predicate" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.Predicate::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.QuantifiedSentence" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.QuantifiedSentence::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.TermEquality" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.TermEquality::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.Constant" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.Constant::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.Function" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.Function::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="aima.core.logic.fol.parsing.ast.Variable" />
+			<role name="Visitor" element="aima.core.logic.fol.parsing.FOLVisitor" />
+			<role name="Accept()" element="aima.core.logic.fol.parsing.ast.Variable::accept(aima.core.logic.fol.parsing.FOLVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

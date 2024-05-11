@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.netflix.priam.connection.JMXNodeTool" />
+			<role name="uniqueInstance" element="com.netflix.priam.connection.JMXNodeTool::tool:com.netflix.priam.connection.JMXNodeTool" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="com.netflix.priam.config.IConfiguration" />
+			<role name="Adapter" element="com.netflix.priam.cryptography.pgp.PgpCredential" />
+			<role name="adaptee" element="com.netflix.priam.cryptography.pgp.PgpCredential::config:com.netflix.priam.config.IConfiguration" />
+			<role name="Request()" element="com.netflix.priam.cryptography.pgp.PgpCredential::getValue(com.netflix.priam.cred.ICredentialGeneric$KEY):byte[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.netflix.priam.config.IConfiguration" />
+			<role name="Adapter" element="com.netflix.priam.google.GcsCredential" />
+			<role name="adaptee" element="com.netflix.priam.google.GcsCredential::config:com.netflix.priam.config.IConfiguration" />
+			<role name="Request()" element="com.netflix.priam.google.GcsCredential::getValue(com.netflix.priam.cred.ICredentialGeneric$KEY):byte[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.netflix.priam.configSource.IConfigSource" />
+			<role name="Adapter" element="com.netflix.priam.config.BackupRestoreConfig" />
+			<role name="adaptee" element="com.netflix.priam.config.BackupRestoreConfig::config:com.netflix.priam.configSource.IConfigSource" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getSnapshotMetaServiceCronExpression():java.lang.String" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::enableV2Backups():boolean" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::enableV2Restore():boolean" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getBackupTTLMonitorPeriodInSec():int" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getBackupVerificationSLOInHours():int" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getBackupVerificationCronExpression():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.netflix.priam.scheduler.PriamScheduler" />
+			<role name="Adapter" element="com.netflix.priam.tuner.CassandraTunerService" />
+			<role name="adaptee" element="com.netflix.priam.tuner.CassandraTunerService::scheduler:com.netflix.priam.scheduler.PriamScheduler" />
+			<role name="Request()" element="com.netflix.priam.tuner.CassandraTunerService::scheduleService():void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="com.netflix.priam.config.IConfiguration" />
+			<role name="Context" element="com.netflix.priam.cryptography.pgp.PgpCredential" />
+			<role name="state" element="com.netflix.priam.cryptography.pgp.PgpCredential::config:com.netflix.priam.config.IConfiguration" />
+			<role name="Request()" element="com.netflix.priam.cryptography.pgp.PgpCredential::getValue(com.netflix.priam.cred.ICredentialGeneric$KEY):byte[]" />
+		</instance>
+		<instance>
+			<role name="State" element="com.netflix.priam.config.IConfiguration" />
+			<role name="Context" element="com.netflix.priam.google.GcsCredential" />
+			<role name="state" element="com.netflix.priam.google.GcsCredential::config:com.netflix.priam.config.IConfiguration" />
+			<role name="Request()" element="com.netflix.priam.google.GcsCredential::getValue(com.netflix.priam.cred.ICredentialGeneric$KEY):byte[]" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.netflix.priam.config.BackupRestoreConfig" />
+			<role name="State" element="com.netflix.priam.configSource.IConfigSource" />
+			<role name="state" element="com.netflix.priam.config.BackupRestoreConfig::config:com.netflix.priam.configSource.IConfigSource" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getSnapshotMetaServiceCronExpression():java.lang.String" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::enableV2Backups():boolean" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::enableV2Restore():boolean" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getBackupTTLMonitorPeriodInSec():int" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getBackupVerificationSLOInHours():int" />
+			<role name="Request()" element="com.netflix.priam.config.BackupRestoreConfig::getBackupVerificationCronExpression():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="State" element="com.netflix.priam.backup.IBackupFileSystem" />
+			<role name="Context" element="com.netflix.priam.restore.RestoreTokenSelector" />
+			<role name="state" element="com.netflix.priam.restore.RestoreTokenSelector::fs:com.netflix.priam.backup.IBackupFileSystem" />
+			<role name="Request()" element="com.netflix.priam.restore.RestoreTokenSelector::getClosestToken(java.math.BigInteger, java.util.Date):java.math.BigInteger" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.netflix.priam.tuner.dse.DseProcessManager" />
+			<role name="State" element="com.netflix.priam.tuner.dse.IDseConfiguration" />
+			<role name="state" element="com.netflix.priam.tuner.dse.DseProcessManager::dseConfig:com.netflix.priam.tuner.dse.IDseConfiguration" />
+			<role name="Request()" element="com.netflix.priam.tuner.dse.DseProcessManager::setEnv(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.netflix.priam.restore.RestoreTokenSelector" />
+			<role name="State" element="com.netflix.priam.utils.ITokenManager" />
+			<role name="state" element="com.netflix.priam.restore.RestoreTokenSelector::tokenManager:com.netflix.priam.utils.ITokenManager" />
+			<role name="Request()" element="com.netflix.priam.restore.RestoreTokenSelector::getClosestToken(java.math.BigInteger, java.util.Date):java.math.BigInteger" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method" />
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

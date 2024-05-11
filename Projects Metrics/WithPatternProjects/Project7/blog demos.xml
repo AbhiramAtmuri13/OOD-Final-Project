@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.bolingcavalry.grpctutorials.lib.AddCartReply" />
+			<role name="uniqueInstance" element="com.bolingcavalry.grpctutorials.lib.AddCartReply::DEFAULT_INSTANCE:com.bolingcavalry.grpctutorials.lib.AddCartReply" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.bolingcavalry.grpctutorials.lib.Buyer" />
+			<role name="uniqueInstance" element="com.bolingcavalry.grpctutorials.lib.Buyer::DEFAULT_INSTANCE:com.bolingcavalry.grpctutorials.lib.Buyer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.bolingcavalry.grpctutorials.lib.HelloReply" />
+			<role name="uniqueInstance" element="com.bolingcavalry.grpctutorials.lib.HelloReply::DEFAULT_INSTANCE:com.bolingcavalry.grpctutorials.lib.HelloReply" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.bolingcavalry.grpctutorials.lib.HelloRequest" />
+			<role name="uniqueInstance" element="com.bolingcavalry.grpctutorials.lib.HelloRequest::DEFAULT_INSTANCE:com.bolingcavalry.grpctutorials.lib.HelloRequest" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.bolingcavalry.grpctutorials.lib.Order" />
+			<role name="uniqueInstance" element="com.bolingcavalry.grpctutorials.lib.Order::DEFAULT_INSTANCE:com.bolingcavalry.grpctutorials.lib.Order" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.bolingcavalry.grpctutorials.lib.ProductOrder" />
+			<role name="uniqueInstance" element="com.bolingcavalry.grpctutorials.lib.ProductOrder::DEFAULT_INSTANCE:com.bolingcavalry.grpctutorials.lib.ProductOrder" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.bolingcavalry.sparkscalademo.app.FirstDemo$" />
+			<role name="uniqueInstance" element="com.bolingcavalry.sparkscalademo.app.FirstDemo$::MODULE$:com.bolingcavalry.sparkscalademo.app.FirstDemo$" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter" />
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State" />
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method" />
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+
